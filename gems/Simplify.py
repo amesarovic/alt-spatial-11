@@ -67,7 +67,7 @@ class Simplify(MacroSpec):
                     TextBox("Tolerance", placeholder="1.0").bindProperty("tolerance")
                 )                
                 .addElement(
-                    SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")
+                    SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").addOption("Meters", "meters").bindProperty("unit")
                 )                                
            )
        )
