@@ -1,0 +1,5 @@
+---
+version: 2
+seeds:
+- name: "points_02"
+  columns: []

@@ -89,6 +89,36 @@ sqlMacros:
     - gems/Buffer_01.py
     createdAt: '2025-08-07 03:03:13'
 sqlSeeds:
+  .prophecy/metadata/sqlseeds/points_02:
+    name: points_02
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: start_city
+        dataType:
+          type: String
+      - name: start_lat
+        dataType:
+          type: Decimal
+      - name: start_long
+        dataType:
+          type: Decimal
+      - name: destination_city
+        dataType:
+          type: String
+      - name: destination_lat
+        dataType:
+          type: Decimal
+      - name: destination_long
+        dataType:
+          type: Decimal
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/points_02.csv
+    - seeds/seeds.yml
+    createdAt: '2025-08-07 19:29:29'
   .prophecy/metadata/sqlseeds/find_nearest_1:
     name: find_nearest_1
     schema:
@@ -327,9 +357,9 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/PolyBuild_Buffer_Workflow/schema.yml
-    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Buffer_Line.sql
     - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Buffer_Polygon.sql
+    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Buffer_Line.sql
+    - models/PolyBuild_Buffer_Workflow/schema.yml
     - .prophecy/ide/pipelines/PolyBuild_Buffer_Workflow.json
     - pipelines/PolyBuild_Buffer_Workflow.py
     createdAt: '2025-08-07 04:21:50'
@@ -350,11 +380,11 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Buffer_01/schema.yml
     - models/Buffer_01/Buffer_01__buffer_new_england.sql
-    - models/Buffer/Buffer__buffer_us_states.sql
     - models/Buffer/Buffer__buffer_new_england.sql
     - models/Buffer/schema.yml
+    - models/Buffer/Buffer__buffer_us_states.sql
+    - models/Buffer_01/schema.yml
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-08-07 02:39:38'
@@ -382,4 +412,15 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/Simplify.json
     - pipelines/Simplify.py
     createdAt: '2025-08-07 03:23:41'
+  .prophecy/metadata/sqlorchestratorpipeline/CreatePoint:
+    name: CreatePoint
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/CreatePoint/schema.yml
+    - models/CreatePoint/CreatePoint__create_geo_point.sql
+    - .prophecy/ide/pipelines/CreatePoint.json
+    - pipelines/CreatePoint.py
+    createdAt: '2025-08-07 19:17:47'
 sqlBusinessApps: {}

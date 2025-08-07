@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "CreatePoint__create_geo_point"
+  tags:
+  - "prophecy_temp"

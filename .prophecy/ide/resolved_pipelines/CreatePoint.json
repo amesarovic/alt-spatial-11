@@ -1,0 +1,116 @@
+{
+  "id" : "CreatePoint",
+  "metainfo" : {
+    "label" : "CreatePoint",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "goXIgrLDvZ1mUhXDWXcxS$$eac0Qh4Wwpv-4kpGbiWPU" : {
+      "id" : "goXIgrLDvZ1mUhXDWXcxS$$eac0Qh4Wwpv-4kpGbiWPU",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "points",
+        "x" : -380,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "points",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "jXCRWbaUppy3zkGJ2Npoz$$JOEZKux6yHGwJpYmlBhTY",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "RmXSGYrtf-zUR-Hc9ms85$$0gm-6IKrUCA80s1vtZ2uU",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "i9GUC0ugaMD99awW1-08I$$toYd1czkMocY6KtnO66rz" : {
+      "id" : "i9GUC0ugaMD99awW1-08I$$toYd1czkMocY6KtnO66rz",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "CreatePoint__create_geo_point",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "CreatePoint__create_geo_point"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "create_geo_point_pHWalWx53ymb1wv4jhOXm$$sLMZdNvIQKA-6iBi3Zhvn", "i9GUC0ugaMD99awW1-08I$$toYd1czkMocY6KtnO66rz", "goXIgrLDvZ1mUhXDWXcxS$$eac0Qh4Wwpv-4kpGbiWPU" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "CreatePoint__create_geo_point_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "CreatePoint__create_geo_point_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "xGi-dG0vZRvHa-BAoIVCn$$sZFrxA71eQAW5Owr4DkvX",
+    "source" : "goXIgrLDvZ1mUhXDWXcxS$$eac0Qh4Wwpv-4kpGbiWPU",
+    "sourcePort" : "RmXSGYrtf-zUR-Hc9ms85$$0gm-6IKrUCA80s1vtZ2uU",
+    "target" : "i9GUC0ugaMD99awW1-08I$$toYd1czkMocY6KtnO66rz",
+    "targetPort" : "CreatePoint__create_geo_point_in_0"
+  } ],
+  "component" : "Pipeline"
+}

@@ -1,0 +1,181 @@
+{
+  "id" : "CreatePoint",
+  "metainfo" : {
+    "label" : "CreatePoint",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "goXIgrLDvZ1mUhXDWXcxS$$eac0Qh4Wwpv-4kpGbiWPU" : {
+      "id" : "goXIgrLDvZ1mUhXDWXcxS$$eac0Qh4Wwpv-4kpGbiWPU",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "points",
+        "x" : -380,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "points",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "jXCRWbaUppy3zkGJ2Npoz$$JOEZKux6yHGwJpYmlBhTY",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "RmXSGYrtf-zUR-Hc9ms85$$0gm-6IKrUCA80s1vtZ2uU",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "i9GUC0ugaMD99awW1-08I$$toYd1czkMocY6KtnO66rz" : {
+      "id" : "i9GUC0ugaMD99awW1-08I$$toYd1czkMocY6KtnO66rz",
+      "component" : "CreatePoint",
+      "metadata" : {
+        "label" : "create_geo_point",
+        "x" : -180,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "addFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "lon",
+            "latitudeColumnName" : "lat",
+            "targetColumnName" : "point"
+          }
+        } ],
+        "relation_name" : [ "points" ],
+        "_oldMacroProperties" : {
+          "macroName" : "CreatePoint",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['points']"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "e3PBho8a1lFegvQM_7ctT$$mvqTmA46oNVQ7OvMQA9Ia",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "pHWalWx53ymb1wv4jhOXm$$sLMZdNvIQKA-6iBi3Zhvn",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "CreatePoint_DatabricksSqlSpatial",
+        "name" : "CreatePoint",
+        "projectName" : "DatabricksSqlSpatial",
+        "sourceProjectName" : "DatabricksSqlSpatial",
+        "sourceProjectVersion" : "0.0.4"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "xGi-dG0vZRvHa-BAoIVCn$$sZFrxA71eQAW5Owr4DkvX",
+    "source" : "goXIgrLDvZ1mUhXDWXcxS$$eac0Qh4Wwpv-4kpGbiWPU",
+    "sourcePort" : "RmXSGYrtf-zUR-Hc9ms85$$0gm-6IKrUCA80s1vtZ2uU",
+    "target" : "i9GUC0ugaMD99awW1-08I$$toYd1czkMocY6KtnO66rz",
+    "targetPort" : "e3PBho8a1lFegvQM_7ctT$$mvqTmA46oNVQ7OvMQA9Ia"
+  } ],
+  "component" : "Pipeline"
+}
