@@ -43,8 +43,189 @@ sqlMacros:
     author: mesarovic.andre@prophecy.io
     files:
     - macros/prophecy_tmp_source.sql
+    - .prophecy/ide/macros/prophecy_tmp_source.json
     createdAt: '2025-08-07 02:39:38'
-sqlSeeds: {}
+sqlSeeds:
+  .prophecy/metadata/sqlseeds/find_nearest_1:
+    name: find_nearest_1
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: customer_id
+        dataType:
+          type: String
+      - name: customer_point
+        dataType:
+          type: String
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/find_nearest_1.csv
+    createdAt: '2025-08-07 02:50:12'
+  .prophecy/metadata/sqlseeds/us_states_lines:
+    name: us_states_lines
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: name
+        dataType:
+          type: String
+      - name: geometry
+        dataType:
+          type: String
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/us_states_lines.csv
+    createdAt: '2025-08-07 02:50:12'
+  .prophecy/metadata/sqlseeds/PolyBuild_output_line:
+    name: PolyBuild_output_line
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: grouping_column_name
+        dataType:
+          type: String
+      - name: geometry_wkt
+        dataType:
+          type: String
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/PolyBuild_output_line.csv
+    createdAt: '2025-08-07 02:50:12'
+  .prophecy/metadata/sqlseeds/spatial_match_2:
+    name: spatial_match_2
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: zone_id
+        dataType:
+          type: String
+      - name: zone_name
+        dataType:
+          type: String
+      - name: zone_polygon
+        dataType:
+          type: String
+      - name: delivery_fee
+        dataType:
+          type: Decimal
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/spatial_match_2.csv
+    createdAt: '2025-08-07 02:50:12'
+  .prophecy/metadata/sqlseeds/poly_build:
+    name: poly_build
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: route_id
+        dataType:
+          type: String
+      - name: stop_schedule
+        dataType:
+          type: Timestamp
+      - name: latitude
+        dataType:
+          type: Decimal
+      - name: longitude
+        dataType:
+          type: Decimal
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/poly_build.csv
+    createdAt: '2025-08-07 02:50:12'
+  .prophecy/metadata/sqlseeds/points:
+    name: points
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: city
+        dataType:
+          type: String
+      - name: lon
+        dataType:
+          type: Decimal
+      - name: lat
+        dataType:
+          type: Decimal
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/points.csv
+    createdAt: '2025-08-07 02:50:12'
+  .prophecy/metadata/sqlseeds/spatial_match_1:
+    name: spatial_match_1
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: store_id
+        dataType:
+          type: Integer
+      - name: store_name
+        dataType:
+          type: String
+      - name: store_location
+        dataType:
+          type: String
+      - name: store_type
+        dataType:
+          type: String
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/spatial_match_1.csv
+    createdAt: '2025-08-07 02:50:12'
+  .prophecy/metadata/sqlseeds/distances:
+    name: distances
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: start_city
+        dataType:
+          type: String
+      - name: destination_city
+        dataType:
+          type: String
+      - name: source_point
+        dataType:
+          type: String
+      - name: dest_point
+        dataType:
+          type: String
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/distances.csv
+    createdAt: '2025-08-07 02:50:12'
+  .prophecy/metadata/sqlseeds/find_nearest_2:
+    name: find_nearest_2
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: center_id
+        dataType:
+          type: String
+      - name: center_point
+        dataType:
+          type: String
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/find_nearest_2.csv
+    createdAt: '2025-08-07 02:50:12'
 sqlSources:
   .prophecy/metadata/sqlsources/andre_dev_alteryx_spatial:
     name: andre_dev.alteryx_spatial
