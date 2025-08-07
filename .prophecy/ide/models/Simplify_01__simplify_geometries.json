@@ -18,8 +18,8 @@
     "version" : 3
   },
   "processes" : {
-    "simplify_geometries_71xxTwNc0YF_yMVVo743_$$iFoq0y1cJvi5B8DcQKvLZ" : {
-      "id" : "simplify_geometries_71xxTwNc0YF_yMVVo743_$$iFoq0y1cJvi5B8DcQKvLZ",
+    "simplify_geometries_6e_L6WeFiqIigrEvTA7oL$$EwTy9W6RTWGcTWaP0Qnat" : {
+      "id" : "simplify_geometries_6e_L6WeFiqIigrEvTA7oL$$EwTy9W6RTWGcTWaP0Qnat",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "simplify_geometries"
@@ -48,12 +48,12 @@
         "autoUpdateOnRun" : false
       }
     },
-    "kxZnj4gxUBxwoJvVVHl3E$$aBHkjZzjGCbp53gX1-wKp" : {
-      "id" : "kxZnj4gxUBxwoJvVVHl3E$$aBHkjZzjGCbp53gX1-wKp",
+    "Rcrfa4mdxtaMkL7CTe69A$$VwJulaBhnYW9oBj7jCEF8" : {
+      "id" : "Rcrfa4mdxtaMkL7CTe69A$$VwJulaBhnYW9oBj7jCEF8",
       "component" : "Simplify_01",
       "metadata" : {
         "label" : "simplify_geometries",
-        "x" : -280,
+        "x" : -260,
         "y" : -200,
         "phase" : 0
       },
@@ -74,6 +74,9 @@
             "name" : "geometryColumnName",
             "value" : "geometry"
           }, {
+            "name" : "outputColumnName",
+            "value" : ""
+          }, {
             "name" : "tolerance",
             "value" : "1"
           }, {
@@ -81,16 +84,17 @@
             "value" : "kms"
           } ]
         },
+        "outputColumnName" : "",
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "unit" : "kms"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "MSYzvnY4WJAk7SKSHm25S$$IvOuBeQuwX5xWEyXUF_Fn",
+          "id" : "j19iUhGdLgRW2dOfj4mmF$$VVQF4-O4OiKvEHBQ3nOqM",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "71xxTwNc0YF_yMVVo743_$$iFoq0y1cJvi5B8DcQKvLZ",
+          "id" : "6e_L6WeFiqIigrEvTA7oL$$EwTy9W6RTWGcTWaP0Qnat",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -130,17 +134,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_kxZnj4gxUBxwoJvVVHl3E$$aBHkjZzjGCbp53gX1-wKp_simplify_geometries_71xxTwNc0YF_yMVVo743_$$iFoq0y1cJvi5B8DcQKvLZ",
-    "source" : "kxZnj4gxUBxwoJvVVHl3E$$aBHkjZzjGCbp53gX1-wKp",
-    "sourcePort" : "71xxTwNc0YF_yMVVo743_$$iFoq0y1cJvi5B8DcQKvLZ",
-    "target" : "simplify_geometries_71xxTwNc0YF_yMVVo743_$$iFoq0y1cJvi5B8DcQKvLZ",
+    "id" : "conn_Rcrfa4mdxtaMkL7CTe69A$$VwJulaBhnYW9oBj7jCEF8_simplify_geometries_6e_L6WeFiqIigrEvTA7oL$$EwTy9W6RTWGcTWaP0Qnat",
+    "source" : "Rcrfa4mdxtaMkL7CTe69A$$VwJulaBhnYW9oBj7jCEF8",
+    "sourcePort" : "6e_L6WeFiqIigrEvTA7oL$$EwTy9W6RTWGcTWaP0Qnat",
+    "target" : "simplify_geometries_6e_L6WeFiqIigrEvTA7oL$$EwTy9W6RTWGcTWaP0Qnat",
     "targetPort" : "input_port_0"
   }, {
-    "id" : "y9acSYCKr-DPWsrSxTQLl$$3TdKYQxr-KUHzdcKarp-f",
+    "id" : "dac_XflPWfSJlOY7O5RKS$$2Xcs0eI_3Dg1cIZRd1ILK",
     "source" : "Rv89uM3ILQr0XtLy2fkVm$$JkBEGMbtKw_bA26aD_Is8",
     "sourcePort" : "VYc3BLvHRA_-m9WY9OPfl$$UNaMf6Zn81AKl7WfZOTdR",
-    "target" : "kxZnj4gxUBxwoJvVVHl3E$$aBHkjZzjGCbp53gX1-wKp",
-    "targetPort" : "MSYzvnY4WJAk7SKSHm25S$$IvOuBeQuwX5xWEyXUF_Fn"
+    "target" : "Rcrfa4mdxtaMkL7CTe69A$$VwJulaBhnYW9oBj7jCEF8",
+    "targetPort" : "j19iUhGdLgRW2dOfj4mmF$$VVQF4-O4OiKvEHBQ3nOqM"
   } ],
   "component" : "Model"
 }

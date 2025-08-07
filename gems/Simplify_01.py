@@ -18,6 +18,7 @@ class Simplify_01(MacroSpec):
         tolerance: str = "1"
         unit: str = "kms"
         geometryColumnName: str = ""
+        outputColumnName: str = ""
 
     def get_relation_names(self, component: Component, context: SqlContext):
         all_upstream_nodes = []
@@ -63,6 +64,9 @@ class Simplify_01(MacroSpec):
                         .bindSchema("component.ports.inputs[0].schema")
                         .bindProperty("geometryColumnName")
                 )                               
+                .addElement( 
+                    TextBox("Output column", placeholder="Output column").bindProperty("outputColumnName")
+                )   
                 .addElement(
                     TextBox("Tolerance", placeholder="1.0").bindProperty("tolerance")
                 )                
@@ -74,6 +78,14 @@ class Simplify_01(MacroSpec):
 
     def validate(self, context: SqlContext, component: Component) -> List[Diagnostic]:
         diagnostics = []
+        if len(component.properties.outputColumnName.strip()) == 0:
+            diagnostics.append(
+                Diagnostic(
+                    "properties.outputColumnName",
+                    "Field 'Output column' cannot be empty.",
+                    SeverityLevelEnum.Error
+                )
+            )
         if len(component.properties.tolerance.strip()) == 0:
             diagnostics.append(
                 Diagnostic(
@@ -134,6 +146,7 @@ class Simplify_01(MacroSpec):
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
             geometryColumnName=parametersMap.get('geometryColumnName'),
+            outputColumnName=str(parametersMap.get('outputColumnName')),
             tolerance=int(parametersMap.get('tolerance')),
             unit=str(parametersMap.get('unit'))
         )
@@ -147,6 +160,7 @@ class Simplify_01(MacroSpec):
                 MacroParameter("relation_name", str(properties.relation_name)),
                 MacroParameter("schema", str(properties.schema)),
                 MacroParameter("geometryColumnName", properties.geometryColumnName),
+                MacroParameter("outputColumnName", properties.outputColumnName),
                 MacroParameter("tolerance", str(properties.tolerance)),
                 MacroParameter("unit", properties.unit)
             ],
