@@ -1,0 +1,121 @@
+{
+  "id" : "PolyBuild_Buffer_Workflow",
+  "metainfo" : {
+    "label" : "PolyBuild_Buffer_Workflow",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "f5Ryx09fliYgyLbv_pYhH$$DDnxiIOmX8A7If6PwvLaT" : {
+      "id" : "f5Ryx09fliYgyLbv_pYhH$$DDnxiIOmX8A7If6PwvLaT",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "poly_build",
+        "x" : -460,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "poly_build",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "8i2y_-fZL824jJHf2thEC$$uu9qUhMQnigxuMHw_YeOG",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "K5777kiUTmLHf6lSwj7Fk$$01l746pGixRD0WjJ8vgII",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "route_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "stop_schedule",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "latitude",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "longitude",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL" : {
+      "id" : "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "PolyBuild_Buffer_Workflow__buffer_geometry",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "PolyBuild_Buffer_Workflow__buffer_geometry"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "buffer_geometry_9wYB12lgxBUCbnOFjjPh9$$LigFsyT0942v_tDVir-7x", "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL", "FAsUDG6UsV4BOWKB6ke9N$$SZairBR624cPIOm8lFAHv", "f5Ryx09fliYgyLbv_pYhH$$DDnxiIOmX8A7If6PwvLaT" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PolyBuild_Buffer_Workflow__buffer_geometry_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "PolyBuild_Buffer_Workflow__buffer_geometry_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "lRw9lqq2aqLgRSlzAF4vM",
+    "source" : "f5Ryx09fliYgyLbv_pYhH$$DDnxiIOmX8A7If6PwvLaT",
+    "sourcePort" : "K5777kiUTmLHf6lSwj7Fk$$01l746pGixRD0WjJ8vgII",
+    "target" : "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL",
+    "targetPort" : "PolyBuild_Buffer_Workflow__buffer_geometry_in_0"
+  } ],
+  "component" : "Pipeline"
+}

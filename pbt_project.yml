@@ -321,30 +321,17 @@ flags:
   shouldAddDefaultDependenciesIfAbsent: false
 pipelineConfigurations: {}
 sqlOrchestratorPipelines:
-  .prophecy/metadata/sqlorchestratorpipeline/Simplify_01:
-    name: Simplify_01
+  .prophecy/metadata/sqlorchestratorpipeline/PolyBuild_Buffer_Workflow:
+    name: PolyBuild_Buffer_Workflow
     schema: null
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Simplify_01/schema.yml
-    - models/Simplify_01/Simplify_01__simplify_geospatial_data.sql
-    - .prophecy/ide/pipelines/Simplify_01.json
-    - pipelines/Simplify_01.py
-    createdAt: '2025-08-07 03:35:57'
-  .prophecy/metadata/sqlorchestratorpipeline/Simplify:
-    name: Simplify
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Simplify_01/schema.yml
-    - models/Simplify_01/Simplify_01__simplify_geospatial_data.sql
-    - models/Simplify/schema.yml
-    - models/Simplify/Simplify__simplify_geometries.sql
-    - .prophecy/ide/pipelines/Simplify.json
-    - pipelines/Simplify.py
-    createdAt: '2025-08-07 03:23:41'
+    - models/PolyBuild_Buffer_Workflow/schema.yml
+    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__buffer_geometry.sql
+    - .prophecy/ide/pipelines/PolyBuild_Buffer_Workflow.json
+    - pipelines/PolyBuild_Buffer_Workflow.py
+    createdAt: '2025-08-07 04:21:50'
   .prophecy/metadata/sqlorchestratorpipeline/Buffer_01:
     name: Buffer_01
     schema: null
@@ -370,4 +357,28 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-08-07 02:39:38'
+  .prophecy/metadata/sqlorchestratorpipeline/Simplify_01:
+    name: Simplify_01
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Simplify_01/schema.yml
+    - models/Simplify_01/Simplify_01__simplify_geospatial_data.sql
+    - .prophecy/ide/pipelines/Simplify_01.json
+    - pipelines/Simplify_01.py
+    createdAt: '2025-08-07 03:35:57'
+  .prophecy/metadata/sqlorchestratorpipeline/Simplify:
+    name: Simplify
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Simplify_01/schema.yml
+    - models/Simplify_01/Simplify_01__simplify_geospatial_data.sql
+    - models/Simplify/schema.yml
+    - models/Simplify/Simplify__simplify_geometries.sql
+    - .prophecy/ide/pipelines/Simplify.json
+    - pipelines/Simplify.py
+    createdAt: '2025-08-07 03:23:41'
 sqlBusinessApps: {}

@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "PolyBuild_Buffer_Workflow__buffer_geometry"
+  tags:
+  - "prophecy_temp"
