@@ -4,3 +4,6 @@ models:
 - name: "Buffer__buffer_new_england"
   tags:
   - "prophecy_temp"
+- name: "Buffer__buffer_us_states"
+  tags:
+  - "prophecy_temp"

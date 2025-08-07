@@ -155,6 +155,137 @@
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "Ffz9mVI_FD9Fa4ii0JJAl" : {
+      "id" : "Ffz9mVI_FD9Fa4ii0JJAl",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "us_states_lines",
+        "x" : -360,
+        "y" : -60,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "us_states_lines",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Pvqcyd3h3f9D0yN-aTxtD",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "mU7mKdRYy8o0R4fYSLWfd",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "x34MTtgHInwBqBoJJn2og$$7K4qeqJ8-ExnxhiSsePbt" : {
+      "id" : "x34MTtgHInwBqBoJJn2og$$7K4qeqJ8-ExnxhiSsePbt",
+      "component" : "Buffer",
+      "metadata" : {
+        "label" : "buffer_us_states",
+        "x" : -120,
+        "y" : -60,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "us_states_lines" ],
+        "geometryColumnName" : "geometry",
+        "_oldMacroProperties" : {
+          "macroName" : "Buffer",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['us_states_lines']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "distance",
+            "value" : "10"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "unit" : "miles",
+        "distance" : 10
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ORf6i8cP4m9kCTpjjYxU5$$-T8ODBb5E4SH9noxCjMNy",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "7TLAeYKMI6j09t4dsLlhk$$qZYIsgkaojgn-23RVQbUZ",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "input",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "output",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "Buffer_DatabricksSqlSpatial",
+        "name" : "Buffer",
+        "projectName" : "DatabricksSqlSpatial",
+        "sourceProjectName" : "DatabricksSqlSpatial",
+        "sourceProjectVersion" : "0.0.4"
+      }
     }
   },
   "connections" : [ {
@@ -163,6 +294,12 @@
     "sourcePort" : "guhTxyE-wAAsTp-p_RTJQ$$IgNUzhyIw2Ygkd_90Ftwu",
     "target" : "StbfZnJormYX3UFaNTYn6$$IoegQyPPXkEbuPmWR7OUD",
     "targetPort" : "4zqwan0nC6wiBLXE2Kpx-$$A3mr6N7Ct2zKPCwEwSFj0"
+  }, {
+    "id" : "lpPNfCM_VpRYTROzNh8_k",
+    "source" : "Ffz9mVI_FD9Fa4ii0JJAl",
+    "sourcePort" : "mU7mKdRYy8o0R4fYSLWfd",
+    "target" : "x34MTtgHInwBqBoJJn2og$$7K4qeqJ8-ExnxhiSsePbt",
+    "targetPort" : "ORf6i8cP4m9kCTpjjYxU5$$-T8ODBb5E4SH9noxCjMNy"
   } ],
   "component" : "Pipeline"
 }

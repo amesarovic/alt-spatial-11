@@ -27,6 +27,16 @@ sqlModels: {}
 sqlSnapshots: {}
 sqlTests: {}
 sqlMacros:
+  .prophecy/metadata/sqlmacros/Buffer:
+    name: Buffer
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/Buffer.sql
+    - .prophecy/ide/macros/Buffer.json
+    - macros/macros.yml
+    createdAt: '2025-08-07 02:53:31'
   .prophecy/metadata/sqlmacros/generate_schema_name:
     name: generate_schema_name
     macroType: expression
@@ -285,6 +295,7 @@ sqlOrchestratorPipelines:
     author: mesarovic.andre@prophecy.io
     files:
     - models/Buffer/schema.yml
+    - models/Buffer/Buffer__buffer_us_states.sql
     - models/Buffer/Buffer__buffer_new_england.sql
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py

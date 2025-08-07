@@ -27,6 +27,79 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
+    "Ffz9mVI_FD9Fa4ii0JJAl" : {
+      "id" : "Ffz9mVI_FD9Fa4ii0JJAl",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "us_states_lines",
+        "x" : -360,
+        "y" : -60,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "us_states_lines",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Pvqcyd3h3f9D0yN-aTxtD",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "mU7mKdRYy8o0R4fYSLWfd",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "x34MTtgHInwBqBoJJn2og$$7K4qeqJ8-ExnxhiSsePbt" : {
+      "id" : "x34MTtgHInwBqBoJJn2og$$7K4qeqJ8-ExnxhiSsePbt",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "Buffer__buffer_us_states",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "Buffer__buffer_us_states"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "buffer_us_states_7TLAeYKMI6j09t4dsLlhk$$qZYIsgkaojgn-23RVQbUZ", "x34MTtgHInwBqBoJJn2og$$7K4qeqJ8-ExnxhiSsePbt", "Ffz9mVI_FD9Fa4ii0JJAl" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Buffer__buffer_us_states_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "Buffer__buffer_us_states_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "StbfZnJormYX3UFaNTYn6$$IoegQyPPXkEbuPmWR7OUD" : {
       "id" : "StbfZnJormYX3UFaNTYn6$$IoegQyPPXkEbuPmWR7OUD",
       "component" : "Model",
@@ -55,6 +128,12 @@
       }
     }
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "lpPNfCM_VpRYTROzNh8_k",
+    "source" : "Ffz9mVI_FD9Fa4ii0JJAl",
+    "sourcePort" : "mU7mKdRYy8o0R4fYSLWfd",
+    "target" : "x34MTtgHInwBqBoJJn2og$$7K4qeqJ8-ExnxhiSsePbt",
+    "targetPort" : "Buffer__buffer_us_states_in_0"
+  } ],
   "component" : "Pipeline"
 }

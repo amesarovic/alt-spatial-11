@@ -1,0 +1,24 @@
+---
+version: 2
+macros:
+- name: "Buffer"
+  arguments:
+  - name: "table_name"
+    type: "value"
+    description: "{\"ProphecyType\": \"value\"}"
+  - name: "schema"
+    type: "value"
+    description: "{\"ProphecyType\": \"value\"}"
+  - name: "geom_column_name"
+    type: "value"
+    description: "{\"ProphecyType\": \"value\"}"
+  - name: "distance"
+    type: "value"
+    description: "{\"ProphecyType\": \"value\"}"
+  - name: "unit"
+    type: "value"
+    description: "{\"ProphecyType\": \"value\"}"
+  - name: "output_column_name"
+    type: "value"
+    description: "{\"ProphecyType\": \"value\"}"
+  macroType: "query"
