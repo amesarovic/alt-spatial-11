@@ -17,12 +17,13 @@ WITH new_england AS (
 buffer_new_england AS (
 
   {{
-    DatabricksSqlSpatial.Buffer(
+    alt_spatial_11.Buffer_01(
       'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
       1, 
-      'miles'
+      'miles', 
+      'ooo'
     )
   }}
 

@@ -27,6 +27,33 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
+    "UuVmmVLqAd7LaehyludFU$$L1ZceLniTCmnVjRLtnmqh" : {
+      "id" : "UuVmmVLqAd7LaehyludFU$$L1ZceLniTCmnVjRLtnmqh",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "Buffer__buffer_new_england",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "Buffer__buffer_new_england"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "buffer_new_england_FAlUE6f-xvOxI8LR83AnP$$ISZykfbJFQk8RXcd1VfhH", "UuVmmVLqAd7LaehyludFU$$L1ZceLniTCmnVjRLtnmqh", "l2MhjTw4fewpkCk9YCb1q$$bZe0rYp3sVyUW4Bf7BxHx" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Buffer__buffer_new_england_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "Buffer__buffer_new_england_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "Ffz9mVI_FD9Fa4ii0JJAl" : {
       "id" : "Ffz9mVI_FD9Fa4ii0JJAl",
       "component" : "Dataset",
@@ -95,33 +122,6 @@
         } ],
         "outputs" : [ {
           "id" : "Buffer__buffer_us_states_out_0",
-          "slug" : "out_0"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
-    "StbfZnJormYX3UFaNTYn6$$IoegQyPPXkEbuPmWR7OUD" : {
-      "id" : "StbfZnJormYX3UFaNTYn6$$IoegQyPPXkEbuPmWR7OUD",
-      "component" : "Model",
-      "metadata" : {
-        "label" : "Buffer__buffer_new_england",
-        "phase" : 0
-      },
-      "properties" : {
-        "modelName" : "Buffer__buffer_new_england"
-      },
-      "visualMetaInfo" : {
-        "visualProcessIds" : [ "buffer_new_england_XK1VexKmJY_HFUExLZSRs$$d-TcTyq77hI2-ooXKw3Tr", "StbfZnJormYX3UFaNTYn6$$IoegQyPPXkEbuPmWR7OUD", "l2MhjTw4fewpkCk9YCb1q$$bZe0rYp3sVyUW4Bf7BxHx" ],
-        "type" : "ephemeral",
-        "isTemporaryTable" : true
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "Buffer__buffer_new_england_in_0",
-          "slug" : "in_0"
-        } ],
-        "outputs" : [ {
-          "id" : "Buffer__buffer_new_england_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false

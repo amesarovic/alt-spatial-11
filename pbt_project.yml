@@ -37,6 +37,17 @@ sqlMacros:
     - .prophecy/ide/macros/Buffer.json
     - macros/macros.yml
     createdAt: '2025-08-07 02:53:31'
+  .prophecy/metadata/sqlmacros/Buffer_01:
+    name: Buffer_01
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/Buffer_01.sql
+    - .prophecy/ide/macros/Buffer_01.json
+    - macros/macros.yml
+    - gems/Buffer_01.py
+    createdAt: '2025-08-07 03:03:13'
   .prophecy/metadata/sqlmacros/generate_schema_name:
     name: generate_schema_name
     macroType: expression
@@ -294,10 +305,23 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Buffer/schema.yml
+    - models/Buffer_01/schema.yml
+    - models/Buffer_01/Buffer_01__buffer_new_england.sql
     - models/Buffer/Buffer__buffer_us_states.sql
     - models/Buffer/Buffer__buffer_new_england.sql
+    - models/Buffer/schema.yml
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-08-07 02:39:38'
+  .prophecy/metadata/sqlorchestratorpipeline/Buffer_01:
+    name: Buffer_01
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Buffer_01/schema.yml
+    - models/Buffer_01/Buffer_01__buffer_new_england.sql
+    - .prophecy/ide/pipelines/Buffer_01.json
+    - pipelines/Buffer_01.py
+    createdAt: '2025-08-07 03:07:55'
 sqlBusinessApps: {}
