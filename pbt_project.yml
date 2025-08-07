@@ -328,7 +328,8 @@ sqlOrchestratorPipelines:
     author: mesarovic.andre@prophecy.io
     files:
     - models/PolyBuild_Buffer_Workflow/schema.yml
-    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__buffer_geometry.sql
+    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Buffer_Line.sql
+    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Buffer_Polygon.sql
     - .prophecy/ide/pipelines/PolyBuild_Buffer_Workflow.json
     - pipelines/PolyBuild_Buffer_Workflow.py
     createdAt: '2025-08-07 04:21:50'

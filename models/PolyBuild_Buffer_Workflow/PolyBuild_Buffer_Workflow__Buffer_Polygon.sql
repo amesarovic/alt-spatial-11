@@ -14,7 +14,7 @@ WITH poly_build AS (
 
 ),
 
-PolyBuild_1 AS (
+Polygon AS (
 
   {{
     DatabricksSqlSpatial.PolyBuild(
@@ -29,11 +29,11 @@ PolyBuild_1 AS (
 
 ),
 
-buffer_geometry AS (
+Buffer_Polygon AS (
 
   {{
     alt_spatial_11.Buffer_01(
-      'PolyBuild_1', 
+      'Polygon', 
       [
         { "name": "grouping_column_name", "dataType": "String" }, 
         { "name": "geometry_wkt", "dataType": "String" }
@@ -49,4 +49,4 @@ buffer_geometry AS (
 
 SELECT *
 
-FROM buffer_geometry
+FROM Buffer_Polygon
