@@ -1,0 +1,111 @@
+name: alt_spatial_11
+description: ''
+version: 0.0.1
+author: mesarovic.andre@prophecy.io
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2025-08-07 02:38:42'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels: {}
+sqlSnapshots: {}
+sqlTests: {}
+sqlMacros:
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/generate_schema_name.sql
+    - .prophecy/ide/macros/generate_schema_name.json
+    createdAt: '2025-08-07 02:38:45'
+  .prophecy/metadata/sqlmacros/prophecy_tmp_source:
+    name: prophecy_tmp_source
+    macroType: expression
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/prophecy_tmp_source.sql
+    createdAt: '2025-08-07 02:39:38'
+sqlSeeds: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/andre_dev_alteryx_spatial:
+    name: andre_dev.alteryx_spatial
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-08-07 02:45:29'
+    tables:
+    - name: new_england
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: name
+          dataType:
+            type: String
+        - name: geometry
+          dataType:
+            type: String
+      description: null
+      author: mesarovic.andre@prophecy.io
+      createdAt: '2025-08-07 02:45:29'
+      tableType: table
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: mesarovic.andre@prophecy.io
+  createdAt: '2025-08-07 02:38:42'
+dependencies: []
+projectDependencies:
+  '47593':
+    projectUID: 47593
+    projectName: ProphecyDatabricksSqlSpatial
+    repositoryPath: gitUri=https://github.com/prophecy-io/databricks-sql-spatial&subPath=
+    version: 0.0.4
+    isDefault: false
+    author: null
+    createdAt: '2025-08-07 02:38:12'
+  '45117':
+    projectUID: 45117
+    projectName: ProphecyDatabricksSqlBasics
+    repositoryPath: gitUri=https://github.com/prophecy-io/databricks-sql-basics&subPath=
+    version: 0.0.11
+    isDefault: true
+    author: null
+    createdAt: '2025-08-07 02:38:12'
+flags:
+  shouldAddDefaultDependenciesIfAbsent: false
+pipelineConfigurations: {}
+sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/Buffer:
+    name: Buffer
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Buffer/schema.yml
+    - models/Buffer/Buffer__buffer_new_england.sql
+    - .prophecy/ide/pipelines/Buffer.json
+    - pipelines/Buffer.py
+    createdAt: '2025-08-07 02:39:38'
+sqlBusinessApps: {}

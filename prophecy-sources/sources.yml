@@ -1,0 +1,16 @@
+---
+version: 2
+sources:
+- name: "andre_dev.alteryx_spatial"
+  database: "andre_dev"
+  schema: "alteryx_spatial"
+  tables:
+  - name: "new_england"
+    columns:
+    - name: "name"
+      dataType:
+        type: "String"
+    - name: "geometry"
+      dataType:
+        type: "String"
+    type: "table"

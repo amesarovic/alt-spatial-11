@@ -1,0 +1,142 @@
+{
+  "id" : "Buffer__buffer_new_england",
+  "metainfo" : {
+    "label" : "Buffer__buffer_new_england",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "buffer_new_england_XK1VexKmJY_HFUExLZSRs$$d-TcTyq77hI2-ooXKw3Tr" : {
+      "id" : "buffer_new_england_XK1VexKmJY_HFUExLZSRs$$d-TcTyq77hI2-ooXKw3Tr",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "buffer_new_england"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM buffer_new_england\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "StbfZnJormYX3UFaNTYn6$$IoegQyPPXkEbuPmWR7OUD" : {
+      "id" : "StbfZnJormYX3UFaNTYn6$$IoegQyPPXkEbuPmWR7OUD",
+      "component" : "Buffer",
+      "metadata" : {
+        "label" : "buffer_new_england",
+        "x" : -120,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "new_england" ],
+        "geometryColumnName" : "geometry",
+        "_oldMacroProperties" : {
+          "macroName" : "Buffer",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['new_england']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "distance",
+            "value" : "10"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "unit" : "miles",
+        "distance" : 10
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4zqwan0nC6wiBLXE2Kpx-$$A3mr6N7Ct2zKPCwEwSFj0",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "XK1VexKmJY_HFUExLZSRs$$d-TcTyq77hI2-ooXKw3Tr",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "l2MhjTw4fewpkCk9YCb1q$$bZe0rYp3sVyUW4Bf7BxHx" : {
+      "id" : "l2MhjTw4fewpkCk9YCb1q$$bZe0rYp3sVyUW4Bf7BxHx",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -360,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Source",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "guhTxyE-wAAsTp-p_RTJQ$$IgNUzhyIw2Ygkd_90Ftwu",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_StbfZnJormYX3UFaNTYn6$$IoegQyPPXkEbuPmWR7OUD_buffer_new_england_XK1VexKmJY_HFUExLZSRs$$d-TcTyq77hI2-ooXKw3Tr",
+    "source" : "StbfZnJormYX3UFaNTYn6$$IoegQyPPXkEbuPmWR7OUD",
+    "sourcePort" : "XK1VexKmJY_HFUExLZSRs$$d-TcTyq77hI2-ooXKw3Tr",
+    "target" : "buffer_new_england_XK1VexKmJY_HFUExLZSRs$$d-TcTyq77hI2-ooXKw3Tr",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "pchmFoRHTF3BxCVve9wt7$$6mqjIgvGzqXm4aQCB2PCa",
+    "source" : "l2MhjTw4fewpkCk9YCb1q$$bZe0rYp3sVyUW4Bf7BxHx",
+    "sourcePort" : "guhTxyE-wAAsTp-p_RTJQ$$IgNUzhyIw2Ygkd_90Ftwu",
+    "target" : "StbfZnJormYX3UFaNTYn6$$IoegQyPPXkEbuPmWR7OUD",
+    "targetPort" : "4zqwan0nC6wiBLXE2Kpx-$$A3mr6N7Ct2zKPCwEwSFj0"
+  } ],
+  "component" : "Model"
+}
