@@ -5,10 +5,12 @@
   {{ log("tolerance=" ~ tolerance, info=True) }}
   {{ log("unit=" ~ unit, info=True) }}
 
-  {%- if unit == 'kilometers' -%}
-    {%- set tolerance_meters = tolerance * 1000 -%}
-  {%- else -%}
+ {%- if unit == 'miles' -%}
     {%- set tolerance_meters = tolerance * 1609.34 -%}
+  {%- elif unit == 'kilometers' -%}
+      {%- set tolerance_meters = tolerance * 1000 -%}
+  {%- else -%}
+    {%- set tolerance_meters = tolerance -%}
   {%- endif -%}
 
   SELECT
