@@ -1,0 +1,60 @@
+{
+  "id" : "Simplify",
+  "metainfo" : {
+    "label" : "Simplify",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "EInq6n4-Mc5sFsXgpd_ud$$3gQ-yVzv-D7_WdSE7xcDN" : {
+      "id" : "EInq6n4-Mc5sFsXgpd_ud$$3gQ-yVzv-D7_WdSE7xcDN",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "Simplify__simplify_geometries",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "Simplify__simplify_geometries"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "simplify_geometries_rq_e1VG1pgqMBvmBdoNdz$$DxB7XI5E2jtEIe30xQQte", "EInq6n4-Mc5sFsXgpd_ud$$3gQ-yVzv-D7_WdSE7xcDN", "MQXK0LcDFo23d5-syeP95$$-ryXSLkZnEh8wXKOeAoMf" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Simplify__simplify_geometries_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "Simplify__simplify_geometries_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

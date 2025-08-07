@@ -27,6 +27,17 @@ sqlModels: {}
 sqlSnapshots: {}
 sqlTests: {}
 sqlMacros:
+  .prophecy/metadata/sqlmacros/Simplify:
+    name: Simplify
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/Simplify.sql
+    - .prophecy/ide/macros/Simplify.json
+    - macros/macros.yml
+    - gems/Simplify.py
+    createdAt: '2025-08-07 03:22:31'
   .prophecy/metadata/sqlmacros/Buffer:
     name: Buffer
     macroType: query
@@ -37,17 +48,6 @@ sqlMacros:
     - .prophecy/ide/macros/Buffer.json
     - macros/macros.yml
     createdAt: '2025-08-07 02:53:31'
-  .prophecy/metadata/sqlmacros/Buffer_01:
-    name: Buffer_01
-    macroType: query
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - macros/Buffer_01.sql
-    - .prophecy/ide/macros/Buffer_01.json
-    - macros/macros.yml
-    - gems/Buffer_01.py
-    createdAt: '2025-08-07 03:03:13'
   .prophecy/metadata/sqlmacros/generate_schema_name:
     name: generate_schema_name
     macroType: expression
@@ -66,6 +66,17 @@ sqlMacros:
     - macros/prophecy_tmp_source.sql
     - .prophecy/ide/macros/prophecy_tmp_source.json
     createdAt: '2025-08-07 02:39:38'
+  .prophecy/metadata/sqlmacros/Buffer_01:
+    name: Buffer_01
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/Buffer_01.sql
+    - .prophecy/ide/macros/Buffer_01.json
+    - macros/macros.yml
+    - gems/Buffer_01.py
+    createdAt: '2025-08-07 03:03:13'
 sqlSeeds:
   .prophecy/metadata/sqlseeds/find_nearest_1:
     name: find_nearest_1
@@ -324,4 +335,15 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/Buffer_01.json
     - pipelines/Buffer_01.py
     createdAt: '2025-08-07 03:07:55'
+  .prophecy/metadata/sqlorchestratorpipeline/Simplify:
+    name: Simplify
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Simplify/schema.yml
+    - models/Simplify/Simplify__simplify_geometries.sql
+    - .prophecy/ide/pipelines/Simplify.json
+    - pipelines/Simplify.py
+    createdAt: '2025-08-07 03:23:41'
 sqlBusinessApps: {}
