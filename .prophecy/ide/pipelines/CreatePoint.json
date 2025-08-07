@@ -168,6 +168,205 @@
         "sourceProjectName" : "DatabricksSqlSpatial",
         "sourceProjectVersion" : "0.0.4"
       }
+    },
+    "-mcS4d0sLiT6QouKzlB62$$WZE5wxT-2MRHk1qQwQHhW" : {
+      "id" : "-mcS4d0sLiT6QouKzlB62$$WZE5wxT-2MRHk1qQwQHhW",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "points_02",
+        "x" : -380,
+        "y" : -20,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "points_02",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "3FMs4u6-6KTSnnFahRGii$$ccczsT3S7bjbctHDR2bA_",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "ufTI9-Xf-1XhZU63e_GOG$$vVHEKB0BAp6Oz7epFKiiS",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "start_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "start_lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "start_long",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "destination_lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "destination_long",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Teb0-Vwv4IGhga8Zy6n7K$$8T85G4t11KZLE84OX4GwM" : {
+      "id" : "Teb0-Vwv4IGhga8Zy6n7K$$8T85G4t11KZLE84OX4GwM",
+      "component" : "CreatePoint",
+      "metadata" : {
+        "label" : "create_geo_points",
+        "x" : -180,
+        "y" : -20,
+        "phase" : 0
+      },
+      "properties" : {
+        "addFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "start_long",
+            "latitudeColumnName" : "start_lat",
+            "targetColumnName" : "start_point"
+          }
+        }, {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "destination_long",
+            "latitudeColumnName" : "destination_lat",
+            "targetColumnName" : "dst_point"
+          }
+        } ],
+        "relation_name" : [ "points_02" ],
+        "_oldMacroProperties" : {
+          "macroName" : "CreatePoint",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['points_02']"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "XNXSxcjaKG49KX2YZrQd3$$3dyegvTJjfNrSx6AJmRWA",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "start_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "start_lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "start_long",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "destination_lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "destination_long",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "yaVPTEEv1lt1R-WLH2EI4$$GyDUiCEP2q5z1xJFWV9St",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "start_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "start_lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "start_long",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "destination_lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "destination_long",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "start_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dst_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "CreatePoint_DatabricksSqlSpatial",
+        "name" : "CreatePoint",
+        "projectName" : "DatabricksSqlSpatial",
+        "sourceProjectName" : "DatabricksSqlSpatial",
+        "sourceProjectVersion" : "0.0.4"
+      }
     }
   },
   "connections" : [ {
@@ -176,6 +375,12 @@
     "sourcePort" : "RmXSGYrtf-zUR-Hc9ms85$$0gm-6IKrUCA80s1vtZ2uU",
     "target" : "i9GUC0ugaMD99awW1-08I$$toYd1czkMocY6KtnO66rz",
     "targetPort" : "e3PBho8a1lFegvQM_7ctT$$mvqTmA46oNVQ7OvMQA9Ia"
+  }, {
+    "id" : "yvUoGCkI4-e5yjZREtBb5$$P_j9bwX0quQU2EWL0T1vy",
+    "source" : "-mcS4d0sLiT6QouKzlB62$$WZE5wxT-2MRHk1qQwQHhW",
+    "sourcePort" : "ufTI9-Xf-1XhZU63e_GOG$$vVHEKB0BAp6Oz7epFKiiS",
+    "target" : "Teb0-Vwv4IGhga8Zy6n7K$$8T85G4t11KZLE84OX4GwM",
+    "targetPort" : "XNXSxcjaKG49KX2YZrQd3$$3dyegvTJjfNrSx6AJmRWA"
   } ],
   "component" : "Pipeline"
 }

@@ -1,0 +1,142 @@
+{
+  "id" : "CreatePoint__create_geo_points",
+  "metainfo" : {
+    "label" : "CreatePoint__create_geo_points",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "create_geo_points_yaVPTEEv1lt1R-WLH2EI4$$GyDUiCEP2q5z1xJFWV9St" : {
+      "id" : "create_geo_points_yaVPTEEv1lt1R-WLH2EI4$$GyDUiCEP2q5z1xJFWV9St",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "create_geo_points"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM create_geo_points\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Teb0-Vwv4IGhga8Zy6n7K$$8T85G4t11KZLE84OX4GwM" : {
+      "id" : "Teb0-Vwv4IGhga8Zy6n7K$$8T85G4t11KZLE84OX4GwM",
+      "component" : "CreatePoint",
+      "metadata" : {
+        "label" : "create_geo_points",
+        "x" : -180,
+        "y" : -20,
+        "phase" : 0
+      },
+      "properties" : {
+        "addFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "start_long",
+            "latitudeColumnName" : "start_lat",
+            "targetColumnName" : "start_point"
+          }
+        }, {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "destination_long",
+            "latitudeColumnName" : "destination_lat",
+            "targetColumnName" : "dst_point"
+          }
+        } ],
+        "relation_name" : [ "points_02" ],
+        "_oldMacroProperties" : {
+          "macroName" : "CreatePoint",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['points_02']"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "XNXSxcjaKG49KX2YZrQd3$$3dyegvTJjfNrSx6AJmRWA",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "yaVPTEEv1lt1R-WLH2EI4$$GyDUiCEP2q5z1xJFWV9St",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "-mcS4d0sLiT6QouKzlB62$$WZE5wxT-2MRHk1qQwQHhW" : {
+      "id" : "-mcS4d0sLiT6QouKzlB62$$WZE5wxT-2MRHk1qQwQHhW",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "points_02",
+        "x" : -380,
+        "y" : -20,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "points_02",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ufTI9-Xf-1XhZU63e_GOG$$vVHEKB0BAp6Oz7epFKiiS",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_Teb0-Vwv4IGhga8Zy6n7K$$8T85G4t11KZLE84OX4GwM_create_geo_points_yaVPTEEv1lt1R-WLH2EI4$$GyDUiCEP2q5z1xJFWV9St",
+    "source" : "Teb0-Vwv4IGhga8Zy6n7K$$8T85G4t11KZLE84OX4GwM",
+    "sourcePort" : "yaVPTEEv1lt1R-WLH2EI4$$GyDUiCEP2q5z1xJFWV9St",
+    "target" : "create_geo_points_yaVPTEEv1lt1R-WLH2EI4$$GyDUiCEP2q5z1xJFWV9St",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "yvUoGCkI4-e5yjZREtBb5$$P_j9bwX0quQU2EWL0T1vy",
+    "source" : "-mcS4d0sLiT6QouKzlB62$$WZE5wxT-2MRHk1qQwQHhW",
+    "sourcePort" : "ufTI9-Xf-1XhZU63e_GOG$$vVHEKB0BAp6Oz7epFKiiS",
+    "target" : "Teb0-Vwv4IGhga8Zy6n7K$$8T85G4t11KZLE84OX4GwM",
+    "targetPort" : "XNXSxcjaKG49KX2YZrQd3$$3dyegvTJjfNrSx6AJmRWA"
+  } ],
+  "component" : "Model"
+}

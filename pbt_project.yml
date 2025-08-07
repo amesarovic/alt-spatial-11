@@ -420,6 +420,7 @@ sqlOrchestratorPipelines:
     files:
     - models/CreatePoint/schema.yml
     - models/CreatePoint/CreatePoint__create_geo_point.sql
+    - models/CreatePoint/CreatePoint__create_geo_points.sql
     - .prophecy/ide/pipelines/CreatePoint.json
     - pipelines/CreatePoint.py
     createdAt: '2025-08-07 19:17:47'

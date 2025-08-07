@@ -4,3 +4,6 @@ models:
 - name: "CreatePoint__create_geo_point"
   tags:
   - "prophecy_temp"
+- name: "CreatePoint__create_geo_points"
+  tags:
+  - "prophecy_temp"
