@@ -14,7 +14,7 @@ WITH new_england AS (
 
 ),
 
-simplify_geospatial_data AS (
+simplify_geometries AS (
 
   {{
     alt_spatial_11.Simplify_01(
@@ -30,4 +30,4 @@ simplify_geospatial_data AS (
 
 SELECT *
 
-FROM simplify_geospatial_data
+FROM simplify_geometries

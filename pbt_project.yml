@@ -328,7 +328,7 @@ sqlOrchestratorPipelines:
     author: mesarovic.andre@prophecy.io
     files:
     - models/Simplify_01/schema.yml
-    - models/Simplify_01/Simplify_01__simplify_geospatial_data.sql
+    - models/Simplify_01/Simplify_01__simplify_geometries.sql
     - .prophecy/ide/pipelines/Simplify_01.json
     - pipelines/Simplify_01.py
     createdAt: '2025-08-07 03:35:57'
@@ -339,7 +339,7 @@ sqlOrchestratorPipelines:
     author: mesarovic.andre@prophecy.io
     files:
     - models/Simplify_01/schema.yml
-    - models/Simplify_01/Simplify_01__simplify_geospatial_data.sql
+    - models/Simplify_01/Simplify_01__simplify_geometries.sql
     - models/Simplify/schema.yml
     - models/Simplify/Simplify__simplify_geometries.sql
     - .prophecy/ide/pipelines/Simplify.json

@@ -17,7 +17,7 @@ class Simplify_01(MacroSpec):
         schema: str = ""
         tolerance: str = "1"
         unit: str = "kms"
-        geom_column_name: str = ""
+        geometryColumnName: str = ""
 
     def get_relation_names(self, component: Component, context: SqlContext):
         all_upstream_nodes = []
@@ -61,7 +61,7 @@ class Simplify_01(MacroSpec):
                 .addElement(
                     SchemaColumnsDropdown("Geometry column (WKT format)")
                         .bindSchema("component.ports.inputs[0].schema")
-                        .bindProperty("geom_column_name")
+                        .bindProperty("geometryColumnName")
                 )                               
                 .addElement(
                     TextBox("Tolerance", placeholder="1.0").bindProperty("tolerance")
@@ -114,13 +114,13 @@ class Simplify_01(MacroSpec):
 
         # generate the actual macro call given the component's
         resolved_macro_name = f"{self.projectName}.{self.name}"
-
+   
         arguments = [
-            "'" + table_name + "'",
+            f"'{table_name}'",
             props.schema,
-            "'" + props.geom_column_name + "'",            
+            f"'{props.geometryColumnName}'",
             str(props.tolerance),
-            "'" + props.unit + "'"
+            f"'{props.unit}'"
         ]
 
         params = ",".join([param for param in arguments])
@@ -133,7 +133,7 @@ class Simplify_01(MacroSpec):
         return Simplify_01.Simplify_01Properties(
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
-            geom_column_name=parametersMap.get('geom_column_name'),
+            geometryColumnName=parametersMap.get('geometryColumnName'),
             tolerance=int(parametersMap.get('tolerance')),
             unit=str(parametersMap.get('unit'))
         )
@@ -146,7 +146,7 @@ class Simplify_01(MacroSpec):
             parameters=[
                 MacroParameter("relation_name", str(properties.relation_name)),
                 MacroParameter("schema", str(properties.schema)),
-                MacroParameter("destinationColumnNames", properties.geom_column_name),
+                MacroParameter("geometryColumnName", properties.geometryColumnName),
                 MacroParameter("tolerance", str(properties.tolerance)),
                 MacroParameter("unit", properties.unit)
             ],

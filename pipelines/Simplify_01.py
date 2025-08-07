@@ -2,8 +2,8 @@ Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@g
 SensorSchedule = SensorSchedule(enabled = False)
 
 with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
-    Simplify_01__simplify_geospatial_data = Task(
-        task_id = "Simplify_01__simplify_geospatial_data", 
+    Simplify_01__simplify_geometries = Task(
+        task_id = "Simplify_01__simplify_geometries", 
         component = "Model", 
-        modelName = "Simplify_01__simplify_geospatial_data"
+        modelName = "Simplify_01__simplify_geometries"
     )

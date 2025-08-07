@@ -1,6 +1,6 @@
 ---
 version: 2
 models:
-- name: "Simplify_01__simplify_geospatial_data"
+- name: "Simplify_01__simplify_geometries"
   tags:
   - "prophecy_temp"
