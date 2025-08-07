@@ -1,0 +1,6 @@
+store_id,store_name,store_location,store_type
+1,Downtown Electronics,"POINT(-74.0059 40.7128)",electronics
+2,Midtown Cafe,"POINT(-73.9857 40.7489)",restaurant
+3,Brooklyn Bookstore,"POINT(-73.9442 40.6782)",bookstore
+4,Queens Pharmacy,"POINT(-73.7949 40.7282)",pharmacy
+5,Upper East Side Boutique,"POINT(-73.9626 40.7831)",clothing
