@@ -33,6 +33,15 @@
         "isWorkflowNodeConfiguration" : false,
         "isReferenced" : false
       }, {
+        "name" : "output_column_name",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
         "name" : "distance",
         "kind" : {
           "type" : "value"
@@ -50,20 +59,12 @@
         "comment" : "",
         "isWorkflowNodeConfiguration" : false,
         "isReferenced" : false
-      }, {
-        "name" : "output_column_name",
-        "kind" : {
-          "type" : "value"
-        },
-        "optional" : false,
-        "isWorkflowNodeConfiguration" : false,
-        "isReferenced" : false
       } ]
     },
     "staleState" : "none",
     "propertiesFile" : {
       "name" : "macros",
-      "content" : "---\nversion: 2\nmacros:\n- name: \"Buffer\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"geom_column_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"output_column_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"Buffer_01\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"geom_column_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
+      "content" : "---\nversion: 2\nmacros:\n- name: \"Buffer\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"geom_column_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"output_column_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"Buffer_01\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"geom_column_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"output_column_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
       "path" : "alt_spatial_11/macros/macros.yml",
       "projectConfiguration" : null,
       "folderConfiguration" : {
@@ -116,6 +117,10 @@
             "description" : "{\"ProphecyType\": \"value\"}"
           }, {
             "name" : "unit",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "output_column_name",
             "type" : "value",
             "description" : "{\"ProphecyType\": \"value\"}"
           } ],

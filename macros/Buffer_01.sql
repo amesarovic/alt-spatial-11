@@ -1,4 +1,4 @@
-{%- macro Buffer_01(table_name, schema, geom_column_name, distance, unit, output_column_name) -%}
+{%- macro Buffer_01(table_name, schema, geom_column_name, output_column_name, distance, unit) -%}
   {{ log("table_name=" ~ table_name, info=True) }}
   {{ log("schema=" ~ schema, info=True) }}
   {{ log("geom_column_name=" ~ geom_column_name, info=True) }}

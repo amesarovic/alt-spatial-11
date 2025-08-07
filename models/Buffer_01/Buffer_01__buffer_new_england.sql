@@ -21,9 +21,9 @@ buffer_new_england AS (
       'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
+      'ooo', 
       1, 
-      'miles', 
-      'ooo'
+      'miles'
     )
   }}
 

@@ -114,10 +114,10 @@ class Buffer_01(MacroSpec):
         arguments = [
             f"'{table_name}'",   
             props.schema,
-            f"'{props.geometryColumnName}'",         
+            f"'{props.geometryColumnName}'",
+            f"'{props.outputColumnName}'",         
             str(props.distance),
             f"'{props.unit}'", 
-            f"'{props.outputColumnName}'",
         ]
 
         params = ",".join([param for param in arguments])
