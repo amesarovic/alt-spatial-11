@@ -75,12 +75,12 @@
         "isCustomOutputSchema" : false
       }
     },
-    "Rcrfa4mdxtaMkL7CTe69A$$VwJulaBhnYW9oBj7jCEF8" : {
-      "id" : "Rcrfa4mdxtaMkL7CTe69A$$VwJulaBhnYW9oBj7jCEF8",
+    "72MWLq-rY5kiEo145vc2u$$hvt5it7JCEO-ID5JekiA4" : {
+      "id" : "72MWLq-rY5kiEo145vc2u$$hvt5it7JCEO-ID5JekiA4",
       "component" : "Simplify_01",
       "metadata" : {
-        "label" : "simplify_geometries",
-        "x" : -260,
+        "label" : "simplify_geospatial_data",
+        "x" : -300,
         "y" : -200,
         "phase" : 0
       },
@@ -102,7 +102,7 @@
             "value" : "geometry"
           }, {
             "name" : "outputColumnName",
-            "value" : ""
+            "value" : "foo"
           }, {
             "name" : "tolerance",
             "value" : "1"
@@ -111,13 +111,13 @@
             "value" : "kms"
           } ]
         },
-        "outputColumnName" : "",
+        "outputColumnName" : "foo",
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "unit" : "kms"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "j19iUhGdLgRW2dOfj4mmF$$VVQF4-O4OiKvEHBQ3nOqM",
+          "id" : "4fuhN5PMn-u8o82SaUAKk$$-ca1f9E8hgM_Q8Pa21vXe",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -136,17 +136,22 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "6e_L6WeFiqIigrEvTA7oL$$EwTy9W6RTWGcTWaP0Qnat",
+          "id" : "VLxzM6PU6kovFAg8Hpmod$$Nxow-l4L6DaLw_DBqv_oH",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "input",
+              "name" : "name",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "output",
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "foo",
               "dataType" : {
                 "type" : "String"
               }
@@ -165,11 +170,11 @@
     }
   },
   "connections" : [ {
-    "id" : "dac_XflPWfSJlOY7O5RKS$$2Xcs0eI_3Dg1cIZRd1ILK",
+    "id" : "20_WwVU10LAmTIRRj7Ze2$$9X1Hb1pxSlTVLq5gMeAS6",
     "source" : "Rv89uM3ILQr0XtLy2fkVm$$JkBEGMbtKw_bA26aD_Is8",
     "sourcePort" : "VYc3BLvHRA_-m9WY9OPfl$$UNaMf6Zn81AKl7WfZOTdR",
-    "target" : "Rcrfa4mdxtaMkL7CTe69A$$VwJulaBhnYW9oBj7jCEF8",
-    "targetPort" : "j19iUhGdLgRW2dOfj4mmF$$VVQF4-O4OiKvEHBQ3nOqM"
+    "target" : "72MWLq-rY5kiEo145vc2u$$hvt5it7JCEO-ID5JekiA4",
+    "targetPort" : "4fuhN5PMn-u8o82SaUAKk$$-ca1f9E8hgM_Q8Pa21vXe"
   } ],
   "component" : "Pipeline"
 }

@@ -14,13 +14,14 @@ WITH new_england AS (
 
 ),
 
-simplify_geometries AS (
+simplify_geospatial_data AS (
 
   {{
     alt_spatial_11.Simplify_01(
       'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
+      'foo', 
       1, 
       'kms'
     )
@@ -30,4 +31,4 @@ simplify_geometries AS (
 
 SELECT *
 
-FROM simplify_geometries
+FROM simplify_geospatial_data

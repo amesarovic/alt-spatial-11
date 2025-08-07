@@ -131,6 +131,7 @@ class Simplify_01(MacroSpec):
             f"'{table_name}'",
             props.schema,
             f"'{props.geometryColumnName}'",
+            f"'{props.outputColumnName}'",
             str(props.tolerance),
             f"'{props.unit}'"
         ]

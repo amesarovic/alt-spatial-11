@@ -1,7 +1,8 @@
-{%- macro Simplify_01(table_name, schema, geom_column_name, tolerance, unit) -%}
+{%- macro Simplify_01(table_name, schema, geom_column_name, output_column_name, tolerance, unit) -%}
   {{ log("table_name=" ~ table_name, info=True) }}
   {{ log("schema=" ~ schema, info=True) }}
   {{ log("geom_column_name=" ~ geom_column_name, info=True) }}
+  {{ log("output_column_name=" ~ output_column_name, info=True) }}
   {{ log("tolerance=" ~ tolerance, info=True) }}
   {{ log("unit=" ~ unit, info=True) }}
 
@@ -14,7 +15,7 @@
   {%- endif -%}
 
   SELECT
-    {{geom_column_name}} as input,
+    *,
     ST_AsText(
       ST_Transform(
         ST_Simplify(
@@ -26,7 +27,7 @@
         ),
         4326
       )
-    ) as output
+    ) as {{output_column_name}}
   FROM
     {{table_name}}
 

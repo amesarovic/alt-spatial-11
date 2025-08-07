@@ -27,28 +27,28 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "Rcrfa4mdxtaMkL7CTe69A$$VwJulaBhnYW9oBj7jCEF8" : {
-      "id" : "Rcrfa4mdxtaMkL7CTe69A$$VwJulaBhnYW9oBj7jCEF8",
+    "72MWLq-rY5kiEo145vc2u$$hvt5it7JCEO-ID5JekiA4" : {
+      "id" : "72MWLq-rY5kiEo145vc2u$$hvt5it7JCEO-ID5JekiA4",
       "component" : "Model",
       "metadata" : {
-        "label" : "Simplify_01__simplify_geometries",
+        "label" : "Simplify_01__simplify_geospatial_data",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "Simplify_01__simplify_geometries"
+        "modelName" : "Simplify_01__simplify_geospatial_data"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "simplify_geometries_6e_L6WeFiqIigrEvTA7oL$$EwTy9W6RTWGcTWaP0Qnat", "Rcrfa4mdxtaMkL7CTe69A$$VwJulaBhnYW9oBj7jCEF8", "Rv89uM3ILQr0XtLy2fkVm$$JkBEGMbtKw_bA26aD_Is8" ],
+        "visualProcessIds" : [ "simplify_geospatial_data_VLxzM6PU6kovFAg8Hpmod$$Nxow-l4L6DaLw_DBqv_oH", "72MWLq-rY5kiEo145vc2u$$hvt5it7JCEO-ID5JekiA4", "Rv89uM3ILQr0XtLy2fkVm$$JkBEGMbtKw_bA26aD_Is8" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "Simplify_01__simplify_geometries_in_0",
+          "id" : "Simplify_01__simplify_geospatial_data_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "Simplify_01__simplify_geometries_out_0",
+          "id" : "Simplify_01__simplify_geospatial_data_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
