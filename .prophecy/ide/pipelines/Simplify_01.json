@@ -1,0 +1,171 @@
+{
+  "id" : "Simplify_01",
+  "metainfo" : {
+    "label" : "Simplify_01",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "Rv89uM3ILQr0XtLy2fkVm$$JkBEGMbtKw_bA26aD_Is8" : {
+      "id" : "Rv89uM3ILQr0XtLy2fkVm$$JkBEGMbtKw_bA26aD_Is8",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -460,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Skfmm--qA79I62tj0gfYv$$j8QP_c7bJgylvBSk0vNlv",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "VYc3BLvHRA_-m9WY9OPfl$$UNaMf6Zn81AKl7WfZOTdR",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "p09P4n5Tk5b9s6XGomEW7$$Pb-8UbI9Vpe8fHtRtJHUf" : {
+      "id" : "p09P4n5Tk5b9s6XGomEW7$$Pb-8UbI9Vpe8fHtRtJHUf",
+      "component" : "Simplify_01",
+      "metadata" : {
+        "label" : "simplify_geospatial_data",
+        "x" : -280,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "tolerance" : "1",
+        "relation_name" : [ "new_england" ],
+        "_oldMacroProperties" : {
+          "macroName" : "Simplify_01",
+          "projectName" : "alt_spatial_11",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['new_england']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "tolerance",
+            "value" : "1"
+          }, {
+            "name" : "unit",
+            "value" : "kms"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "unit" : "kms",
+        "geom_column_name" : "geometry"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TQcSrHhxPCbmRUsfN6bXm$$IvrtwV1nj_BsZq_Nb2ypg",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "OukhvMPJADXSM16b4nJL1$$--3yKsi0R3vmd9fZGvrFG",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "input",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "output",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "Simplify_01_alt_spatial_11",
+        "name" : "Simplify_01",
+        "projectName" : "alt_spatial_11",
+        "sourceProjectName" : "alt_spatial_11"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "yWNvAA90yDYCMJlji2L6v$$vlxm8evgP_1FWkhaNoDJi",
+    "source" : "Rv89uM3ILQr0XtLy2fkVm$$JkBEGMbtKw_bA26aD_Is8",
+    "sourcePort" : "VYc3BLvHRA_-m9WY9OPfl$$UNaMf6Zn81AKl7WfZOTdR",
+    "target" : "p09P4n5Tk5b9s6XGomEW7$$Pb-8UbI9Vpe8fHtRtJHUf",
+    "targetPort" : "TQcSrHhxPCbmRUsfN6bXm$$IvrtwV1nj_BsZq_Nb2ypg"
+  } ],
+  "component" : "Pipeline"
+}
