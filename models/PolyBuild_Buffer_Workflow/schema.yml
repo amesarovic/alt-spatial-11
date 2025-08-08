@@ -1,0 +1,9 @@
+---
+version: 2
+models:
+- name: "PolyBuild_Buffer_Workflow__Buffer_Line"
+  tags:
+  - "prophecy_temp"
+- name: "PolyBuild_Buffer_Workflow__Buffer_Polygon"
+  tags:
+  - "prophecy_temp"

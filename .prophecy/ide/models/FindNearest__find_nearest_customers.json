@@ -1,0 +1,205 @@
+{
+  "id" : "FindNearest__find_nearest_customers",
+  "metainfo" : {
+    "label" : "FindNearest__find_nearest_customers",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "find_nearest_customers_BgvC-iYbKS5RbTbg9PTXM$$Mh8AQaE3ATB0dqe6ZYfs2" : {
+      "id" : "find_nearest_customers_BgvC-iYbKS5RbTbg9PTXM$$Mh8AQaE3ATB0dqe6ZYfs2",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "find_nearest_customers"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM find_nearest_customers\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "uIHXm4yAIU_1DcubVyTsW$$nDAuOGJvgPYAuYfqeJDE5" : {
+      "id" : "uIHXm4yAIU_1DcubVyTsW$$nDAuOGJvgPYAuYfqeJDE5",
+      "component" : "FindNearest",
+      "metadata" : {
+        "label" : "find_nearest_customers",
+        "x" : -200,
+        "y" : -160,
+        "phase" : 0
+      },
+      "properties" : {
+        "sourceType" : "point",
+        "sourceColumnName" : "customer_id",
+        "ignoreZeroDistance" : false,
+        "relation_name" : [ "find_nearest_1", "find_nearest_2" ],
+        "columnNames" : [ ],
+        "_oldMacroProperties" : {
+          "macroName" : "FindNearest",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['find_nearest_1', 'find_nearest_2']"
+          }, {
+            "name" : "source_schema",
+            "value" : "[{\"name\": \"customer_id\", \"dataType\": \"String\"}, {\"name\": \"customer_point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "target_schema",
+            "value" : "[{\"name\": \"center_id\", \"dataType\": \"String\"}, {\"name\": \"center_point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "sourceColumnName",
+            "value" : "customer_id"
+          }, {
+            "name" : "destinationColumnName",
+            "value" : "center_point"
+          }, {
+            "name" : "sourceType",
+            "value" : "point"
+          }, {
+            "name" : "targetType",
+            "value" : "point"
+          }, {
+            "name" : "nearestPoints",
+            "value" : "1"
+          }, {
+            "name" : "maxDistance",
+            "value" : "20"
+          }, {
+            "name" : "units",
+            "value" : "kms"
+          }, {
+            "name" : "ignoreZeroDistance",
+            "value" : "false"
+          } ]
+        },
+        "source_schema" : "[{\"name\": \"customer_id\", \"dataType\": \"String\"}, {\"name\": \"customer_point\", \"dataType\": \"String\"}]",
+        "maxDistance" : 20,
+        "destinationColumnName" : "center_point",
+        "nearestPoints" : 1,
+        "units" : "kms",
+        "targetType" : "point",
+        "target_schema" : "[{\"name\": \"center_id\", \"dataType\": \"String\"}, {\"name\": \"center_point\", \"dataType\": \"String\"}]"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Yjv8kOy-1nW6p63ZHAesR$$26vQRPbLmixaH0nLcKjqg",
+          "slug" : "in0"
+        }, {
+          "id" : "XVqUzZcIrSG_ttMymNorw$$F-KgJQ4Pz_VjnNcfJ_QNc",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "BgvC-iYbKS5RbTbg9PTXM$$Mh8AQaE3ATB0dqe6ZYfs2",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "fRBBUEV8f-xEnitMtOtdw$$bxPHXkuJjUvCKYPGMb5DD" : {
+      "id" : "fRBBUEV8f-xEnitMtOtdw$$bxPHXkuJjUvCKYPGMb5DD",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "find_nearest_1",
+        "x" : -400,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "find_nearest_1",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "_aOKg9vqNzNyKYNkuLHws$$tdoSlQyq77kvjfah0eMYK",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "ceqZPVarQB2hkD5-MMtqu$$nv7viPLo0G01RYTYWldfy" : {
+      "id" : "ceqZPVarQB2hkD5-MMtqu$$nv7viPLo0G01RYTYWldfy",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "find_nearest_2",
+        "x" : -400,
+        "y" : -60,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "find_nearest_2",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "IMhLgt6lzGrUvOelg0v2-$$3Wsv5idCevJV7hG8ItTRB",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_uIHXm4yAIU_1DcubVyTsW$$nDAuOGJvgPYAuYfqeJDE5_find_nearest_customers_BgvC-iYbKS5RbTbg9PTXM$$Mh8AQaE3ATB0dqe6ZYfs2",
+    "source" : "uIHXm4yAIU_1DcubVyTsW$$nDAuOGJvgPYAuYfqeJDE5",
+    "sourcePort" : "BgvC-iYbKS5RbTbg9PTXM$$Mh8AQaE3ATB0dqe6ZYfs2",
+    "target" : "find_nearest_customers_BgvC-iYbKS5RbTbg9PTXM$$Mh8AQaE3ATB0dqe6ZYfs2",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "j24lf5udFVvv-iPFo02ka$$EGzEjqd0SKz-Wk7AQK9YY",
+    "source" : "fRBBUEV8f-xEnitMtOtdw$$bxPHXkuJjUvCKYPGMb5DD",
+    "sourcePort" : "_aOKg9vqNzNyKYNkuLHws$$tdoSlQyq77kvjfah0eMYK",
+    "target" : "uIHXm4yAIU_1DcubVyTsW$$nDAuOGJvgPYAuYfqeJDE5",
+    "targetPort" : "Yjv8kOy-1nW6p63ZHAesR$$26vQRPbLmixaH0nLcKjqg"
+  }, {
+    "id" : "i335VXGILhjy9z6dHMhjk$$IgaHnY4eH_yJymk3Q5a8k",
+    "source" : "ceqZPVarQB2hkD5-MMtqu$$nv7viPLo0G01RYTYWldfy",
+    "sourcePort" : "IMhLgt6lzGrUvOelg0v2-$$3Wsv5idCevJV7hG8ItTRB",
+    "target" : "uIHXm4yAIU_1DcubVyTsW$$nDAuOGJvgPYAuYfqeJDE5",
+    "targetPort" : "XVqUzZcIrSG_ttMymNorw$$F-KgJQ4Pz_VjnNcfJ_QNc"
+  } ],
+  "component" : "Model"
+}

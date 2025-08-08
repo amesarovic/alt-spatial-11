@@ -26,7 +26,263 @@
     },
     "isTranspiledPipeline" : false
   },
-  "processes" : { },
-  "connections" : [ ],
+  "processes" : {
+    "fRBBUEV8f-xEnitMtOtdw$$bxPHXkuJjUvCKYPGMb5DD" : {
+      "id" : "fRBBUEV8f-xEnitMtOtdw$$bxPHXkuJjUvCKYPGMb5DD",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "find_nearest_1",
+        "x" : -400,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "find_nearest_1",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "eRjOeFWtwJohszEBfnjCs$$FQP1ZIDhaWQWRDhpmyUOo",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "_aOKg9vqNzNyKYNkuLHws$$tdoSlQyq77kvjfah0eMYK",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "customer_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "ceqZPVarQB2hkD5-MMtqu$$nv7viPLo0G01RYTYWldfy" : {
+      "id" : "ceqZPVarQB2hkD5-MMtqu$$nv7viPLo0G01RYTYWldfy",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "find_nearest_2",
+        "x" : -400,
+        "y" : -60,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "find_nearest_2",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Xch03FkQEQH9vkPo9GJzN$$lVoSo0CzkhjmK88f1Wzbn",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "IMhLgt6lzGrUvOelg0v2-$$3Wsv5idCevJV7hG8ItTRB",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "center_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "center_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "uIHXm4yAIU_1DcubVyTsW$$nDAuOGJvgPYAuYfqeJDE5" : {
+      "id" : "uIHXm4yAIU_1DcubVyTsW$$nDAuOGJvgPYAuYfqeJDE5",
+      "component" : "FindNearest",
+      "metadata" : {
+        "label" : "find_nearest_customers",
+        "x" : -200,
+        "y" : -160,
+        "phase" : 0
+      },
+      "properties" : {
+        "sourceType" : "point",
+        "sourceColumnName" : "customer_id",
+        "ignoreZeroDistance" : false,
+        "relation_name" : [ "find_nearest_1", "find_nearest_2" ],
+        "columnNames" : [ ],
+        "_oldMacroProperties" : {
+          "macroName" : "FindNearest",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['find_nearest_1', 'find_nearest_2']"
+          }, {
+            "name" : "source_schema",
+            "value" : "[{\"name\": \"customer_id\", \"dataType\": \"String\"}, {\"name\": \"customer_point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "target_schema",
+            "value" : "[{\"name\": \"center_id\", \"dataType\": \"String\"}, {\"name\": \"center_point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "sourceColumnName",
+            "value" : "customer_id"
+          }, {
+            "name" : "destinationColumnName",
+            "value" : "center_point"
+          }, {
+            "name" : "sourceType",
+            "value" : "point"
+          }, {
+            "name" : "targetType",
+            "value" : "point"
+          }, {
+            "name" : "nearestPoints",
+            "value" : "1"
+          }, {
+            "name" : "maxDistance",
+            "value" : "20"
+          }, {
+            "name" : "units",
+            "value" : "kms"
+          }, {
+            "name" : "ignoreZeroDistance",
+            "value" : "false"
+          } ]
+        },
+        "source_schema" : "[{\"name\": \"customer_id\", \"dataType\": \"String\"}, {\"name\": \"customer_point\", \"dataType\": \"String\"}]",
+        "maxDistance" : 20,
+        "destinationColumnName" : "center_point",
+        "nearestPoints" : 1,
+        "units" : "kms",
+        "targetType" : "point",
+        "target_schema" : "[{\"name\": \"center_id\", \"dataType\": \"String\"}, {\"name\": \"center_point\", \"dataType\": \"String\"}]"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Yjv8kOy-1nW6p63ZHAesR$$26vQRPbLmixaH0nLcKjqg",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "customer_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        }, {
+          "id" : "XVqUzZcIrSG_ttMymNorw$$F-KgJQ4Pz_VjnNcfJ_QNc",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "center_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "center_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "BgvC-iYbKS5RbTbg9PTXM$$Mh8AQaE3ATB0dqe6ZYfs2",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "customer_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "center_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "center_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "rank_number",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "distanceKilometers",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "cardinal_direction",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "FindNearest_DatabricksSqlSpatial",
+        "name" : "FindNearest",
+        "projectName" : "DatabricksSqlSpatial",
+        "sourceProjectName" : "DatabricksSqlSpatial",
+        "sourceProjectVersion" : "0.0.4"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "j24lf5udFVvv-iPFo02ka$$EGzEjqd0SKz-Wk7AQK9YY",
+    "source" : "fRBBUEV8f-xEnitMtOtdw$$bxPHXkuJjUvCKYPGMb5DD",
+    "sourcePort" : "_aOKg9vqNzNyKYNkuLHws$$tdoSlQyq77kvjfah0eMYK",
+    "target" : "uIHXm4yAIU_1DcubVyTsW$$nDAuOGJvgPYAuYfqeJDE5",
+    "targetPort" : "Yjv8kOy-1nW6p63ZHAesR$$26vQRPbLmixaH0nLcKjqg"
+  }, {
+    "id" : "i335VXGILhjy9z6dHMhjk$$IgaHnY4eH_yJymk3Q5a8k",
+    "source" : "ceqZPVarQB2hkD5-MMtqu$$nv7viPLo0G01RYTYWldfy",
+    "sourcePort" : "IMhLgt6lzGrUvOelg0v2-$$3Wsv5idCevJV7hG8ItTRB",
+    "target" : "uIHXm4yAIU_1DcubVyTsW$$nDAuOGJvgPYAuYfqeJDE5",
+    "targetPort" : "XVqUzZcIrSG_ttMymNorw$$F-KgJQ4Pz_VjnNcfJ_QNc"
+  } ],
   "component" : "Pipeline"
 }

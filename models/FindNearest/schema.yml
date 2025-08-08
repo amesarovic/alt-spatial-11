@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "FindNearest__find_nearest_customers"
+  tags:
+  - "prophecy_temp"

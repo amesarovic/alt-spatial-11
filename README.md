@@ -1,0 +1,1 @@
+Latest Spatial Gem work as of 2025-08

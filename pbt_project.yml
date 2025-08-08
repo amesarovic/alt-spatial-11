@@ -357,6 +357,9 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Buffer_Polygon.sql
+    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Buffer_Line.sql
+    - models/PolyBuild_Buffer_Workflow/schema.yml
     - .prophecy/ide/pipelines/PolyBuild_Buffer_Workflow.json
     - pipelines/PolyBuild_Buffer_Workflow.py
     createdAt: '2025-08-07 04:21:50'
@@ -366,11 +369,11 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Buffer_01/schema.yml
-    - models/Buffer/Buffer__buffer_us_states.sql
-    - models/Buffer_01/Buffer_01__buffer_new_england.sql
     - models/Buffer/Buffer__buffer_new_england.sql
+    - models/Buffer_01/Buffer_01__buffer_new_england.sql
+    - models/Buffer_01/schema.yml
     - models/Buffer/schema.yml
+    - models/Buffer/Buffer__buffer_us_states.sql
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-08-07 02:39:38'
@@ -391,9 +394,12 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/PolyBuild_Buffer_Workflow/schema.yml
     - models/PolyBuild/schema.yml
-    - models/PolyBuild/PolyBuild__Polygon.sql
     - models/PolyBuild/PolyBuild__Line.sql
+    - models/PolyBuild/PolyBuild__Polygon.sql
+    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Buffer_Line.sql
+    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Buffer_Polygon.sql
     - .prophecy/ide/pipelines/PolyBuild.json
     - pipelines/PolyBuild.py
     createdAt: '2025-08-08 04:45:01'
@@ -414,13 +420,24 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Simplify/schema.yml
-    - models/Simplify/Simplify__simplify_geometries.sql
     - models/Simplify_01/schema.yml
     - models/Simplify_01/Simplify_01__simplify_geospatial_data.sql
+    - models/Simplify/schema.yml
+    - models/Simplify/Simplify__simplify_geometries.sql
     - .prophecy/ide/pipelines/Simplify.json
     - pipelines/Simplify.py
     createdAt: '2025-08-07 03:23:41'
+  .prophecy/metadata/sqlorchestratorpipeline/CreatePoint_Distance_Workflow:
+    name: CreatePoint_Distance_Workflow
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/CreatePoint_Distance_Workflow/schema.yml
+    - models/CreatePoint_Distance_Workflow/CreatePoint_Distance_Workflow__calculate_distance.sql
+    - .prophecy/ide/pipelines/CreatePoint_Distance_Workflow.json
+    - pipelines/CreatePoint_Distance_Workflow.py
+    createdAt: '2025-08-08 20:24:50'
   .prophecy/metadata/sqlorchestratorpipeline/SpatialMatch_Buffer_Workflow:
     name: SpatialMatch_Buffer_Workflow
     schema: null
@@ -447,6 +464,8 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/FindNearest/schema.yml
+    - models/FindNearest/FindNearest__find_nearest_customers.sql
     - .prophecy/ide/pipelines/FindNearest.json
     - pipelines/FindNearest.py
     createdAt: '2025-08-08 04:44:35'
@@ -456,9 +475,11 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/CreatePoint_Distance_Workflow/CreatePoint_Distance_Workflow__calculate_distance.sql
     - models/CreatePoint/schema.yml
-    - models/CreatePoint/CreatePoint__create_geo_point.sql
     - models/CreatePoint/CreatePoint__create_geo_points.sql
+    - models/CreatePoint/CreatePoint__create_geo_point.sql
+    - models/CreatePoint_Distance_Workflow/schema.yml
     - .prophecy/ide/pipelines/CreatePoint.json
     - pipelines/CreatePoint.py
     createdAt: '2025-08-07 19:17:47'
