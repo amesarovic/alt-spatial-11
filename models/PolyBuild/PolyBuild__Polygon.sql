@@ -27,26 +27,8 @@ Polygon AS (
     )
   }}
 
-),
-
-Buffer_Polygon AS (
-
-  {{
-    alt_spatial_11.Buffer_01(
-      'Polygon', 
-      [
-        { "name": "grouping_column_name", "dataType": "String" }, 
-        { "name": "geometry_wkt", "dataType": "String" }
-      ], 
-      'geometry_wkt', 
-      'output', 
-      200, 
-      'meters'
-    )
-  }}
-
 )
 
 SELECT *
 
-FROM Buffer_Polygon
+FROM Polygon

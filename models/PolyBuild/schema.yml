@@ -1,0 +1,9 @@
+---
+version: 2
+models:
+- name: "PolyBuild__Line"
+  tags:
+  - "prophecy_temp"
+- name: "PolyBuild__Polygon"
+  tags:
+  - "prophecy_temp"

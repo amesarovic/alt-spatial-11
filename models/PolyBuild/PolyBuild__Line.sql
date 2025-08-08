@@ -14,7 +14,7 @@ WITH poly_build AS (
 
 ),
 
-LineString AS (
+Line AS (
 
   {{
     DatabricksSqlSpatial.PolyBuild(
@@ -22,26 +22,8 @@ LineString AS (
       'SequencePolyline', 
       'longitude', 
       'latitude', 
-      'route_id', 
+      'stop_schedule', 
       'stop_schedule'
-    )
-  }}
-
-),
-
-Buffer_Line AS (
-
-  {{
-    alt_spatial_11.Buffer_01(
-      'LineString', 
-      [
-        { "name": "grouping_column_name", "dataType": "String" }, 
-        { "name": "geometry_wkt", "dataType": "String" }
-      ], 
-      'geometry_wkt', 
-      'output', 
-      200, 
-      'meters'
     )
   }}
 
@@ -49,4 +31,4 @@ Buffer_Line AS (
 
 SELECT *
 
-FROM Buffer_Line
+FROM Line

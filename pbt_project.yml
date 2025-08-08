@@ -357,34 +357,20 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Buffer_Polygon.sql
-    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Buffer_Line.sql
-    - models/PolyBuild_Buffer_Workflow/schema.yml
     - .prophecy/ide/pipelines/PolyBuild_Buffer_Workflow.json
     - pipelines/PolyBuild_Buffer_Workflow.py
     createdAt: '2025-08-07 04:21:50'
-  .prophecy/metadata/sqlorchestratorpipeline/Buffer_01:
-    name: Buffer_01
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Buffer_01/schema.yml
-    - models/Buffer_01/Buffer_01__buffer_new_england.sql
-    - .prophecy/ide/pipelines/Buffer_01.json
-    - pipelines/Buffer_01.py
-    createdAt: '2025-08-07 03:07:55'
   .prophecy/metadata/sqlorchestratorpipeline/Buffer:
     name: Buffer
     schema: null
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/Buffer_01/schema.yml
+    - models/Buffer/Buffer__buffer_us_states.sql
     - models/Buffer_01/Buffer_01__buffer_new_england.sql
     - models/Buffer/Buffer__buffer_new_england.sql
     - models/Buffer/schema.yml
-    - models/Buffer/Buffer__buffer_us_states.sql
-    - models/Buffer_01/schema.yml
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-08-07 02:39:38'
@@ -399,19 +385,71 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/Simplify_01.json
     - pipelines/Simplify_01.py
     createdAt: '2025-08-07 03:35:57'
+  .prophecy/metadata/sqlorchestratorpipeline/PolyBuild:
+    name: PolyBuild
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/PolyBuild/schema.yml
+    - models/PolyBuild/PolyBuild__Polygon.sql
+    - models/PolyBuild/PolyBuild__Line.sql
+    - .prophecy/ide/pipelines/PolyBuild.json
+    - pipelines/PolyBuild.py
+    createdAt: '2025-08-08 04:45:01'
+  .prophecy/metadata/sqlorchestratorpipeline/Distance:
+    name: Distance
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Distance/Distance__calculate_distance.sql
+    - models/Distance/schema.yml
+    - .prophecy/ide/pipelines/Distance.json
+    - pipelines/Distance.py
+    createdAt: '2025-08-07 19:41:58'
   .prophecy/metadata/sqlorchestratorpipeline/Simplify:
     name: Simplify
     schema: null
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Simplify_01/schema.yml
-    - models/Simplify_01/Simplify_01__simplify_geospatial_data.sql
     - models/Simplify/schema.yml
     - models/Simplify/Simplify__simplify_geometries.sql
+    - models/Simplify_01/schema.yml
+    - models/Simplify_01/Simplify_01__simplify_geospatial_data.sql
     - .prophecy/ide/pipelines/Simplify.json
     - pipelines/Simplify.py
     createdAt: '2025-08-07 03:23:41'
+  .prophecy/metadata/sqlorchestratorpipeline/SpatialMatch_Buffer_Workflow:
+    name: SpatialMatch_Buffer_Workflow
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/SpatialMatch_Buffer_Workflow.json
+    - pipelines/SpatialMatch_Buffer_Workflow.py
+    createdAt: '2025-08-07 20:00:11'
+  .prophecy/metadata/sqlorchestratorpipeline/Buffer_01:
+    name: Buffer_01
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Buffer_01/schema.yml
+    - models/Buffer_01/Buffer_01__buffer_new_england.sql
+    - .prophecy/ide/pipelines/Buffer_01.json
+    - pipelines/Buffer_01.py
+    createdAt: '2025-08-07 03:07:55'
+  .prophecy/metadata/sqlorchestratorpipeline/FindNearest:
+    name: FindNearest
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/FindNearest.json
+    - pipelines/FindNearest.py
+    createdAt: '2025-08-08 04:44:35'
   .prophecy/metadata/sqlorchestratorpipeline/CreatePoint:
     name: CreatePoint
     schema: null
@@ -424,4 +462,15 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/CreatePoint.json
     - pipelines/CreatePoint.py
     createdAt: '2025-08-07 19:17:47'
+  .prophecy/metadata/sqlorchestratorpipeline/SpatialMatch:
+    name: SpatialMatch
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/SpatialMatch/schema.yml
+    - models/SpatialMatch/SpatialMatch__SpatialMatch_1.sql
+    - .prophecy/ide/pipelines/SpatialMatch.json
+    - pipelines/SpatialMatch.py
+    createdAt: '2025-08-07 19:59:51'
 sqlBusinessApps: {}

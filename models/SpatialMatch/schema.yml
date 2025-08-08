@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "SpatialMatch__SpatialMatch_1"
+  tags:
+  - "prophecy_temp"
