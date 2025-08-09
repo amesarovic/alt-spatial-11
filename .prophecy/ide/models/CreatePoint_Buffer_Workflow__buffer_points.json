@@ -1,0 +1,194 @@
+{
+  "id" : "CreatePoint_Buffer_Workflow__buffer_points",
+  "metainfo" : {
+    "label" : "CreatePoint_Buffer_Workflow__buffer_points",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "buffer_points_EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5" : {
+      "id" : "buffer_points_EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "buffer_points"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM buffer_points\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt" : {
+      "id" : "uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt",
+      "component" : "Buffer_01",
+      "metadata" : {
+        "label" : "buffer_points",
+        "x" : -60,
+        "y" : -120,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "CreatePoint_1" ],
+        "geometryColumnName" : "point",
+        "_oldMacroProperties" : {
+          "macroName" : "Buffer_01",
+          "projectName" : "alt_spatial_11",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['CreatePoint_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"start_city\", \"dataType\": \"String\"}, {\"name\": \"start_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"start_long\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_city\", \"dataType\": \"String\"}, {\"name\": \"destination_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_long\", \"dataType\": \"Decimal\"}, {\"name\": \"point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "point"
+          }, {
+            "name" : "distance",
+            "value" : "10"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
+          }, {
+            "name" : "outputColumnName",
+            "value" : "output"
+          } ]
+        },
+        "outputColumnName" : "output",
+        "schema" : "[{\"name\": \"start_city\", \"dataType\": \"String\"}, {\"name\": \"start_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"start_long\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_city\", \"dataType\": \"String\"}, {\"name\": \"destination_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_long\", \"dataType\": \"Decimal\"}, {\"name\": \"point\", \"dataType\": \"String\"}]",
+        "unit" : "miles",
+        "distance" : 10
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "W1Yg-A1276lMEN9IoFf_y$$w5n0qZbtMwRlbXlccUJ5e",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "uJ2KH4NmOj-4BVne9av_-$$KunII8FnT9fV2unzSNfvm" : {
+      "id" : "uJ2KH4NmOj-4BVne9av_-$$KunII8FnT9fV2unzSNfvm",
+      "component" : "CreatePoint",
+      "metadata" : {
+        "label" : "CreatePoint_1",
+        "x" : -220,
+        "y" : -120,
+        "phase" : 0
+      },
+      "properties" : {
+        "addFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "start_long",
+            "latitudeColumnName" : "start_lat",
+            "targetColumnName" : "point"
+          }
+        } ],
+        "relation_name" : [ "points_02" ],
+        "_oldMacroProperties" : {
+          "macroName" : "CreatePoint",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['points_02']"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TjFlIe59LC1GQVUV3ma3Y$$AWQyRN7U0FbiRPwi98wcf",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "41CGmAbBnvPSEZLfo89jj$$uzHqZOmpE25V3-b7SafOi",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "U1y9jNHmaNx8biZWo3ehk$$I0pIh0ZPJRtPe8PeyLTq2" : {
+      "id" : "U1y9jNHmaNx8biZWo3ehk$$I0pIh0ZPJRtPe8PeyLTq2",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "points_02",
+        "x" : -400,
+        "y" : -120,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "points_02",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "JPzq7CJOzk4EQFH7TEn7t$$2xb68TjfulryOPYzm95xg",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt_buffer_points_EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5",
+    "source" : "uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt",
+    "sourcePort" : "EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5",
+    "target" : "buffer_points_EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "fUzopBOMJ36QTL0CVjvBu$$iA-1JjZYxvmkxVhUA5-su",
+    "source" : "uJ2KH4NmOj-4BVne9av_-$$KunII8FnT9fV2unzSNfvm",
+    "sourcePort" : "41CGmAbBnvPSEZLfo89jj$$uzHqZOmpE25V3-b7SafOi",
+    "target" : "uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt",
+    "targetPort" : "W1Yg-A1276lMEN9IoFf_y$$w5n0qZbtMwRlbXlccUJ5e"
+  }, {
+    "id" : "trRJc2P65CYCxUM9am2fD$$YiaU7J4JifJdb_rQaN7TA",
+    "source" : "U1y9jNHmaNx8biZWo3ehk$$I0pIh0ZPJRtPe8PeyLTq2",
+    "sourcePort" : "JPzq7CJOzk4EQFH7TEn7t$$2xb68TjfulryOPYzm95xg",
+    "target" : "uJ2KH4NmOj-4BVne9av_-$$KunII8FnT9fV2unzSNfvm",
+    "targetPort" : "TjFlIe59LC1GQVUV3ma3Y$$AWQyRN7U0FbiRPwi98wcf"
+  } ],
+  "component" : "Model"
+}

@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "CreatePoint_Buffer_Workflow__buffer_points"
+  tags:
+  - "prophecy_temp"

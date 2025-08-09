@@ -1,7 +1,7 @@
 {
-  "id" : "CreatePoint_Distance_Workflow",
+  "id" : "CreatePoint_Buffer_Workflow",
   "metainfo" : {
-    "label" : "CreatePoint_Distance_Workflow",
+    "label" : "CreatePoint_Buffer_Workflow",
     "autoLayout" : false,
     "version" : 1,
     "configuration" : {
@@ -27,12 +27,12 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "CpCnkCfRe8x2JBFh0eZ2f$$xF8zzA1r1b7AwnIvoHM_S" : {
-      "id" : "CpCnkCfRe8x2JBFh0eZ2f$$xF8zzA1r1b7AwnIvoHM_S",
+    "U1y9jNHmaNx8biZWo3ehk$$I0pIh0ZPJRtPe8PeyLTq2" : {
+      "id" : "U1y9jNHmaNx8biZWo3ehk$$I0pIh0ZPJRtPe8PeyLTq2",
       "component" : "Dataset",
       "metadata" : {
         "label" : "points_02",
-        "x" : -380,
+        "x" : -400,
         "y" : -120,
         "phase" : 0
       },
@@ -47,11 +47,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "qeJCo5wb7s-E5F-uEtsY-$$zTnqW2cZpNvaOqIdBb4av",
+          "id" : "Az4mB2ePVofcM7_h7zmQz$$l6D3xHzD7gs3tSZb8-7SW",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "h5J9aLyGEI3M7zqX2f8XX$$Vbf1k21jXXkMTOANRelgv",
+          "id" : "JPzq7CJOzk4EQFH7TEn7t$$2xb68TjfulryOPYzm95xg",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
@@ -92,12 +92,155 @@
         "isCustomOutputSchema" : false
       }
     },
-    "mJJuwwPlE8dR6t-hM7vGs$$ZFAPSxsBDovpuUt85jf6k" : {
-      "id" : "mJJuwwPlE8dR6t-hM7vGs$$ZFAPSxsBDovpuUt85jf6k",
+    "uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt" : {
+      "id" : "uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt",
+      "component" : "Buffer_01",
+      "metadata" : {
+        "label" : "buffer_points",
+        "x" : -60,
+        "y" : -120,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "CreatePoint_1" ],
+        "geometryColumnName" : "point",
+        "_oldMacroProperties" : {
+          "macroName" : "Buffer_01",
+          "projectName" : "alt_spatial_11",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['CreatePoint_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"start_city\", \"dataType\": \"String\"}, {\"name\": \"start_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"start_long\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_city\", \"dataType\": \"String\"}, {\"name\": \"destination_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_long\", \"dataType\": \"Decimal\"}, {\"name\": \"point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "point"
+          }, {
+            "name" : "distance",
+            "value" : "10"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
+          }, {
+            "name" : "outputColumnName",
+            "value" : "output"
+          } ]
+        },
+        "outputColumnName" : "output",
+        "schema" : "[{\"name\": \"start_city\", \"dataType\": \"String\"}, {\"name\": \"start_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"start_long\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_city\", \"dataType\": \"String\"}, {\"name\": \"destination_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_long\", \"dataType\": \"Decimal\"}, {\"name\": \"point\", \"dataType\": \"String\"}]",
+        "unit" : "miles",
+        "distance" : 10
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "W1Yg-A1276lMEN9IoFf_y$$w5n0qZbtMwRlbXlccUJ5e",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "start_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "start_lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "start_long",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "destination_lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "destination_long",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "start_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "start_lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "start_long",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "destination_lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "destination_long",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "output",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "Buffer_01_alt_spatial_11",
+        "name" : "Buffer_01",
+        "projectName" : "alt_spatial_11",
+        "sourceProjectName" : "alt_spatial_11"
+      }
+    },
+    "uJ2KH4NmOj-4BVne9av_-$$KunII8FnT9fV2unzSNfvm" : {
+      "id" : "uJ2KH4NmOj-4BVne9av_-$$KunII8FnT9fV2unzSNfvm",
       "component" : "CreatePoint",
       "metadata" : {
-        "label" : "create_start_point",
-        "x" : -200,
+        "label" : "CreatePoint_1",
+        "x" : -220,
         "y" : -120,
         "phase" : 0
       },
@@ -107,14 +250,7 @@
           "AddMatchField" : {
             "longitudeColumnName" : "start_long",
             "latitudeColumnName" : "start_lat",
-            "targetColumnName" : "start_point"
-          }
-        }, {
-          "kind" : "AddMatchField",
-          "AddMatchField" : {
-            "longitudeColumnName" : "destination_long",
-            "latitudeColumnName" : "destination_lat",
-            "targetColumnName" : "dest_point"
+            "targetColumnName" : "point"
           }
         } ],
         "relation_name" : [ "points_02" ],
@@ -129,7 +265,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "go5VgDXyHeeBqkpiGz3B8$$8xJMMNSUyDIzJubYT79q9",
+          "id" : "TjFlIe59LC1GQVUV3ma3Y$$AWQyRN7U0FbiRPwi98wcf",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
@@ -168,7 +304,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "6f-NIBYdT2Q6ndWPY2LN1$$oZPTho-0mlwe3LvM9gBCX",
+          "id" : "41CGmAbBnvPSEZLfo89jj$$uzHqZOmpE25V3-b7SafOi",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
@@ -203,12 +339,7 @@
                 "type" : "Decimal"
               }
             }, {
-              "name" : "start_point",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "dest_point",
+              "name" : "point",
               "dataType" : {
                 "type" : "String"
               }
@@ -225,196 +356,20 @@
         "sourceProjectName" : "DatabricksSqlSpatial",
         "sourceProjectVersion" : "0.0.4"
       }
-    },
-    "J_Whg68rVHCc42RX58vRd$$7xKvKT3RLEEVALhC9oO7P" : {
-      "id" : "J_Whg68rVHCc42RX58vRd$$7xKvKT3RLEEVALhC9oO7P",
-      "component" : "Distance",
-      "metadata" : {
-        "label" : "calculate_distance",
-        "x" : -20,
-        "y" : -120,
-        "phase" : 0
-      },
-      "properties" : {
-        "sourceType" : "point",
-        "destinationType" : "point",
-        "relation_name" : [ "create_start_point" ],
-        "columnNames" : [ ],
-        "_oldMacroProperties" : {
-          "macroName" : "Distance",
-          "projectName" : "DatabricksSqlSpatial",
-          "parameters" : [ {
-            "name" : "relation_name",
-            "value" : "['create_start_point']"
-          }, {
-            "name" : "schema",
-            "value" : "[{\"name\": \"start_city\", \"dataType\": \"String\"}, {\"name\": \"start_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"start_long\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_city\", \"dataType\": \"String\"}, {\"name\": \"destination_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_long\", \"dataType\": \"Decimal\"}, {\"name\": \"start_point\", \"dataType\": \"String\"}, {\"name\": \"dest_point\", \"dataType\": \"String\"}]"
-          }, {
-            "name" : "sourceColumnNames",
-            "value" : "start_point"
-          }, {
-            "name" : "destinationColumnNames",
-            "value" : "dest_point"
-          }, {
-            "name" : "sourceType",
-            "value" : "point"
-          }, {
-            "name" : "destinationType",
-            "value" : "point"
-          }, {
-            "name" : "outputDistance",
-            "value" : "true"
-          }, {
-            "name" : "units",
-            "value" : "kms"
-          }, {
-            "name" : "outputCardDirection",
-            "value" : "true"
-          }, {
-            "name" : "outputDirectionDegrees",
-            "value" : "false"
-          } ]
-        },
-        "outputCardDirection" : true,
-        "destinationColumnNames" : "dest_point",
-        "schema" : "[{\"name\": \"start_city\", \"dataType\": \"String\"}, {\"name\": \"start_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"start_long\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_city\", \"dataType\": \"String\"}, {\"name\": \"destination_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_long\", \"dataType\": \"Decimal\"}, {\"name\": \"start_point\", \"dataType\": \"String\"}, {\"name\": \"dest_point\", \"dataType\": \"String\"}]",
-        "units" : "kms",
-        "outputDirectionDegrees" : false,
-        "outputDistance" : true,
-        "sourceColumnNames" : "start_point"
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "xtXi6tzojXGJ-uaq8-qT3$$sfaKAH4rft3chAFmUm5ci",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "start_city",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "start_lat",
-              "dataType" : {
-                "type" : "Decimal"
-              }
-            }, {
-              "name" : "start_long",
-              "dataType" : {
-                "type" : "Decimal"
-              }
-            }, {
-              "name" : "destination_city",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "destination_lat",
-              "dataType" : {
-                "type" : "Decimal"
-              }
-            }, {
-              "name" : "destination_long",
-              "dataType" : {
-                "type" : "Decimal"
-              }
-            }, {
-              "name" : "start_point",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "dest_point",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "aJQ-JwdciyF2wmlLJDolN$$6rP6_t3FzGw7Lk4iIRXZA",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "start_city",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "start_lat",
-              "dataType" : {
-                "type" : "Decimal"
-              }
-            }, {
-              "name" : "start_long",
-              "dataType" : {
-                "type" : "Decimal"
-              }
-            }, {
-              "name" : "destination_city",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "destination_lat",
-              "dataType" : {
-                "type" : "Decimal"
-              }
-            }, {
-              "name" : "destination_long",
-              "dataType" : {
-                "type" : "Decimal"
-              }
-            }, {
-              "name" : "start_point",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "dest_point",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "distanceKilometers",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "cardinal_direction",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      },
-      "componentInfo" : {
-        "gemId" : "Distance_DatabricksSqlSpatial",
-        "name" : "Distance",
-        "projectName" : "DatabricksSqlSpatial",
-        "sourceProjectName" : "DatabricksSqlSpatial",
-        "sourceProjectVersion" : "0.0.4"
-      }
     }
   },
   "connections" : [ {
-    "id" : "FngwIB9cEYBcn6TDAEbWt$$lOWNsQUY91-4BLtepMhxP",
-    "source" : "CpCnkCfRe8x2JBFh0eZ2f$$xF8zzA1r1b7AwnIvoHM_S",
-    "sourcePort" : "h5J9aLyGEI3M7zqX2f8XX$$Vbf1k21jXXkMTOANRelgv",
-    "target" : "mJJuwwPlE8dR6t-hM7vGs$$ZFAPSxsBDovpuUt85jf6k",
-    "targetPort" : "go5VgDXyHeeBqkpiGz3B8$$8xJMMNSUyDIzJubYT79q9"
+    "id" : "fUzopBOMJ36QTL0CVjvBu$$iA-1JjZYxvmkxVhUA5-su",
+    "source" : "uJ2KH4NmOj-4BVne9av_-$$KunII8FnT9fV2unzSNfvm",
+    "sourcePort" : "41CGmAbBnvPSEZLfo89jj$$uzHqZOmpE25V3-b7SafOi",
+    "target" : "uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt",
+    "targetPort" : "W1Yg-A1276lMEN9IoFf_y$$w5n0qZbtMwRlbXlccUJ5e"
   }, {
-    "id" : "3Y_IBnXv-rPw3FLCyAeQL$$4bmdcu2hDJa36J2DF8myv",
-    "source" : "mJJuwwPlE8dR6t-hM7vGs$$ZFAPSxsBDovpuUt85jf6k",
-    "sourcePort" : "6f-NIBYdT2Q6ndWPY2LN1$$oZPTho-0mlwe3LvM9gBCX",
-    "target" : "J_Whg68rVHCc42RX58vRd$$7xKvKT3RLEEVALhC9oO7P",
-    "targetPort" : "xtXi6tzojXGJ-uaq8-qT3$$sfaKAH4rft3chAFmUm5ci"
+    "id" : "trRJc2P65CYCxUM9am2fD$$YiaU7J4JifJdb_rQaN7TA",
+    "source" : "U1y9jNHmaNx8biZWo3ehk$$I0pIh0ZPJRtPe8PeyLTq2",
+    "sourcePort" : "JPzq7CJOzk4EQFH7TEn7t$$2xb68TjfulryOPYzm95xg",
+    "target" : "uJ2KH4NmOj-4BVne9av_-$$KunII8FnT9fV2unzSNfvm",
+    "targetPort" : "TjFlIe59LC1GQVUV3ma3Y$$AWQyRN7U0FbiRPwi98wcf"
   } ],
   "component" : "Pipeline"
 }
