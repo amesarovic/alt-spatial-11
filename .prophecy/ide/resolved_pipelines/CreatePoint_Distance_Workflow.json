@@ -96,24 +96,24 @@
       "id" : "J_Whg68rVHCc42RX58vRd$$7xKvKT3RLEEVALhC9oO7P",
       "component" : "Model",
       "metadata" : {
-        "label" : "CreatePoint_Distance_Workflow__calculate_distance",
+        "label" : "CreatePoint_Distance_Workflow__Distance",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "CreatePoint_Distance_Workflow__calculate_distance"
+        "modelName" : "CreatePoint_Distance_Workflow__Distance"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "calculate_distance_aJQ-JwdciyF2wmlLJDolN$$6rP6_t3FzGw7Lk4iIRXZA", "J_Whg68rVHCc42RX58vRd$$7xKvKT3RLEEVALhC9oO7P", "mJJuwwPlE8dR6t-hM7vGs$$ZFAPSxsBDovpuUt85jf6k", "CpCnkCfRe8x2JBFh0eZ2f$$xF8zzA1r1b7AwnIvoHM_S" ],
+        "visualProcessIds" : [ "Distance_aJQ-JwdciyF2wmlLJDolN$$6rP6_t3FzGw7Lk4iIRXZA", "J_Whg68rVHCc42RX58vRd$$7xKvKT3RLEEVALhC9oO7P", "mJJuwwPlE8dR6t-hM7vGs$$ZFAPSxsBDovpuUt85jf6k", "CpCnkCfRe8x2JBFh0eZ2f$$xF8zzA1r1b7AwnIvoHM_S" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "CreatePoint_Distance_Workflow__calculate_distance_in_0",
+          "id" : "CreatePoint_Distance_Workflow__Distance_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "CreatePoint_Distance_Workflow__calculate_distance_out_0",
+          "id" : "CreatePoint_Distance_Workflow__Distance_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -125,7 +125,7 @@
     "source" : "CpCnkCfRe8x2JBFh0eZ2f$$xF8zzA1r1b7AwnIvoHM_S",
     "sourcePort" : "h5J9aLyGEI3M7zqX2f8XX$$Vbf1k21jXXkMTOANRelgv",
     "target" : "J_Whg68rVHCc42RX58vRd$$7xKvKT3RLEEVALhC9oO7P",
-    "targetPort" : "CreatePoint_Distance_Workflow__calculate_distance_in_0"
+    "targetPort" : "CreatePoint_Distance_Workflow__Distance_in_0"
   } ],
   "component" : "Pipeline"
 }

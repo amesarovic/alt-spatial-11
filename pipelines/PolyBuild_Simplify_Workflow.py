@@ -2,15 +2,15 @@ Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@g
 SensorSchedule = SensorSchedule(enabled = False)
 
 with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
-    PolyBuild_Buffer_Workflow__Polygon_Buffer = Task(
-        task_id = "PolyBuild_Buffer_Workflow__Polygon_Buffer", 
+    PolyBuild_Simplify_Workflow__Polygon_Simplify = Task(
+        task_id = "PolyBuild_Simplify_Workflow__Polygon_Simplify", 
         component = "Model", 
-        modelName = "PolyBuild_Buffer_Workflow__Polygon_Buffer"
+        modelName = "PolyBuild_Simplify_Workflow__Polygon_Simplify"
     )
-    PolyBuild_Buffer_Workflow__LineString_Buffer = Task(
-        task_id = "PolyBuild_Buffer_Workflow__LineString_Buffer", 
+    PolyBuild_Simplify_Workflow__LineString_Simplify = Task(
+        task_id = "PolyBuild_Simplify_Workflow__LineString_Simplify", 
         component = "Model", 
-        modelName = "PolyBuild_Buffer_Workflow__LineString_Buffer"
+        modelName = "PolyBuild_Simplify_Workflow__LineString_Simplify"
     )
     poly_build = Task(
         task_id = "poly_build", 
@@ -20,5 +20,5 @@ with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
     )
     (
         poly_build.out
-        >> [PolyBuild_Buffer_Workflow__LineString_Buffer.in_0, PolyBuild_Buffer_Workflow__Polygon_Buffer.in_0]
+        >> [PolyBuild_Simplify_Workflow__LineString_Simplify.in_0, PolyBuild_Simplify_Workflow__Polygon_Simplify.in_0]
     )

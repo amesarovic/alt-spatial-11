@@ -96,24 +96,24 @@
       "id" : "uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt",
       "component" : "Model",
       "metadata" : {
-        "label" : "CreatePoint_Buffer_Workflow__buffer_points",
+        "label" : "CreatePoint_Buffer_Workflow__Buffer",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "CreatePoint_Buffer_Workflow__buffer_points"
+        "modelName" : "CreatePoint_Buffer_Workflow__Buffer"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "buffer_points_EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5", "uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt", "uJ2KH4NmOj-4BVne9av_-$$KunII8FnT9fV2unzSNfvm", "U1y9jNHmaNx8biZWo3ehk$$I0pIh0ZPJRtPe8PeyLTq2" ],
+        "visualProcessIds" : [ "Buffer_EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5", "uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt", "uJ2KH4NmOj-4BVne9av_-$$KunII8FnT9fV2unzSNfvm", "U1y9jNHmaNx8biZWo3ehk$$I0pIh0ZPJRtPe8PeyLTq2" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "CreatePoint_Buffer_Workflow__buffer_points_in_0",
+          "id" : "CreatePoint_Buffer_Workflow__Buffer_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "CreatePoint_Buffer_Workflow__buffer_points_out_0",
+          "id" : "CreatePoint_Buffer_Workflow__Buffer_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -125,7 +125,7 @@
     "source" : "U1y9jNHmaNx8biZWo3ehk$$I0pIh0ZPJRtPe8PeyLTq2",
     "sourcePort" : "JPzq7CJOzk4EQFH7TEn7t$$2xb68TjfulryOPYzm95xg",
     "target" : "uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt",
-    "targetPort" : "CreatePoint_Buffer_Workflow__buffer_points_in_0"
+    "targetPort" : "CreatePoint_Buffer_Workflow__Buffer_in_0"
   } ],
   "component" : "Pipeline"
 }

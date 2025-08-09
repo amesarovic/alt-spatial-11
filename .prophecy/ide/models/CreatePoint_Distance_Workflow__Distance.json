@@ -1,7 +1,7 @@
 {
-  "id" : "CreatePoint_Distance_Workflow__calculate_distance",
+  "id" : "CreatePoint_Distance_Workflow__Distance",
   "metainfo" : {
-    "label" : "CreatePoint_Distance_Workflow__calculate_distance",
+    "label" : "CreatePoint_Distance_Workflow__Distance",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -18,17 +18,17 @@
     "version" : 3
   },
   "processes" : {
-    "calculate_distance_aJQ-JwdciyF2wmlLJDolN$$6rP6_t3FzGw7Lk4iIRXZA" : {
-      "id" : "calculate_distance_aJQ-JwdciyF2wmlLJDolN$$6rP6_t3FzGw7Lk4iIRXZA",
+    "Distance_aJQ-JwdciyF2wmlLJDolN$$6rP6_t3FzGw7Lk4iIRXZA" : {
+      "id" : "Distance_aJQ-JwdciyF2wmlLJDolN$$6rP6_t3FzGw7Lk4iIRXZA",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "calculate_distance"
+        "label" : "Distance"
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM calculate_distance\n\n",
+        "query" : "\nSELECT *\n\nFROM Distance\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -52,7 +52,7 @@
       "id" : "J_Whg68rVHCc42RX58vRd$$7xKvKT3RLEEVALhC9oO7P",
       "component" : "Distance",
       "metadata" : {
-        "label" : "calculate_distance",
+        "label" : "Distance",
         "x" : -20,
         "y" : -120,
         "phase" : 0
@@ -60,14 +60,14 @@
       "properties" : {
         "sourceType" : "point",
         "destinationType" : "point",
-        "relation_name" : [ "create_start_point" ],
+        "relation_name" : [ "CreatePoint" ],
         "columnNames" : [ ],
         "_oldMacroProperties" : {
           "macroName" : "Distance",
           "projectName" : "DatabricksSqlSpatial",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['create_start_point']"
+            "value" : "['CreatePoint']"
           }, {
             "name" : "schema",
             "value" : "[{\"name\": \"start_city\", \"dataType\": \"String\"}, {\"name\": \"start_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"start_long\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_city\", \"dataType\": \"String\"}, {\"name\": \"destination_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_long\", \"dataType\": \"Decimal\"}, {\"name\": \"start_point\", \"dataType\": \"String\"}, {\"name\": \"dest_point\", \"dataType\": \"String\"}]"
@@ -122,7 +122,7 @@
       "id" : "mJJuwwPlE8dR6t-hM7vGs$$ZFAPSxsBDovpuUt85jf6k",
       "component" : "CreatePoint",
       "metadata" : {
-        "label" : "create_start_point",
+        "label" : "CreatePoint",
         "x" : -200,
         "y" : -120,
         "phase" : 0
@@ -196,10 +196,10 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_J_Whg68rVHCc42RX58vRd$$7xKvKT3RLEEVALhC9oO7P_calculate_distance_aJQ-JwdciyF2wmlLJDolN$$6rP6_t3FzGw7Lk4iIRXZA",
+    "id" : "conn_J_Whg68rVHCc42RX58vRd$$7xKvKT3RLEEVALhC9oO7P_Distance_aJQ-JwdciyF2wmlLJDolN$$6rP6_t3FzGw7Lk4iIRXZA",
     "source" : "J_Whg68rVHCc42RX58vRd$$7xKvKT3RLEEVALhC9oO7P",
     "sourcePort" : "aJQ-JwdciyF2wmlLJDolN$$6rP6_t3FzGw7Lk4iIRXZA",
-    "target" : "calculate_distance_aJQ-JwdciyF2wmlLJDolN$$6rP6_t3FzGw7Lk4iIRXZA",
+    "target" : "Distance_aJQ-JwdciyF2wmlLJDolN$$6rP6_t3FzGw7Lk4iIRXZA",
     "targetPort" : "input_port_0"
   }, {
     "id" : "3Y_IBnXv-rPw3FLCyAeQL$$4bmdcu2hDJa36J2DF8myv",

@@ -8,9 +8,9 @@ with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "points_02", "sourceType" : "Seed"}
     )
-    CreatePoint_Distance_Workflow__calculate_distance = Task(
-        task_id = "CreatePoint_Distance_Workflow__calculate_distance", 
+    CreatePoint_Distance_Workflow__Distance = Task(
+        task_id = "CreatePoint_Distance_Workflow__Distance", 
         component = "Model", 
-        modelName = "CreatePoint_Distance_Workflow__calculate_distance"
+        modelName = "CreatePoint_Distance_Workflow__Distance"
     )
-    points_02.out >> CreatePoint_Distance_Workflow__calculate_distance.in_0
+    points_02.out >> CreatePoint_Distance_Workflow__Distance.in_0

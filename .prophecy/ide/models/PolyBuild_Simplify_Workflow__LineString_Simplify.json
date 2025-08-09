@@ -1,7 +1,7 @@
 {
-  "id" : "PolyBuild_Buffer_Workflow__Buffer_Polygon",
+  "id" : "PolyBuild_Simplify_Workflow__LineString_Simplify",
   "metainfo" : {
-    "label" : "PolyBuild_Buffer_Workflow__Buffer_Polygon",
+    "label" : "PolyBuild_Simplify_Workflow__LineString_Simplify",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -18,17 +18,17 @@
     "version" : 3
   },
   "processes" : {
-    "Buffer_Polygon_9wYB12lgxBUCbnOFjjPh9$$LigFsyT0942v_tDVir-7x" : {
-      "id" : "Buffer_Polygon_9wYB12lgxBUCbnOFjjPh9$$LigFsyT0942v_tDVir-7x",
+    "LineString_Simplify_BejnNsHI1D-kQjRXC-dDA$$iZNMZfnUj9rjGSIX0oZ1b" : {
+      "id" : "LineString_Simplify_BejnNsHI1D-kQjRXC-dDA$$iZNMZfnUj9rjGSIX0oZ1b",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "Buffer_Polygon"
+        "label" : "LineString_Simplify"
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM Buffer_Polygon\n\n",
+        "query" : "\nSELECT *\n\nFROM LineString_Simplify\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -48,70 +48,70 @@
         "autoUpdateOnRun" : false
       }
     },
-    "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL" : {
-      "id" : "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL",
-      "component" : "Buffer_01",
+    "_isCWPB3fHXfFD0RwEszD$$daSwU1J0NiXfqKiMJlsdT" : {
+      "id" : "_isCWPB3fHXfFD0RwEszD$$daSwU1J0NiXfqKiMJlsdT",
+      "component" : "Simplify_01",
       "metadata" : {
-        "label" : "Buffer_Polygon",
+        "label" : "LineString_Simplify",
         "x" : -80,
-        "y" : -200,
+        "y" : 20,
         "phase" : 0
       },
       "properties" : {
-        "relation_name" : [ "Polygon" ],
+        "tolerance" : "1",
+        "relation_name" : [ "LineString" ],
         "geometryColumnName" : "geometry_wkt",
         "_oldMacroProperties" : {
-          "macroName" : "Buffer_01",
+          "macroName" : "Simplify_01",
           "projectName" : "alt_spatial_11",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['Polygon']"
+            "value" : "['LineString']"
           }, {
             "name" : "schema",
             "value" : "[{\"name\": \"grouping_column_name\", \"dataType\": \"String\"}, {\"name\": \"geometry_wkt\", \"dataType\": \"String\"}]"
           }, {
-            "name" : "destinationColumnNames",
+            "name" : "geometryColumnName",
             "value" : "geometry_wkt"
-          }, {
-            "name" : "distance",
-            "value" : "200"
-          }, {
-            "name" : "unit",
-            "value" : "meters"
           }, {
             "name" : "outputColumnName",
             "value" : "output"
+          }, {
+            "name" : "tolerance",
+            "value" : "1"
+          }, {
+            "name" : "unit",
+            "value" : "kms"
           } ]
         },
         "outputColumnName" : "output",
         "schema" : "[{\"name\": \"grouping_column_name\", \"dataType\": \"String\"}, {\"name\": \"geometry_wkt\", \"dataType\": \"String\"}]",
-        "unit" : "meters",
-        "distance" : 200
+        "unit" : "kms"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "xaRHfhU2vFUuZL6mIGHZv$$3IqNN9tSpH1YCRF6lM1B4",
+          "id" : "agzDpFefWSi-lAd-BieUI$$zA_x9DGF7a3e8pOTCbVwo",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "9wYB12lgxBUCbnOFjjPh9$$LigFsyT0942v_tDVir-7x",
+          "id" : "BejnNsHI1D-kQjRXC-dDA$$iZNMZfnUj9rjGSIX0oZ1b",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "FAsUDG6UsV4BOWKB6ke9N$$SZairBR624cPIOm8lFAHv" : {
-      "id" : "FAsUDG6UsV4BOWKB6ke9N$$SZairBR624cPIOm8lFAHv",
+    "ARVL-ZVqpfPRNeb4RzOhj$$Zazpv0XOKlruyWcxzvjbo" : {
+      "id" : "ARVL-ZVqpfPRNeb4RzOhj$$Zazpv0XOKlruyWcxzvjbo",
       "component" : "PolyBuild",
       "metadata" : {
-        "label" : "Polygon",
-        "x" : -280,
-        "y" : -200,
+        "label" : "LineString",
+        "x" : -260,
+        "y" : 20,
         "phase" : 0
       },
       "properties" : {
-        "buildMethod" : "SequencePolygon",
+        "buildMethod" : "SequencePolyline",
         "longitudeColumnName" : "longitude",
         "sequenceColumnName" : "stop_schedule",
         "groupColumnName" : "route_id",
@@ -124,7 +124,7 @@
             "value" : "['poly_build']"
           }, {
             "name" : "buildMethod",
-            "value" : "SequencePolygon"
+            "value" : "SequencePolyline"
           }, {
             "name" : "longitudeColumnName",
             "value" : "longitude"
@@ -143,24 +143,24 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "KBJNfM1izcR1lNErEmlb-$$ubEJA-rpqVof7ScFuoetR",
+          "id" : "ZQ3VE52IpstPXktgN5Lul$$d4BTbb-SfPY4yJOFdmZHy",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "t6GybaS0ZweM8IR59woGU$$8-gHKM1lz64GFHVzssbyt",
+          "id" : "j5y340P2gRm67BMr3mWrT$$rNWt8RJMK2523JVrsDbT2",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "f5Ryx09fliYgyLbv_pYhH$$DDnxiIOmX8A7If6PwvLaT" : {
-      "id" : "f5Ryx09fliYgyLbv_pYhH$$DDnxiIOmX8A7If6PwvLaT",
+    "XXkKSvZsT_ZARmuMtqit4$$etk6NEUp2NZnvEWUOcIyB" : {
+      "id" : "XXkKSvZsT_ZARmuMtqit4$$etk6NEUp2NZnvEWUOcIyB",
       "component" : "Source",
       "metadata" : {
         "label" : "poly_build",
-        "x" : -480,
-        "y" : -120,
+        "x" : -460,
+        "y" : -60,
         "phase" : 0
       },
       "properties" : {
@@ -175,7 +175,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "K5777kiUTmLHf6lSwj7Fk$$01l746pGixRD0WjJ8vgII",
+          "id" : "-JEwNEv7kAg7bBXge00ID$$LNQFtNTdxZ_uD_06dkBgm",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -184,23 +184,23 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL_Buffer_Polygon_9wYB12lgxBUCbnOFjjPh9$$LigFsyT0942v_tDVir-7x",
-    "source" : "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL",
-    "sourcePort" : "9wYB12lgxBUCbnOFjjPh9$$LigFsyT0942v_tDVir-7x",
-    "target" : "Buffer_Polygon_9wYB12lgxBUCbnOFjjPh9$$LigFsyT0942v_tDVir-7x",
+    "id" : "conn__isCWPB3fHXfFD0RwEszD$$daSwU1J0NiXfqKiMJlsdT_LineString_Simplify_BejnNsHI1D-kQjRXC-dDA$$iZNMZfnUj9rjGSIX0oZ1b",
+    "source" : "_isCWPB3fHXfFD0RwEszD$$daSwU1J0NiXfqKiMJlsdT",
+    "sourcePort" : "BejnNsHI1D-kQjRXC-dDA$$iZNMZfnUj9rjGSIX0oZ1b",
+    "target" : "LineString_Simplify_BejnNsHI1D-kQjRXC-dDA$$iZNMZfnUj9rjGSIX0oZ1b",
     "targetPort" : "input_port_1"
   }, {
-    "id" : "jP-OnZZ0xWO0RfmQvvQGk$$oN5Qwh6UyjoU2MmfDjrgR",
-    "source" : "FAsUDG6UsV4BOWKB6ke9N$$SZairBR624cPIOm8lFAHv",
-    "sourcePort" : "t6GybaS0ZweM8IR59woGU$$8-gHKM1lz64GFHVzssbyt",
-    "target" : "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL",
-    "targetPort" : "xaRHfhU2vFUuZL6mIGHZv$$3IqNN9tSpH1YCRF6lM1B4"
+    "id" : "lrHQ0nWC6R04cEUMHTgK3",
+    "source" : "ARVL-ZVqpfPRNeb4RzOhj$$Zazpv0XOKlruyWcxzvjbo",
+    "sourcePort" : "j5y340P2gRm67BMr3mWrT$$rNWt8RJMK2523JVrsDbT2",
+    "target" : "_isCWPB3fHXfFD0RwEszD$$daSwU1J0NiXfqKiMJlsdT",
+    "targetPort" : "agzDpFefWSi-lAd-BieUI$$zA_x9DGF7a3e8pOTCbVwo"
   }, {
-    "id" : "lRw9lqq2aqLgRSlzAF4vM",
-    "source" : "f5Ryx09fliYgyLbv_pYhH$$DDnxiIOmX8A7If6PwvLaT",
-    "sourcePort" : "K5777kiUTmLHf6lSwj7Fk$$01l746pGixRD0WjJ8vgII",
-    "target" : "FAsUDG6UsV4BOWKB6ke9N$$SZairBR624cPIOm8lFAHv",
-    "targetPort" : "KBJNfM1izcR1lNErEmlb-$$ubEJA-rpqVof7ScFuoetR"
+    "id" : "Fib4qlPvEt2UMvDCxsUNq",
+    "source" : "XXkKSvZsT_ZARmuMtqit4$$etk6NEUp2NZnvEWUOcIyB",
+    "sourcePort" : "-JEwNEv7kAg7bBXge00ID$$LNQFtNTdxZ_uD_06dkBgm",
+    "target" : "ARVL-ZVqpfPRNeb4RzOhj$$Zazpv0XOKlruyWcxzvjbo",
+    "targetPort" : "ZQ3VE52IpstPXktgN5Lul$$d4BTbb-SfPY4yJOFdmZHy"
   } ],
   "component" : "Model"
 }

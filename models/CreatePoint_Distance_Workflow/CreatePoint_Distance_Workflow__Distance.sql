@@ -14,7 +14,7 @@ WITH points_02 AS (
 
 ),
 
-create_start_point AS (
+CreatePoint AS (
 
   {{
     DatabricksSqlSpatial.CreatePoint(
@@ -25,11 +25,11 @@ create_start_point AS (
 
 ),
 
-calculate_distance AS (
+Distance AS (
 
   {{
     DatabricksSqlSpatial.Distance(
-      'create_start_point', 
+      'CreatePoint', 
       'start_point', 
       'dest_point', 
       'point', 
@@ -55,4 +55,4 @@ calculate_distance AS (
 
 SELECT *
 
-FROM calculate_distance
+FROM Distance

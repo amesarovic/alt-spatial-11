@@ -1,0 +1,206 @@
+{
+  "id" : "PolyBuild_Simplify_Workflow__Polygon_Simplify",
+  "metainfo" : {
+    "label" : "PolyBuild_Simplify_Workflow__Polygon_Simplify",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "Polygon_Simplify_WSA1_VsE0mg2mWeQ_Isn4$$pjmgjCuJaOrjHwUXtjATg" : {
+      "id" : "Polygon_Simplify_WSA1_VsE0mg2mWeQ_Isn4$$pjmgjCuJaOrjHwUXtjATg",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "Polygon_Simplify"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM Polygon_Simplify\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "7hmMrR8vZw4GeOjl2ryjZ$$NkSjnsEHGngr8_QL6muvZ" : {
+      "id" : "7hmMrR8vZw4GeOjl2ryjZ$$NkSjnsEHGngr8_QL6muvZ",
+      "component" : "Simplify_01",
+      "metadata" : {
+        "label" : "Polygon_Simplify",
+        "x" : -80,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "tolerance" : "1",
+        "relation_name" : [ "Polygon" ],
+        "geometryColumnName" : "geometry_wkt",
+        "_oldMacroProperties" : {
+          "macroName" : "Simplify_01",
+          "projectName" : "alt_spatial_11",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['Polygon']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"grouping_column_name\", \"dataType\": \"String\"}, {\"name\": \"geometry_wkt\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "geometryColumnName",
+            "value" : "geometry_wkt"
+          }, {
+            "name" : "outputColumnName",
+            "value" : "output"
+          }, {
+            "name" : "tolerance",
+            "value" : "1"
+          }, {
+            "name" : "unit",
+            "value" : "kms"
+          } ]
+        },
+        "outputColumnName" : "output",
+        "schema" : "[{\"name\": \"grouping_column_name\", \"dataType\": \"String\"}, {\"name\": \"geometry_wkt\", \"dataType\": \"String\"}]",
+        "unit" : "kms"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SdAIaKPYrJ9KZsu_JwfSE$$DqxlX020IhlMSgRtebt6g",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "WSA1_VsE0mg2mWeQ_Isn4$$pjmgjCuJaOrjHwUXtjATg",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "nJ8glHCS76vv77ocjz_nX$$G5W4_v-BCq7-1YNPFU5Pu" : {
+      "id" : "nJ8glHCS76vv77ocjz_nX$$G5W4_v-BCq7-1YNPFU5Pu",
+      "component" : "PolyBuild",
+      "metadata" : {
+        "label" : "Polygon",
+        "x" : -260,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "buildMethod" : "SequencePolygon",
+        "longitudeColumnName" : "longitude",
+        "sequenceColumnName" : "stop_schedule",
+        "groupColumnName" : "route_id",
+        "relation_name" : [ "poly_build" ],
+        "_oldMacroProperties" : {
+          "macroName" : "PolyBuild",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['poly_build']"
+          }, {
+            "name" : "buildMethod",
+            "value" : "SequencePolygon"
+          }, {
+            "name" : "longitudeColumnName",
+            "value" : "longitude"
+          }, {
+            "name" : "latitudeColumnName",
+            "value" : "latitude"
+          }, {
+            "name" : "groupColumnName",
+            "value" : "route_id"
+          }, {
+            "name" : "sequenceColumnName",
+            "value" : "stop_schedule"
+          } ]
+        },
+        "latitudeColumnName" : "latitude"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RcrNbmg-UL6RSWxEHJGgU$$VHj2lKa44Ydw3-P70xG5f",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "uC0TvrkUOIKijYXDbdq85$$dd-ww08CimyOWZLyTN1Ui",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "XXkKSvZsT_ZARmuMtqit4$$etk6NEUp2NZnvEWUOcIyB" : {
+      "id" : "XXkKSvZsT_ZARmuMtqit4$$etk6NEUp2NZnvEWUOcIyB",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "poly_build",
+        "x" : -460,
+        "y" : -60,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "poly_build",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "-JEwNEv7kAg7bBXge00ID$$LNQFtNTdxZ_uD_06dkBgm",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_7hmMrR8vZw4GeOjl2ryjZ$$NkSjnsEHGngr8_QL6muvZ_Polygon_Simplify_WSA1_VsE0mg2mWeQ_Isn4$$pjmgjCuJaOrjHwUXtjATg",
+    "source" : "7hmMrR8vZw4GeOjl2ryjZ$$NkSjnsEHGngr8_QL6muvZ",
+    "sourcePort" : "WSA1_VsE0mg2mWeQ_Isn4$$pjmgjCuJaOrjHwUXtjATg",
+    "target" : "Polygon_Simplify_WSA1_VsE0mg2mWeQ_Isn4$$pjmgjCuJaOrjHwUXtjATg",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "zR0E8-tIJZCmnbAKRqYmo$$qnMjZk-mU6n6H2Rk3OOEs",
+    "source" : "nJ8glHCS76vv77ocjz_nX$$G5W4_v-BCq7-1YNPFU5Pu",
+    "sourcePort" : "uC0TvrkUOIKijYXDbdq85$$dd-ww08CimyOWZLyTN1Ui",
+    "target" : "7hmMrR8vZw4GeOjl2ryjZ$$NkSjnsEHGngr8_QL6muvZ",
+    "targetPort" : "SdAIaKPYrJ9KZsu_JwfSE$$DqxlX020IhlMSgRtebt6g"
+  }, {
+    "id" : "ogZtcd_rSR6HkNFxNfPCr$$LiFIwqEWhT-kUI_8n4a6L",
+    "source" : "XXkKSvZsT_ZARmuMtqit4$$etk6NEUp2NZnvEWUOcIyB",
+    "sourcePort" : "-JEwNEv7kAg7bBXge00ID$$LNQFtNTdxZ_uD_06dkBgm",
+    "target" : "nJ8glHCS76vv77ocjz_nX$$G5W4_v-BCq7-1YNPFU5Pu",
+    "targetPort" : "RcrNbmg-UL6RSWxEHJGgU$$VHj2lKa44Ydw3-P70xG5f"
+  } ],
+  "component" : "Model"
+}

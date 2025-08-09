@@ -20,7 +20,7 @@ CreatePoint_1 AS (
 
 ),
 
-buffer_points AS (
+Buffer AS (
 
   {{
     alt_spatial_11.Buffer_01(
@@ -45,4 +45,4 @@ buffer_points AS (
 
 SELECT *
 
-FROM buffer_points
+FROM Buffer

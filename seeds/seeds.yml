@@ -1,5 +1,5 @@
 ---
 version: 2
 seeds:
-- name: "points_02"
+- name: "find_nearest_raw_2"
   columns: []

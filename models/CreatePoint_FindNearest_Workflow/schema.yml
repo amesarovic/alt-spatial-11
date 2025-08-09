@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "CreatePoint_FindNearest_Workflow__FindNearestPoints"
+  tags:
+  - "prophecy_temp"

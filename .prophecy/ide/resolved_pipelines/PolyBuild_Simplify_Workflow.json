@@ -1,7 +1,7 @@
 {
-  "id" : "PolyBuild_Buffer_Workflow",
+  "id" : "PolyBuild_Simplify_Workflow",
   "metainfo" : {
-    "label" : "PolyBuild_Buffer_Workflow",
+    "label" : "PolyBuild_Simplify_Workflow",
     "autoLayout" : false,
     "version" : 1,
     "configuration" : {
@@ -27,67 +27,67 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL" : {
-      "id" : "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL",
+    "7hmMrR8vZw4GeOjl2ryjZ$$NkSjnsEHGngr8_QL6muvZ" : {
+      "id" : "7hmMrR8vZw4GeOjl2ryjZ$$NkSjnsEHGngr8_QL6muvZ",
       "component" : "Model",
       "metadata" : {
-        "label" : "PolyBuild_Buffer_Workflow__Polygon_Buffer",
+        "label" : "PolyBuild_Simplify_Workflow__Polygon_Simplify",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "PolyBuild_Buffer_Workflow__Polygon_Buffer"
+        "modelName" : "PolyBuild_Simplify_Workflow__Polygon_Simplify"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "Polygon_Buffer_9wYB12lgxBUCbnOFjjPh9$$LigFsyT0942v_tDVir-7x", "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL", "FAsUDG6UsV4BOWKB6ke9N$$SZairBR624cPIOm8lFAHv", "f5Ryx09fliYgyLbv_pYhH$$DDnxiIOmX8A7If6PwvLaT" ],
+        "visualProcessIds" : [ "Polygon_Simplify_WSA1_VsE0mg2mWeQ_Isn4$$pjmgjCuJaOrjHwUXtjATg", "7hmMrR8vZw4GeOjl2ryjZ$$NkSjnsEHGngr8_QL6muvZ", "nJ8glHCS76vv77ocjz_nX$$G5W4_v-BCq7-1YNPFU5Pu", "XXkKSvZsT_ZARmuMtqit4$$etk6NEUp2NZnvEWUOcIyB" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "PolyBuild_Buffer_Workflow__Polygon_Buffer_in_0",
+          "id" : "PolyBuild_Simplify_Workflow__Polygon_Simplify_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "PolyBuild_Buffer_Workflow__Polygon_Buffer_out_0",
+          "id" : "PolyBuild_Simplify_Workflow__Polygon_Simplify_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
       }
     },
-    "yrrIpBm5WF0PCKiZVMDAj$$wqRLvNguzU3Fv809nTYWy" : {
-      "id" : "yrrIpBm5WF0PCKiZVMDAj$$wqRLvNguzU3Fv809nTYWy",
+    "_isCWPB3fHXfFD0RwEszD$$daSwU1J0NiXfqKiMJlsdT" : {
+      "id" : "_isCWPB3fHXfFD0RwEszD$$daSwU1J0NiXfqKiMJlsdT",
       "component" : "Model",
       "metadata" : {
-        "label" : "PolyBuild_Buffer_Workflow__LineString_Buffer",
+        "label" : "PolyBuild_Simplify_Workflow__LineString_Simplify",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "PolyBuild_Buffer_Workflow__LineString_Buffer"
+        "modelName" : "PolyBuild_Simplify_Workflow__LineString_Simplify"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "LineString_Buffer_0HFftAl1kYIVLjzs1j_Ap$$EIoQd5vYZ0UbiY29YQB5I", "yrrIpBm5WF0PCKiZVMDAj$$wqRLvNguzU3Fv809nTYWy", "crxjeruCop_uBSk5RLtZ5$$-TQLJjQBnM3BD9OhIcNfw", "f5Ryx09fliYgyLbv_pYhH$$DDnxiIOmX8A7If6PwvLaT" ],
+        "visualProcessIds" : [ "LineString_Simplify_BejnNsHI1D-kQjRXC-dDA$$iZNMZfnUj9rjGSIX0oZ1b", "_isCWPB3fHXfFD0RwEszD$$daSwU1J0NiXfqKiMJlsdT", "ARVL-ZVqpfPRNeb4RzOhj$$Zazpv0XOKlruyWcxzvjbo", "XXkKSvZsT_ZARmuMtqit4$$etk6NEUp2NZnvEWUOcIyB" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "PolyBuild_Buffer_Workflow__LineString_Buffer_in_0",
+          "id" : "PolyBuild_Simplify_Workflow__LineString_Simplify_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "PolyBuild_Buffer_Workflow__LineString_Buffer_out_0",
+          "id" : "PolyBuild_Simplify_Workflow__LineString_Simplify_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
       }
     },
-    "f5Ryx09fliYgyLbv_pYhH$$DDnxiIOmX8A7If6PwvLaT" : {
-      "id" : "f5Ryx09fliYgyLbv_pYhH$$DDnxiIOmX8A7If6PwvLaT",
+    "XXkKSvZsT_ZARmuMtqit4$$etk6NEUp2NZnvEWUOcIyB" : {
+      "id" : "XXkKSvZsT_ZARmuMtqit4$$etk6NEUp2NZnvEWUOcIyB",
       "component" : "Dataset",
       "metadata" : {
         "label" : "poly_build",
-        "x" : -480,
-        "y" : -120,
+        "x" : -460,
+        "y" : -60,
         "phase" : 0
       },
       "properties" : {
@@ -101,11 +101,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "8i2y_-fZL824jJHf2thEC$$uu9qUhMQnigxuMHw_YeOG",
+          "id" : "PtNKKCG3eNk8gxmaICa8o$$yDJo199dbmvW6-rrdQA3m",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "K5777kiUTmLHf6lSwj7Fk$$01l746pGixRD0WjJ8vgII",
+          "id" : "-JEwNEv7kAg7bBXge00ID$$LNQFtNTdxZ_uD_06dkBgm",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
@@ -138,17 +138,17 @@
     }
   },
   "connections" : [ {
-    "id" : "FxzAVCmQCXx8C-JK7Ryys",
-    "source" : "f5Ryx09fliYgyLbv_pYhH$$DDnxiIOmX8A7If6PwvLaT",
-    "sourcePort" : "K5777kiUTmLHf6lSwj7Fk$$01l746pGixRD0WjJ8vgII",
-    "target" : "yrrIpBm5WF0PCKiZVMDAj$$wqRLvNguzU3Fv809nTYWy",
-    "targetPort" : "PolyBuild_Buffer_Workflow__LineString_Buffer_in_0"
+    "id" : "Fib4qlPvEt2UMvDCxsUNq",
+    "source" : "XXkKSvZsT_ZARmuMtqit4$$etk6NEUp2NZnvEWUOcIyB",
+    "sourcePort" : "-JEwNEv7kAg7bBXge00ID$$LNQFtNTdxZ_uD_06dkBgm",
+    "target" : "_isCWPB3fHXfFD0RwEszD$$daSwU1J0NiXfqKiMJlsdT",
+    "targetPort" : "PolyBuild_Simplify_Workflow__LineString_Simplify_in_0"
   }, {
-    "id" : "lRw9lqq2aqLgRSlzAF4vM",
-    "source" : "f5Ryx09fliYgyLbv_pYhH$$DDnxiIOmX8A7If6PwvLaT",
-    "sourcePort" : "K5777kiUTmLHf6lSwj7Fk$$01l746pGixRD0WjJ8vgII",
-    "target" : "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL",
-    "targetPort" : "PolyBuild_Buffer_Workflow__Polygon_Buffer_in_0"
+    "id" : "ogZtcd_rSR6HkNFxNfPCr$$LiFIwqEWhT-kUI_8n4a6L",
+    "source" : "XXkKSvZsT_ZARmuMtqit4$$etk6NEUp2NZnvEWUOcIyB",
+    "sourcePort" : "-JEwNEv7kAg7bBXge00ID$$LNQFtNTdxZ_uD_06dkBgm",
+    "target" : "7hmMrR8vZw4GeOjl2ryjZ$$NkSjnsEHGngr8_QL6muvZ",
+    "targetPort" : "PolyBuild_Simplify_Workflow__Polygon_Simplify_in_0"
   } ],
   "component" : "Pipeline"
 }

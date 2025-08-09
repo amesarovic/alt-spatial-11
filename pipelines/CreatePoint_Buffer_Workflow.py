@@ -8,9 +8,9 @@ with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "points_02", "sourceType" : "Seed"}
     )
-    CreatePoint_Buffer_Workflow__buffer_points = Task(
-        task_id = "CreatePoint_Buffer_Workflow__buffer_points", 
+    CreatePoint_Buffer_Workflow__Buffer = Task(
+        task_id = "CreatePoint_Buffer_Workflow__Buffer", 
         component = "Model", 
-        modelName = "CreatePoint_Buffer_Workflow__buffer_points"
+        modelName = "CreatePoint_Buffer_Workflow__Buffer"
     )
-    points_02.out >> CreatePoint_Buffer_Workflow__buffer_points.in_0
+    points_02.out >> CreatePoint_Buffer_Workflow__Buffer.in_0

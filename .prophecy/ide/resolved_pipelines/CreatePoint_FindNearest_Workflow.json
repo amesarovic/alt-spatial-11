@@ -1,0 +1,175 @@
+{
+  "id" : "CreatePoint_FindNearest_Workflow",
+  "metainfo" : {
+    "label" : "CreatePoint_FindNearest_Workflow",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "OPXBLsDEwRiJ63Mjw6_4d$$JtItDtqUCls3vNOD1UYiG" : {
+      "id" : "OPXBLsDEwRiJ63Mjw6_4d$$JtItDtqUCls3vNOD1UYiG",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "Center",
+        "x" : -800,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "find_nearest_raw_2",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wr0mgi8hWxy93_EM1sqzq$$wYJwn2QF7STwxhI5Tra-1",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "FQ_NPpbN2MpQ3iRky9QLJ$$TWBEdamJoOHmpFXae59q9",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "center_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "vVL7-IR2fwzJP0d3wz9N9$$XqwF72h3ufB8dUN9rJRo1" : {
+      "id" : "vVL7-IR2fwzJP0d3wz9N9$$XqwF72h3ufB8dUN9rJRo1",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "Customer",
+        "x" : -800,
+        "y" : -300,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "find_nearest_raw_1",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "DcEjmUAgc00J8DyaJ6NSM$$6Dx-SWyoPpZRL6JJiDFN-",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "0fiGaZFMuuuv43-kmg8EX$$D0oxED7TyltMk-rqrJG4a",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Rxkf3-u7huLqrtEJ4eB5E$$RdHjbP461xfF6vvcRA4i-" : {
+      "id" : "Rxkf3-u7huLqrtEJ4eB5E$$RdHjbP461xfF6vvcRA4i-",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "CreatePoint_FindNearest_Workflow__FindNearestPoints",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "CreatePoint_FindNearest_Workflow__FindNearestPoints"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "FindNearestPoints_eCk4NvAGKTbMILDdM5Gy1$$92-0pESOxLgumMAFqNZj5", "Rxkf3-u7huLqrtEJ4eB5E$$RdHjbP461xfF6vvcRA4i-", "CWUYxdmpQECuC5KYVJHjf$$x8TGXtdWqfeZ3gGg7Kcmx", "vVL7-IR2fwzJP0d3wz9N9$$XqwF72h3ufB8dUN9rJRo1", "hK6R7q-ywNKBbAjnSStAe$$Q0kldL7X923Pne6QxHPOl", "OPXBLsDEwRiJ63Mjw6_4d$$JtItDtqUCls3vNOD1UYiG" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "CreatePoint_FindNearest_Workflow__FindNearestPoints_in_0",
+          "slug" : "in_0"
+        }, {
+          "id" : "CreatePoint_FindNearest_Workflow__FindNearestPoints_in_1",
+          "slug" : "in_1"
+        } ],
+        "outputs" : [ {
+          "id" : "CreatePoint_FindNearest_Workflow__FindNearestPoints_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "vCSiK4dpeg-nqbU8oxPK1",
+    "source" : "vVL7-IR2fwzJP0d3wz9N9$$XqwF72h3ufB8dUN9rJRo1",
+    "sourcePort" : "0fiGaZFMuuuv43-kmg8EX$$D0oxED7TyltMk-rqrJG4a",
+    "target" : "Rxkf3-u7huLqrtEJ4eB5E$$RdHjbP461xfF6vvcRA4i-",
+    "targetPort" : "CreatePoint_FindNearest_Workflow__FindNearestPoints_in_0"
+  }, {
+    "id" : "8ulsRAenig1epgrQezZZQ$$YszKvlbu7LTZKwqr3dgmn",
+    "source" : "OPXBLsDEwRiJ63Mjw6_4d$$JtItDtqUCls3vNOD1UYiG",
+    "sourcePort" : "FQ_NPpbN2MpQ3iRky9QLJ$$TWBEdamJoOHmpFXae59q9",
+    "target" : "Rxkf3-u7huLqrtEJ4eB5E$$RdHjbP461xfF6vvcRA4i-",
+    "targetPort" : "CreatePoint_FindNearest_Workflow__FindNearestPoints_in_1"
+  } ],
+  "component" : "Pipeline"
+}

@@ -1,6 +1,6 @@
 ---
 version: 2
 models:
-- name: "CreatePoint_Distance_Workflow__calculate_distance"
+- name: "CreatePoint_Distance_Workflow__Distance"
   tags:
   - "prophecy_temp"

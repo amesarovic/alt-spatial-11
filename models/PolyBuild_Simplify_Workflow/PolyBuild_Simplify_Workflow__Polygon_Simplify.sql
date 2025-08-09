@@ -29,10 +29,10 @@ Polygon AS (
 
 ),
 
-Buffer_Polygon AS (
+Polygon_Simplify AS (
 
   {{
-    alt_spatial_11.Buffer_01(
+    alt_spatial_11.Simplify_01(
       'Polygon', 
       [
         { "name": "grouping_column_name", "dataType": "String" }, 
@@ -40,8 +40,8 @@ Buffer_Polygon AS (
       ], 
       'geometry_wkt', 
       'output', 
-      200, 
-      'meters'
+      1, 
+      'kms'
     )
   }}
 
@@ -49,4 +49,4 @@ Buffer_Polygon AS (
 
 SELECT *
 
-FROM Buffer_Polygon
+FROM Polygon_Simplify

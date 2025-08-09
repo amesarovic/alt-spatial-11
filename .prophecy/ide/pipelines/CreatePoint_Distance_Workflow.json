@@ -96,7 +96,7 @@
       "id" : "mJJuwwPlE8dR6t-hM7vGs$$ZFAPSxsBDovpuUt85jf6k",
       "component" : "CreatePoint",
       "metadata" : {
-        "label" : "create_start_point",
+        "label" : "CreatePoint",
         "x" : -200,
         "y" : -120,
         "phase" : 0
@@ -230,7 +230,7 @@
       "id" : "J_Whg68rVHCc42RX58vRd$$7xKvKT3RLEEVALhC9oO7P",
       "component" : "Distance",
       "metadata" : {
-        "label" : "calculate_distance",
+        "label" : "Distance",
         "x" : -20,
         "y" : -120,
         "phase" : 0
@@ -238,14 +238,14 @@
       "properties" : {
         "sourceType" : "point",
         "destinationType" : "point",
-        "relation_name" : [ "create_start_point" ],
+        "relation_name" : [ "CreatePoint" ],
         "columnNames" : [ ],
         "_oldMacroProperties" : {
           "macroName" : "Distance",
           "projectName" : "DatabricksSqlSpatial",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['create_start_point']"
+            "value" : "['CreatePoint']"
           }, {
             "name" : "schema",
             "value" : "[{\"name\": \"start_city\", \"dataType\": \"String\"}, {\"name\": \"start_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"start_long\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_city\", \"dataType\": \"String\"}, {\"name\": \"destination_lat\", \"dataType\": \"Decimal\"}, {\"name\": \"destination_long\", \"dataType\": \"Decimal\"}, {\"name\": \"start_point\", \"dataType\": \"String\"}, {\"name\": \"dest_point\", \"dataType\": \"String\"}]"

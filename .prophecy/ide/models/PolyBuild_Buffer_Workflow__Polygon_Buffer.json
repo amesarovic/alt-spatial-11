@@ -1,7 +1,7 @@
 {
-  "id" : "PolyBuild_Buffer_Workflow__Buffer_Line",
+  "id" : "PolyBuild_Buffer_Workflow__Polygon_Buffer",
   "metainfo" : {
-    "label" : "PolyBuild_Buffer_Workflow__Buffer_Line",
+    "label" : "PolyBuild_Buffer_Workflow__Polygon_Buffer",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -18,17 +18,17 @@
     "version" : 3
   },
   "processes" : {
-    "Buffer_Line_0HFftAl1kYIVLjzs1j_Ap$$EIoQd5vYZ0UbiY29YQB5I" : {
-      "id" : "Buffer_Line_0HFftAl1kYIVLjzs1j_Ap$$EIoQd5vYZ0UbiY29YQB5I",
+    "Polygon_Buffer_9wYB12lgxBUCbnOFjjPh9$$LigFsyT0942v_tDVir-7x" : {
+      "id" : "Polygon_Buffer_9wYB12lgxBUCbnOFjjPh9$$LigFsyT0942v_tDVir-7x",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "Buffer_Line"
+        "label" : "Polygon_Buffer"
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM Buffer_Line\n\n",
+        "query" : "\nSELECT *\n\nFROM Polygon_Buffer\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -37,35 +37,35 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "input_port_0",
-          "slug" : "input_port_0"
+          "id" : "input_port_1",
+          "slug" : "input_port_1"
         } ],
         "outputs" : [ {
-          "id" : "output_port_0",
-          "slug" : "output_port_0"
+          "id" : "output_port_1",
+          "slug" : "output_port_1"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "yrrIpBm5WF0PCKiZVMDAj$$wqRLvNguzU3Fv809nTYWy" : {
-      "id" : "yrrIpBm5WF0PCKiZVMDAj$$wqRLvNguzU3Fv809nTYWy",
+    "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL" : {
+      "id" : "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL",
       "component" : "Buffer_01",
       "metadata" : {
-        "label" : "Buffer_Line",
+        "label" : "Polygon_Buffer",
         "x" : -80,
-        "y" : -40,
+        "y" : -200,
         "phase" : 0
       },
       "properties" : {
-        "relation_name" : [ "LineString" ],
+        "relation_name" : [ "Polygon" ],
         "geometryColumnName" : "geometry_wkt",
         "_oldMacroProperties" : {
           "macroName" : "Buffer_01",
           "projectName" : "alt_spatial_11",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['LineString']"
+            "value" : "['Polygon']"
           }, {
             "name" : "schema",
             "value" : "[{\"name\": \"grouping_column_name\", \"dataType\": \"String\"}, {\"name\": \"geometry_wkt\", \"dataType\": \"String\"}]"
@@ -90,28 +90,28 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "T12stoJw9nsyOV2ClzYoc$$3b6YcaOMMYD--BwHlDdsL",
+          "id" : "xaRHfhU2vFUuZL6mIGHZv$$3IqNN9tSpH1YCRF6lM1B4",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "0HFftAl1kYIVLjzs1j_Ap$$EIoQd5vYZ0UbiY29YQB5I",
+          "id" : "9wYB12lgxBUCbnOFjjPh9$$LigFsyT0942v_tDVir-7x",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "crxjeruCop_uBSk5RLtZ5$$-TQLJjQBnM3BD9OhIcNfw" : {
-      "id" : "crxjeruCop_uBSk5RLtZ5$$-TQLJjQBnM3BD9OhIcNfw",
+    "FAsUDG6UsV4BOWKB6ke9N$$SZairBR624cPIOm8lFAHv" : {
+      "id" : "FAsUDG6UsV4BOWKB6ke9N$$SZairBR624cPIOm8lFAHv",
       "component" : "PolyBuild",
       "metadata" : {
-        "label" : "LineString",
+        "label" : "Polygon",
         "x" : -280,
-        "y" : -40,
+        "y" : -200,
         "phase" : 0
       },
       "properties" : {
-        "buildMethod" : "SequencePolyline",
+        "buildMethod" : "SequencePolygon",
         "longitudeColumnName" : "longitude",
         "sequenceColumnName" : "stop_schedule",
         "groupColumnName" : "route_id",
@@ -124,7 +124,7 @@
             "value" : "['poly_build']"
           }, {
             "name" : "buildMethod",
-            "value" : "SequencePolyline"
+            "value" : "SequencePolygon"
           }, {
             "name" : "longitudeColumnName",
             "value" : "longitude"
@@ -143,11 +143,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "aLMeMvT_ZdkwQAdYt0X4t$$O-Qx8l1RYy290Pf7SmPVD",
+          "id" : "KBJNfM1izcR1lNErEmlb-$$ubEJA-rpqVof7ScFuoetR",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "Pn9v4VfOhjDS23UhRjanj$$lP_OGIuPZz0BLJGBQ0mDF",
+          "id" : "t6GybaS0ZweM8IR59woGU$$8-gHKM1lz64GFHVzssbyt",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -184,23 +184,23 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_yrrIpBm5WF0PCKiZVMDAj$$wqRLvNguzU3Fv809nTYWy_Buffer_Line_0HFftAl1kYIVLjzs1j_Ap$$EIoQd5vYZ0UbiY29YQB5I",
-    "source" : "yrrIpBm5WF0PCKiZVMDAj$$wqRLvNguzU3Fv809nTYWy",
-    "sourcePort" : "0HFftAl1kYIVLjzs1j_Ap$$EIoQd5vYZ0UbiY29YQB5I",
-    "target" : "Buffer_Line_0HFftAl1kYIVLjzs1j_Ap$$EIoQd5vYZ0UbiY29YQB5I",
-    "targetPort" : "input_port_0"
+    "id" : "conn_oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL_Polygon_Buffer_9wYB12lgxBUCbnOFjjPh9$$LigFsyT0942v_tDVir-7x",
+    "source" : "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL",
+    "sourcePort" : "9wYB12lgxBUCbnOFjjPh9$$LigFsyT0942v_tDVir-7x",
+    "target" : "Polygon_Buffer_9wYB12lgxBUCbnOFjjPh9$$LigFsyT0942v_tDVir-7x",
+    "targetPort" : "input_port_1"
   }, {
-    "id" : "v8_lm-DyK3z_vAxjhNhMt",
-    "source" : "crxjeruCop_uBSk5RLtZ5$$-TQLJjQBnM3BD9OhIcNfw",
-    "sourcePort" : "Pn9v4VfOhjDS23UhRjanj$$lP_OGIuPZz0BLJGBQ0mDF",
-    "target" : "yrrIpBm5WF0PCKiZVMDAj$$wqRLvNguzU3Fv809nTYWy",
-    "targetPort" : "T12stoJw9nsyOV2ClzYoc$$3b6YcaOMMYD--BwHlDdsL"
+    "id" : "jP-OnZZ0xWO0RfmQvvQGk$$oN5Qwh6UyjoU2MmfDjrgR",
+    "source" : "FAsUDG6UsV4BOWKB6ke9N$$SZairBR624cPIOm8lFAHv",
+    "sourcePort" : "t6GybaS0ZweM8IR59woGU$$8-gHKM1lz64GFHVzssbyt",
+    "target" : "oTMVHepsjc7hyAMHZMVLm$$k4UwcetJI05B7nx8252xL",
+    "targetPort" : "xaRHfhU2vFUuZL6mIGHZv$$3IqNN9tSpH1YCRF6lM1B4"
   }, {
-    "id" : "FxzAVCmQCXx8C-JK7Ryys",
+    "id" : "lRw9lqq2aqLgRSlzAF4vM",
     "source" : "f5Ryx09fliYgyLbv_pYhH$$DDnxiIOmX8A7If6PwvLaT",
     "sourcePort" : "K5777kiUTmLHf6lSwj7Fk$$01l746pGixRD0WjJ8vgII",
-    "target" : "crxjeruCop_uBSk5RLtZ5$$-TQLJjQBnM3BD9OhIcNfw",
-    "targetPort" : "aLMeMvT_ZdkwQAdYt0X4t$$O-Qx8l1RYy290Pf7SmPVD"
+    "target" : "FAsUDG6UsV4BOWKB6ke9N$$SZairBR624cPIOm8lFAHv",
+    "targetPort" : "KBJNfM1izcR1lNErEmlb-$$ubEJA-rpqVof7ScFuoetR"
   } ],
   "component" : "Model"
 }

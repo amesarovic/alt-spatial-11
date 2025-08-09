@@ -29,10 +29,10 @@ LineString AS (
 
 ),
 
-Buffer_Line AS (
+LineString_Simplify AS (
 
   {{
-    alt_spatial_11.Buffer_01(
+    alt_spatial_11.Simplify_01(
       'LineString', 
       [
         { "name": "grouping_column_name", "dataType": "String" }, 
@@ -40,8 +40,8 @@ Buffer_Line AS (
       ], 
       'geometry_wkt', 
       'output', 
-      200, 
-      'meters'
+      1, 
+      'kms'
     )
   }}
 
@@ -49,4 +49,4 @@ Buffer_Line AS (
 
 SELECT *
 
-FROM Buffer_Line
+FROM LineString_Simplify

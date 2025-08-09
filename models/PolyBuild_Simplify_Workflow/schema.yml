@@ -1,0 +1,9 @@
+---
+version: 2
+models:
+- name: "PolyBuild_Simplify_Workflow__LineString_Simplify"
+  tags:
+  - "prophecy_temp"
+- name: "PolyBuild_Simplify_Workflow__Polygon_Simplify"
+  tags:
+  - "prophecy_temp"

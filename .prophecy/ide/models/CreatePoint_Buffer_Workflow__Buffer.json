@@ -1,7 +1,7 @@
 {
-  "id" : "CreatePoint_Buffer_Workflow__buffer_points",
+  "id" : "CreatePoint_Buffer_Workflow__Buffer",
   "metainfo" : {
-    "label" : "CreatePoint_Buffer_Workflow__buffer_points",
+    "label" : "CreatePoint_Buffer_Workflow__Buffer",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -18,17 +18,17 @@
     "version" : 3
   },
   "processes" : {
-    "buffer_points_EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5" : {
-      "id" : "buffer_points_EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5",
+    "Buffer_EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5" : {
+      "id" : "Buffer_EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "buffer_points"
+        "label" : "Buffer"
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM buffer_points\n\n",
+        "query" : "\nSELECT *\n\nFROM Buffer\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -52,7 +52,7 @@
       "id" : "uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt",
       "component" : "Buffer_01",
       "metadata" : {
-        "label" : "buffer_points",
+        "label" : "Buffer",
         "x" : -60,
         "y" : -120,
         "phase" : 0
@@ -172,10 +172,10 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt_buffer_points_EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5",
+    "id" : "conn_uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt_Buffer_EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5",
     "source" : "uQMWPv8YWD3_XIqd2r0At$$u_MoZyPgKPlHVaGxOBzMt",
     "sourcePort" : "EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5",
-    "target" : "buffer_points_EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5",
+    "target" : "Buffer_EG4sURzP4wsFDok2MKA6-$$WW0gpxgKwSWLRhBxVYRX5",
     "targetPort" : "input_port_0"
   }, {
     "id" : "fUzopBOMJ36QTL0CVjvBu$$iA-1JjZYxvmkxVhUA5-su",
