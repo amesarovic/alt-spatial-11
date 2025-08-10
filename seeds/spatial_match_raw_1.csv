@@ -1,0 +1,6 @@
+store_id,store_name,store_lat,store_lon,store_type
+1,Downtown Electronics,-74.0059,40.7128,electronics
+2,Midtown Cafe,-73.9857,40.7489,restaurant
+3,Brooklyn Bookstore,-73.9442,40.6782,bookstore
+4,Queens Pharmacy,-73.7949,40.7282,pharmacy
+5,Upper East Side Boutique,-73.9626,40.7831,clothing
