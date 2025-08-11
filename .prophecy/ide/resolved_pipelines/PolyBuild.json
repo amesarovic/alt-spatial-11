@@ -32,8 +32,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "poly_build",
-        "x" : -480,
-        "y" : -40,
+        "x" : -520,
+        "y" : -20,
         "phase" : 0
       },
       "properties" : {
@@ -109,6 +109,33 @@
         "isCustomOutputSchema" : false
       }
     },
+    "D6RKTNnr6UOC7WIKnAT8R$$ilQ4QZ1CQRnPcpTgNJX8Y" : {
+      "id" : "D6RKTNnr6UOC7WIKnAT8R$$ilQ4QZ1CQRnPcpTgNJX8Y",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "PolyBuild__PolyBuild_1_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "PolyBuild__PolyBuild_1_1"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "PolyBuild_1_1_WeHpCuAJ5jKZEGBedjb_3$$rCtc86g7w4KiIrWyEPs0w", "D6RKTNnr6UOC7WIKnAT8R$$ilQ4QZ1CQRnPcpTgNJX8Y", "EcjYlUzUw-yvzD7HcE8iX$$UQ36DHGbYPSi3-id2pFL1" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PolyBuild__PolyBuild_1_1_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "PolyBuild__PolyBuild_1_1_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "wN3rbbNDadDySWOvcXAIP$$sgsuf79CVmpaRpb9LVQgy" : {
       "id" : "wN3rbbNDadDySWOvcXAIP$$sgsuf79CVmpaRpb9LVQgy",
       "component" : "Model",
@@ -131,6 +158,33 @@
         } ],
         "outputs" : [ {
           "id" : "PolyBuild__Polygon_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "7Xun2qnvPuHZVpsH2o68x$$STwHjKgjZ_96qmur5bweq" : {
+      "id" : "7Xun2qnvPuHZVpsH2o68x$$STwHjKgjZ_96qmur5bweq",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "PolyBuild__build_route_polygon",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "PolyBuild__build_route_polygon"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "build_route_polygon_IKg5y52HcJtEAvStuO8cW$$CNF_6tpP1n_lNOCpt1o-u", "7Xun2qnvPuHZVpsH2o68x$$STwHjKgjZ_96qmur5bweq", "EcjYlUzUw-yvzD7HcE8iX$$UQ36DHGbYPSi3-id2pFL1" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PolyBuild__build_route_polygon_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "PolyBuild__build_route_polygon_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false

@@ -1,0 +1,340 @@
+{
+  "id" : "SpatialMatch_Workflow_02__SpatialMatch_1",
+  "metainfo" : {
+    "label" : "SpatialMatch_Workflow_02__SpatialMatch_1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "uRIDW8GqOYM2fwKWqqo9H$$AQGFtGWNg1U9cOVUdpT8_" : {
+      "id" : "uRIDW8GqOYM2fwKWqqo9H$$AQGFtGWNg1U9cOVUdpT8_",
+      "component" : "PolyBuild",
+      "metadata" : {
+        "label" : "Zone",
+        "x" : -220,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "buildMethod" : "SequencePolygon",
+        "longitudeColumnName" : "",
+        "sequenceColumnName" : "",
+        "groupColumnName" : "",
+        "relation_name" : [ "Zone_Join" ],
+        "_oldMacroProperties" : {
+          "macroName" : "PolyBuild",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['Zone_Join']"
+          }, {
+            "name" : "buildMethod",
+            "value" : "SequencePolygon"
+          }, {
+            "name" : "longitudeColumnName",
+            "value" : ""
+          }, {
+            "name" : "latitudeColumnName",
+            "value" : ""
+          }, {
+            "name" : "groupColumnName",
+            "value" : ""
+          }, {
+            "name" : "sequenceColumnName",
+            "value" : ""
+          } ]
+        },
+        "latitudeColumnName" : ""
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "g64CL86BJbsp0pX7KXBO9$$dXddH9BW71uJ3_uvs8mm3",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "ev1iwJkLqUiSeNUWDkWPG$$yhMBZ9UfPAiSy1MH25S1N",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "SpatialMatch_1_J3lO1lRQwwkkSd60W3mna$$BnMTXDMdsJx6Cms5zc4xz" : {
+      "id" : "SpatialMatch_1_J3lO1lRQwwkkSd60W3mna$$BnMTXDMdsJx6Cms5zc4xz",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "SpatialMatch_1"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM SpatialMatch_1\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "3rwN2JopnMETPh-zDWKWF$$4TcXG7XCPzempjKNEWJTo" : {
+      "id" : "3rwN2JopnMETPh-zDWKWF$$4TcXG7XCPzempjKNEWJTo",
+      "component" : "SpatialMatch",
+      "metadata" : {
+        "label" : "SpatialMatch_1",
+        "x" : -40,
+        "y" : -260,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "Store", "Zone" ],
+        "target_column" : "",
+        "source_column" : "",
+        "match_type" : "",
+        "schemas" : [ [ "store_id", "store_name", "store_lat", "store_lon", "store_type", "store_location" ], [ "zone_id", "zone_name", "zone_polygon", "delivery_fee" ] ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "eO0-JwkWSy5yR-7LPFrri$$JZmtGiQkv_rmFyyXAMF-f",
+          "slug" : "in0"
+        }, {
+          "id" : "DsWWCu58YosllpvxwDSUl$$OGktW6Y1DscaryTxgtQON",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "J3lO1lRQwwkkSd60W3mna$$BnMTXDMdsJx6Cms5zc4xz",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "ftY0HF8egHk3Nbg6p3nXF$$znYoBuc6ZBqaiHHL_4ixf" : {
+      "id" : "ftY0HF8egHk3Nbg6p3nXF$$znYoBuc6ZBqaiHHL_4ixf",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Zone_Join",
+        "x" : -400,
+        "y" : -100,
+        "phase" : 0
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : ""
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "HxncSwH20nwW2zfNnNGxH$$nLR9sLrCdvsT3SkbySehp",
+          "slug" : "in0"
+        }, {
+          "id" : "ZGZ19kNWEj7FlXCRiRjKe$$oZKN-jcqtQCsXdwbcdGI3",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "yvsR7Q8LTCx29bR5UDjNO$$QLao5gkpe6_Df2o8PfxAA",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "yElNjOkqB_3-NtY55CC8Q$$mTTwyxTsqUtfu1J_8b3Er" : {
+      "id" : "yElNjOkqB_3-NtY55CC8Q$$mTTwyxTsqUtfu1J_8b3Er",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Zones_Fact",
+        "x" : -560,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "spatial_match_raw_20_fact",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "MKW9pHI49zls2Dfyof_XB$$_G1rcDZTOTrWiKDD_3v1t",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "8u3LINXmERorYzgJwAfS8$$5y_ogRrReHC1k1eEmI7vf" : {
+      "id" : "8u3LINXmERorYzgJwAfS8$$5y_ogRrReHC1k1eEmI7vf",
+      "component" : "CreatePoint",
+      "metadata" : {
+        "label" : "Store",
+        "x" : -400,
+        "y" : -340,
+        "phase" : 0
+      },
+      "properties" : {
+        "addFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "store_lon",
+            "latitudeColumnName" : "store_lat",
+            "targetColumnName" : "store_location"
+          }
+        } ],
+        "relation_name" : [ "Stores" ],
+        "_oldMacroProperties" : {
+          "macroName" : "CreatePoint",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['Stores']"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "J2mqSSnSRmS4I_ZtVhMcE$$Y0rJPSFZuOkS8RkHyydtN",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "77gxy8dq3ZlDaMPH8yko2$$z1bTS6nVfkPLFXUb2Be_M",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "cNld5uNmbgxbJiXiMHhCH$$ufN5pLfXpvo-dxuSxSibC" : {
+      "id" : "cNld5uNmbgxbJiXiMHhCH$$ufN5pLfXpvo-dxuSxSibC",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Stores",
+        "x" : -560,
+        "y" : -340,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "spatial_match_raw_1",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "sVi-Yiwx1aihNWGIu1W0f$$WyJrsnFQBljyTttBUiAgz",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "DG1mycMDwu8VfmY69ufF7$$C53eGhilfZR8aI5MCg7Ux" : {
+      "id" : "DG1mycMDwu8VfmY69ufF7$$C53eGhilfZR8aI5MCg7Ux",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Zones_Poly",
+        "x" : -560,
+        "y" : -20,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "3p_YAhMaLofXBLxu1qSm3$$XVm6CqIzIq7HsrWzE8lBI",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_3rwN2JopnMETPh-zDWKWF$$4TcXG7XCPzempjKNEWJTo_SpatialMatch_1_J3lO1lRQwwkkSd60W3mna$$BnMTXDMdsJx6Cms5zc4xz",
+    "source" : "3rwN2JopnMETPh-zDWKWF$$4TcXG7XCPzempjKNEWJTo",
+    "sourcePort" : "J3lO1lRQwwkkSd60W3mna$$BnMTXDMdsJx6Cms5zc4xz",
+    "target" : "SpatialMatch_1_J3lO1lRQwwkkSd60W3mna$$BnMTXDMdsJx6Cms5zc4xz",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "oY3NaE97HWbQK_txj2B7_",
+    "source" : "8u3LINXmERorYzgJwAfS8$$5y_ogRrReHC1k1eEmI7vf",
+    "sourcePort" : "77gxy8dq3ZlDaMPH8yko2$$z1bTS6nVfkPLFXUb2Be_M",
+    "target" : "3rwN2JopnMETPh-zDWKWF$$4TcXG7XCPzempjKNEWJTo",
+    "targetPort" : "eO0-JwkWSy5yR-7LPFrri$$JZmtGiQkv_rmFyyXAMF-f"
+  }, {
+    "id" : "7Bphhmq8_jFL-tNhuwCEf",
+    "source" : "uRIDW8GqOYM2fwKWqqo9H$$AQGFtGWNg1U9cOVUdpT8_",
+    "sourcePort" : "ev1iwJkLqUiSeNUWDkWPG$$yhMBZ9UfPAiSy1MH25S1N",
+    "target" : "3rwN2JopnMETPh-zDWKWF$$4TcXG7XCPzempjKNEWJTo",
+    "targetPort" : "DsWWCu58YosllpvxwDSUl$$OGktW6Y1DscaryTxgtQON"
+  }, {
+    "id" : "ngfmXAtQy4KYz7h3ceoyd",
+    "source" : "cNld5uNmbgxbJiXiMHhCH$$ufN5pLfXpvo-dxuSxSibC",
+    "sourcePort" : "sVi-Yiwx1aihNWGIu1W0f$$WyJrsnFQBljyTttBUiAgz",
+    "target" : "8u3LINXmERorYzgJwAfS8$$5y_ogRrReHC1k1eEmI7vf",
+    "targetPort" : "J2mqSSnSRmS4I_ZtVhMcE$$Y0rJPSFZuOkS8RkHyydtN"
+  }, {
+    "id" : "NXDdrnVBbPPBnEuAQjQvS",
+    "source" : "ftY0HF8egHk3Nbg6p3nXF$$znYoBuc6ZBqaiHHL_4ixf",
+    "sourcePort" : "yvsR7Q8LTCx29bR5UDjNO$$QLao5gkpe6_Df2o8PfxAA",
+    "target" : "uRIDW8GqOYM2fwKWqqo9H$$AQGFtGWNg1U9cOVUdpT8_",
+    "targetPort" : "g64CL86BJbsp0pX7KXBO9$$dXddH9BW71uJ3_uvs8mm3"
+  }, {
+    "id" : "LTWYMafdVmYRsqnQd7-en$$WO4RNjJ0sUjqY21TJg07H",
+    "source" : "yElNjOkqB_3-NtY55CC8Q$$mTTwyxTsqUtfu1J_8b3Er",
+    "sourcePort" : "MKW9pHI49zls2Dfyof_XB$$_G1rcDZTOTrWiKDD_3v1t",
+    "target" : "ftY0HF8egHk3Nbg6p3nXF$$znYoBuc6ZBqaiHHL_4ixf",
+    "targetPort" : "HxncSwH20nwW2zfNnNGxH$$nLR9sLrCdvsT3SkbySehp"
+  }, {
+    "id" : "MuhDrnmipCLW8APRk680W$$d46Ro_f1qimEHCaTrEjhh",
+    "source" : "DG1mycMDwu8VfmY69ufF7$$C53eGhilfZR8aI5MCg7Ux",
+    "sourcePort" : "3p_YAhMaLofXBLxu1qSm3$$XVm6CqIzIq7HsrWzE8lBI",
+    "target" : "ftY0HF8egHk3Nbg6p3nXF$$znYoBuc6ZBqaiHHL_4ixf",
+    "targetPort" : "ZGZ19kNWEj7FlXCRiRjKe$$oZKN-jcqtQCsXdwbcdGI3"
+  } ],
+  "component" : "Model"
+}

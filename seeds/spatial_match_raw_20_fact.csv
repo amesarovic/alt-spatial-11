@@ -1,0 +1,5 @@
+zone_id,zone_name,delivery_fee
+MANHATTAN_SOUTH,Lower Manhattan,5.99
+MANHATTAN_NORTH,Upper Manhattan,7.99
+BROOKLYN_WEST,Western Brooklyn,6.99
+QUEENS_CENTRAL,Central Queens,8.99

@@ -1,0 +1,121 @@
+{
+  "id" : "scratch__Limit_1",
+  "metainfo" : {
+    "label" : "scratch__Limit_1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "Limit_1_Ttjx2S7109U_k1cHsomUF$$1w94f9l7vSGP0b6QQyezF" : {
+      "id" : "Limit_1_Ttjx2S7109U_k1cHsomUF$$1w94f9l7vSGP0b6QQyezF",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "Limit_1"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM Limit_1\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "5YJADBsDgo-k1jOsxvj1x$$SVItMAH8d5SDX7BcGC7TV" : {
+      "id" : "5YJADBsDgo-k1jOsxvj1x$$SVItMAH8d5SDX7BcGC7TV",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_1",
+        "x" : -200,
+        "y" : -260,
+        "phase" : 0
+      },
+      "properties" : {
+        "limit" : {
+          "expression" : "10"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "CoV1UXRQFqLzuHJMKDEJT$$QGfvKy9NajArqkYzerRQt",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Ttjx2S7109U_k1cHsomUF$$1w94f9l7vSGP0b6QQyezF",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "q_qqWRFximruZ3aSqdHTd$$qI6a9DyVtuPMR7-1TXTi1" : {
+      "id" : "q_qqWRFximruZ3aSqdHTd$$qI6a9DyVtuPMR7-1TXTi1",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "spatial_match_raw_20_fact",
+        "x" : -380,
+        "y" : -260,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "spatial_match_raw_20_fact",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "UGTdY30zbIWZLB43kAmVU$$U_BTZO_RwkMM7xTZNRVF9",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_5YJADBsDgo-k1jOsxvj1x$$SVItMAH8d5SDX7BcGC7TV_Limit_1_Ttjx2S7109U_k1cHsomUF$$1w94f9l7vSGP0b6QQyezF",
+    "source" : "5YJADBsDgo-k1jOsxvj1x$$SVItMAH8d5SDX7BcGC7TV",
+    "sourcePort" : "Ttjx2S7109U_k1cHsomUF$$1w94f9l7vSGP0b6QQyezF",
+    "target" : "Limit_1_Ttjx2S7109U_k1cHsomUF$$1w94f9l7vSGP0b6QQyezF",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "eS_YyT9_xjYUqEGEGxeGY$$XkSA5_P6lXXQ2eTZOfXOL",
+    "source" : "q_qqWRFximruZ3aSqdHTd$$qI6a9DyVtuPMR7-1TXTi1",
+    "sourcePort" : "UGTdY30zbIWZLB43kAmVU$$U_BTZO_RwkMM7xTZNRVF9",
+    "target" : "5YJADBsDgo-k1jOsxvj1x$$SVItMAH8d5SDX7BcGC7TV",
+    "targetPort" : "CoV1UXRQFqLzuHJMKDEJT$$QGfvKy9NajArqkYzerRQt"
+  } ],
+  "component" : "Model"
+}

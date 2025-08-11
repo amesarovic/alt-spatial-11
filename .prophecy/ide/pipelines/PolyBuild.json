@@ -32,8 +32,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "poly_build",
-        "x" : -480,
-        "y" : -40,
+        "x" : -520,
+        "y" : -20,
         "phase" : 0
       },
       "properties" : {
@@ -80,6 +80,258 @@
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
+      }
+    },
+    "pWrpn4k8ZJmMefi1CdfWn$$COAmvkoCsrEmUTmIMagnF" : {
+      "id" : "pWrpn4k8ZJmMefi1CdfWn$$COAmvkoCsrEmUTmIMagnF",
+      "component" : "PolyBuild",
+      "metadata" : {
+        "label" : "Line",
+        "x" : -260,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "buildMethod" : "SequencePolyline",
+        "longitudeColumnName" : "longitude",
+        "sequenceColumnName" : "stop_schedule",
+        "groupColumnName" : "stop_schedule",
+        "relation_name" : [ "poly_build" ],
+        "_oldMacroProperties" : {
+          "macroName" : "PolyBuild",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['poly_build']"
+          }, {
+            "name" : "buildMethod",
+            "value" : "SequencePolyline"
+          }, {
+            "name" : "longitudeColumnName",
+            "value" : "longitude"
+          }, {
+            "name" : "latitudeColumnName",
+            "value" : "latitude"
+          }, {
+            "name" : "groupColumnName",
+            "value" : "stop_schedule"
+          }, {
+            "name" : "sequenceColumnName",
+            "value" : "stop_schedule"
+          } ]
+        },
+        "latitudeColumnName" : "latitude"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "5dsQMys1xmnHJYS_VccJv$$3v3Clsd46M9DBzUxDIPgn",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "route_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "stop_schedule",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "latitude",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "longitude",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "pjybXJncvEVRlxzB5j0bV$$k6G1ZyR5t21OSXlWdgLBh",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "grouping_column_name",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "geometry_wkt",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "PolyBuild_DatabricksSqlSpatial",
+        "name" : "PolyBuild",
+        "projectName" : "DatabricksSqlSpatial",
+        "sourceProjectName" : "DatabricksSqlSpatial",
+        "sourceProjectVersion" : "0.0.4"
+      }
+    },
+    "EcjYlUzUw-yvzD7HcE8iX$$UQ36DHGbYPSi3-id2pFL1" : {
+      "id" : "EcjYlUzUw-yvzD7HcE8iX$$UQ36DHGbYPSi3-id2pFL1",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "02_poly_build",
+        "x" : -540,
+        "y" : 280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "poly_build_02",
+          "sourceType" : "Source",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Iz47yTTDtP-6FdjCWjr-B$$jmEVC12Avbcqg7XiJFVbm",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "MVCDKI9E-yfHIq1mcMJHa$$_9B-4sD3chU4Qg-T1eyPf",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "route_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "stop_schedule",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "latitude",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "longitude",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "D6RKTNnr6UOC7WIKnAT8R$$ilQ4QZ1CQRnPcpTgNJX8Y" : {
+      "id" : "D6RKTNnr6UOC7WIKnAT8R$$ilQ4QZ1CQRnPcpTgNJX8Y",
+      "component" : "PolyBuild",
+      "metadata" : {
+        "label" : "PolyBuild_1_1",
+        "x" : -280,
+        "y" : 380,
+        "phase" : 0
+      },
+      "properties" : {
+        "buildMethod" : "SequencePolyline",
+        "longitudeColumnName" : "longitude",
+        "sequenceColumnName" : "stop_schedule",
+        "groupColumnName" : "route_id",
+        "relation_name" : [ "02_poly_build" ],
+        "_oldMacroProperties" : {
+          "macroName" : "PolyBuild",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['02_poly_build']"
+          }, {
+            "name" : "buildMethod",
+            "value" : "SequencePolyline"
+          }, {
+            "name" : "longitudeColumnName",
+            "value" : "longitude"
+          }, {
+            "name" : "latitudeColumnName",
+            "value" : "latitude"
+          }, {
+            "name" : "groupColumnName",
+            "value" : "route_id"
+          }, {
+            "name" : "sequenceColumnName",
+            "value" : "stop_schedule"
+          } ]
+        },
+        "latitudeColumnName" : "latitude"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-zhXi83IvUqh327NqNckK$$QJe1IcqvyHWiEiige8wsI",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "route_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "stop_schedule",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "latitude",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "longitude",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "WeHpCuAJ5jKZEGBedjb_3$$rCtc86g7w4KiIrWyEPs0w",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "grouping_column_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry_wkt",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "PolyBuild_DatabricksSqlSpatial",
+        "name" : "PolyBuild",
+        "projectName" : "DatabricksSqlSpatial",
+        "sourceProjectName" : "DatabricksSqlSpatial",
+        "sourceProjectVersion" : "0.0.4"
       }
     },
     "wN3rbbNDadDySWOvcXAIP$$sgsuf79CVmpaRpb9LVQgy" : {
@@ -181,30 +433,30 @@
         "sourceProjectVersion" : "0.0.4"
       }
     },
-    "pWrpn4k8ZJmMefi1CdfWn$$COAmvkoCsrEmUTmIMagnF" : {
-      "id" : "pWrpn4k8ZJmMefi1CdfWn$$COAmvkoCsrEmUTmIMagnF",
+    "7Xun2qnvPuHZVpsH2o68x$$STwHjKgjZ_96qmur5bweq" : {
+      "id" : "7Xun2qnvPuHZVpsH2o68x$$STwHjKgjZ_96qmur5bweq",
       "component" : "PolyBuild",
       "metadata" : {
-        "label" : "Line",
-        "x" : -260,
-        "y" : 20,
+        "label" : "build_route_polygon",
+        "x" : -280,
+        "y" : 220,
         "phase" : 0
       },
       "properties" : {
-        "buildMethod" : "SequencePolyline",
+        "buildMethod" : "SequencePolygon",
         "longitudeColumnName" : "longitude",
         "sequenceColumnName" : "stop_schedule",
-        "groupColumnName" : "stop_schedule",
-        "relation_name" : [ "poly_build" ],
+        "groupColumnName" : "route_id",
+        "relation_name" : [ "02_poly_build" ],
         "_oldMacroProperties" : {
           "macroName" : "PolyBuild",
           "projectName" : "DatabricksSqlSpatial",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['poly_build']"
+            "value" : "['02_poly_build']"
           }, {
             "name" : "buildMethod",
-            "value" : "SequencePolyline"
+            "value" : "SequencePolygon"
           }, {
             "name" : "longitudeColumnName",
             "value" : "longitude"
@@ -213,7 +465,7 @@
             "value" : "latitude"
           }, {
             "name" : "groupColumnName",
-            "value" : "stop_schedule"
+            "value" : "route_id"
           }, {
             "name" : "sequenceColumnName",
             "value" : "stop_schedule"
@@ -223,10 +475,10 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "5dsQMys1xmnHJYS_VccJv$$3v3Clsd46M9DBzUxDIPgn",
+          "id" : "mzuSuJWhSeiBWaMCKCDLa$$Ih2febxGOIn2bbK7-vLKL",
           "schema" : {
             "entityType" : "",
-            "providerType" : "Databricks",
+            "providerType" : "databricks",
             "fields" : [ {
               "name" : "route_id",
               "dataType" : {
@@ -240,26 +492,26 @@
             }, {
               "name" : "latitude",
               "dataType" : {
-                "type" : "Decimal"
+                "type" : "Double"
               }
             }, {
               "name" : "longitude",
               "dataType" : {
-                "type" : "Decimal"
+                "type" : "Double"
               }
             } ]
           },
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "pjybXJncvEVRlxzB5j0bV$$k6G1ZyR5t21OSXlWdgLBh",
+          "id" : "IKg5y52HcJtEAvStuO8cW$$CNF_6tpP1n_lNOCpt1o-u",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
               "name" : "grouping_column_name",
               "dataType" : {
-                "type" : "Timestamp"
+                "type" : "String"
               }
             }, {
               "name" : "geometry_wkt",
@@ -293,6 +545,18 @@
     "sourcePort" : "OmJggvv59Cqtwjdts3pG1$$ST7PbF68HZV-RllU5vUIV",
     "target" : "pWrpn4k8ZJmMefi1CdfWn$$COAmvkoCsrEmUTmIMagnF",
     "targetPort" : "5dsQMys1xmnHJYS_VccJv$$3v3Clsd46M9DBzUxDIPgn"
+  }, {
+    "id" : "2keVNXMhKxsKdR36_jfrn",
+    "source" : "EcjYlUzUw-yvzD7HcE8iX$$UQ36DHGbYPSi3-id2pFL1",
+    "sourcePort" : "MVCDKI9E-yfHIq1mcMJHa$$_9B-4sD3chU4Qg-T1eyPf",
+    "target" : "7Xun2qnvPuHZVpsH2o68x$$STwHjKgjZ_96qmur5bweq",
+    "targetPort" : "mzuSuJWhSeiBWaMCKCDLa$$Ih2febxGOIn2bbK7-vLKL"
+  }, {
+    "id" : "C3l9FGaNNe2rgDwnbAYAk",
+    "source" : "EcjYlUzUw-yvzD7HcE8iX$$UQ36DHGbYPSi3-id2pFL1",
+    "sourcePort" : "MVCDKI9E-yfHIq1mcMJHa$$_9B-4sD3chU4Qg-T1eyPf",
+    "target" : "D6RKTNnr6UOC7WIKnAT8R$$ilQ4QZ1CQRnPcpTgNJX8Y",
+    "targetPort" : "-zhXi83IvUqh327NqNckK$$QJe1IcqvyHWiEiige8wsI"
   } ],
   "component" : "Pipeline"
 }

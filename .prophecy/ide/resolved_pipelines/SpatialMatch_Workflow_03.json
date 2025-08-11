@@ -1,0 +1,111 @@
+{
+  "id" : "SpatialMatch_Workflow_03",
+  "metainfo" : {
+    "label" : "SpatialMatch_Workflow_03",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "hpMEVLg76Cw6Azxle_3om$$jwMm-IjJCrGTfhp35ERKS" : {
+      "id" : "hpMEVLg76Cw6Azxle_3om$$jwMm-IjJCrGTfhp35ERKS",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "Table_0",
+        "x" : -540,
+        "y" : -260,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Kk2lsCItDsJ7Jwf6fQf5p$$CtmrThzjzvJwckOrupw7p",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "wdBgnyREgC_qM2FLhJ_8I$$Yxp6a75_GqG2PHa7P3S3R",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "-86VC2D-2uYl3wxtXZp9i$$GIrtgqLLzyxMj8XLmS98H" : {
+      "id" : "-86VC2D-2uYl3wxtXZp9i$$GIrtgqLLzyxMj8XLmS98H",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "Table_1",
+        "x" : -540,
+        "y" : -80,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "EhuFhvkV5k3yrLub7V7IX$$qB2Cb-gino-WdL92pEHlJ",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "Xmi5Ltm_5bI6RKJflPdtC$$AJkvr60J69idvI_Gk9Hud",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "H1uS1sxXVZnI7DRQh1IDS$$8eAl7Ju64gZwHjXBl-qTN" : {
+      "id" : "H1uS1sxXVZnI7DRQh1IDS$$8eAl7Ju64gZwHjXBl-qTN",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "Table_2",
+        "x" : -540,
+        "y" : 80,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "00ADa4vA70uF1rNcSozo6$$gJiGknGVXGrYrVt1baGTG",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "RVDQGyYALi38kRoHEZoZD$$cVlE1bYXJ4y5ti6gBb9L1",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

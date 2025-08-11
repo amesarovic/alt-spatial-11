@@ -1,0 +1,188 @@
+{
+  "id" : "SpatialMatch_Workflow_02",
+  "metainfo" : {
+    "label" : "SpatialMatch_Workflow_02",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "3rwN2JopnMETPh-zDWKWF$$4TcXG7XCPzempjKNEWJTo" : {
+      "id" : "3rwN2JopnMETPh-zDWKWF$$4TcXG7XCPzempjKNEWJTo",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "SpatialMatch_Workflow_02__SpatialMatch_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "SpatialMatch_Workflow_02__SpatialMatch_1"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "SpatialMatch_1_J3lO1lRQwwkkSd60W3mna$$BnMTXDMdsJx6Cms5zc4xz", "3rwN2JopnMETPh-zDWKWF$$4TcXG7XCPzempjKNEWJTo", "8u3LINXmERorYzgJwAfS8$$5y_ogRrReHC1k1eEmI7vf", "cNld5uNmbgxbJiXiMHhCH$$ufN5pLfXpvo-dxuSxSibC", "uRIDW8GqOYM2fwKWqqo9H$$AQGFtGWNg1U9cOVUdpT8_", "ftY0HF8egHk3Nbg6p3nXF$$znYoBuc6ZBqaiHHL_4ixf", "yElNjOkqB_3-NtY55CC8Q$$mTTwyxTsqUtfu1J_8b3Er", "DG1mycMDwu8VfmY69ufF7$$C53eGhilfZR8aI5MCg7Ux" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SpatialMatch_Workflow_02__SpatialMatch_1_in_0",
+          "slug" : "in_0"
+        }, {
+          "id" : "SpatialMatch_Workflow_02__SpatialMatch_1_in_1",
+          "slug" : "in_1"
+        }, {
+          "id" : "SpatialMatch_Workflow_02__SpatialMatch_1_in_2",
+          "slug" : "in_2"
+        } ],
+        "outputs" : [ {
+          "id" : "SpatialMatch_Workflow_02__SpatialMatch_1_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "yElNjOkqB_3-NtY55CC8Q$$mTTwyxTsqUtfu1J_8b3Er" : {
+      "id" : "yElNjOkqB_3-NtY55CC8Q$$mTTwyxTsqUtfu1J_8b3Er",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "Zones_Fact",
+        "x" : -560,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "spatial_match_raw_20_fact",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Z9hCoeiZqeYV-1KXWz0EE$$-8nIAuNzc2NWdXJai-1Z2",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "MKW9pHI49zls2Dfyof_XB$$_G1rcDZTOTrWiKDD_3v1t",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "zone_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "zone_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "delivery_fee",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "cNld5uNmbgxbJiXiMHhCH$$ufN5pLfXpvo-dxuSxSibC" : {
+      "id" : "cNld5uNmbgxbJiXiMHhCH$$ufN5pLfXpvo-dxuSxSibC",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "Stores",
+        "x" : -560,
+        "y" : -340,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "spatial_match_raw_1",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "zmEbGoeHvVRZ3WNMvDoLv$$OB7twrsfBJ9uon0hIuCpe",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "sVi-Yiwx1aihNWGIu1W0f$$WyJrsnFQBljyTttBUiAgz",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "store_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "store_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "store_lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "store_lon",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "store_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "ngfmXAtQy4KYz7h3ceoyd",
+    "source" : "cNld5uNmbgxbJiXiMHhCH$$ufN5pLfXpvo-dxuSxSibC",
+    "sourcePort" : "sVi-Yiwx1aihNWGIu1W0f$$WyJrsnFQBljyTttBUiAgz",
+    "target" : "3rwN2JopnMETPh-zDWKWF$$4TcXG7XCPzempjKNEWJTo",
+    "targetPort" : "SpatialMatch_Workflow_02__SpatialMatch_1_in_0"
+  }, {
+    "id" : "LTWYMafdVmYRsqnQd7-en$$WO4RNjJ0sUjqY21TJg07H",
+    "source" : "yElNjOkqB_3-NtY55CC8Q$$mTTwyxTsqUtfu1J_8b3Er",
+    "sourcePort" : "MKW9pHI49zls2Dfyof_XB$$_G1rcDZTOTrWiKDD_3v1t",
+    "target" : "3rwN2JopnMETPh-zDWKWF$$4TcXG7XCPzempjKNEWJTo",
+    "targetPort" : "SpatialMatch_Workflow_02__SpatialMatch_1_in_1"
+  } ],
+  "component" : "Pipeline"
+}

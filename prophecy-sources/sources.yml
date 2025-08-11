@@ -14,3 +14,18 @@ sources:
       dataType:
         type: "String"
     type: "table"
+  - name: "poly_build_02"
+    columns:
+    - name: "route_id"
+      dataType:
+        type: "String"
+    - name: "stop_schedule"
+      dataType:
+        type: "Timestamp"
+    - name: "latitude"
+      dataType:
+        type: "Double"
+    - name: "longitude"
+      dataType:
+        type: "Double"
+    type: "table"
