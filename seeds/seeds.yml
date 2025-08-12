@@ -1,5 +1,5 @@
 ---
 version: 2
 seeds:
-- name: "spatial_match_raw_20_fact"
+- name: "airport_fn_01"
   columns: []

@@ -29,3 +29,42 @@ sources:
       dataType:
         type: "Double"
     type: "table"
+  - name: "airport_fn_01"
+    columns:
+    - name: "city"
+      dataType:
+        type: "String"
+    - name: "state"
+      dataType:
+        type: "String"
+    - name: "name"
+      dataType:
+        type: "String"
+    - name: "lat"
+      dataType:
+        type: "Double"
+    - name: "lon"
+      dataType:
+        type: "Double"
+    type: "table"
+  - name: "us_airports_2"
+    columns:
+    - name: "city"
+      dataType:
+        type: "String"
+    - name: "state"
+      dataType:
+        type: "String"
+    - name: "lat"
+      dataType:
+        type: "Double"
+    - name: "lon"
+      dataType:
+        type: "Double"
+    - name: "iata_code"
+      dataType:
+        type: "String"
+    - name: "name"
+      dataType:
+        type: "String"
+    type: "table"

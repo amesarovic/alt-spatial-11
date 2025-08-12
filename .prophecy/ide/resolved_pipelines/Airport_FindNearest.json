@@ -1,0 +1,129 @@
+{
+  "id" : "Airport_FindNearest",
+  "metainfo" : {
+    "label" : "Airport_FindNearest",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "cw2_cbVDTJcxKMi-6830_$$FRu8GQ03C4UmooNV-KVcV" : {
+      "id" : "cw2_cbVDTJcxKMi-6830_$$FRu8GQ03C4UmooNV-KVcV",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "airport_fn_01",
+        "x" : -420,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "airport_fn_01",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Vzg1OMbaoVbcfqvuWoPk7$$lwJ6Dw-CmqYvfLrvZOF3v",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "stdn3Sd_Mfz0McA3eZDHQ$$Np43SUZvxv1L5GHQQC-qv",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "state",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "RWOR4pksL7XOtULkHHlM_$$2PCsrAkCkoeuAUoh2LkJ3" : {
+      "id" : "RWOR4pksL7XOtULkHHlM_$$2PCsrAkCkoeuAUoh2LkJ3",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "Airport_FindNearest__find_nearest_points",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "Airport_FindNearest__find_nearest_points"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "find_nearest_points_Iv2RCdV8QWG_5r-sojr-u$$pzuotKzDqrP5zqlKNyyX2", "RWOR4pksL7XOtULkHHlM_$$2PCsrAkCkoeuAUoh2LkJ3", "SbcHOOAU4yb-QVwnRWYlc$$Ml2GVODcZ-AKHsymA5zkC", "cw2_cbVDTJcxKMi-6830_$$FRu8GQ03C4UmooNV-KVcV", "JyLapyqeR3aXr5yRkNf88$$ZzY1NuMYWLByTZm5k91Gp", "oBl9uHtsgmS3D4OkHLEj_$$_MTDp7p4BULjOESS58Lmm" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Airport_FindNearest__find_nearest_points_in_0",
+          "slug" : "in_0"
+        }, {
+          "id" : "Airport_FindNearest__find_nearest_points_in_1",
+          "slug" : "in_1"
+        } ],
+        "outputs" : [ {
+          "id" : "Airport_FindNearest__find_nearest_points_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "7JVCNw4ZgFyQi56GskJp7$$T7STbQvwBYOwfXUnnkhCo",
+    "source" : "cw2_cbVDTJcxKMi-6830_$$FRu8GQ03C4UmooNV-KVcV",
+    "sourcePort" : "stdn3Sd_Mfz0McA3eZDHQ$$Np43SUZvxv1L5GHQQC-qv",
+    "target" : "RWOR4pksL7XOtULkHHlM_$$2PCsrAkCkoeuAUoh2LkJ3",
+    "targetPort" : "Airport_FindNearest__find_nearest_points_in_0"
+  } ],
+  "component" : "Pipeline"
+}

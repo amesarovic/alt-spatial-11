@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "Airport_FindNearest__find_nearest_points"
+  tags:
+  - "prophecy_temp"
