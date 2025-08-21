@@ -1,0 +1,632 @@
+{
+  "id" : "Airport_FindNearest_03",
+  "metainfo" : {
+    "label" : "Airport_FindNearest_03",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "tA6S4gtineGOsI6ynfPrp$$v7mYlHla0vtZ_-hS5z5t6" : {
+      "id" : "tA6S4gtineGOsI6ynfPrp$$v7mYlHla0vtZ_-hS5z5t6",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "distribution_centers",
+        "x" : -940,
+        "y" : -340,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "distribution_centers",
+          "sourceType" : "Source",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "j0NHCQ9USvX6ETNS9oeDy$$I3h3L8R3oIyRPiBwTGUIh",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "IlIHrh0e8W_JufWu0qll1$$pPUwnt8jK8qz8VkrtL2UC",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "UrButyovwNEm7AtmldpGP$$MGCuKxpIBqkrW8s5u1mFy" : {
+      "id" : "UrButyovwNEm7AtmldpGP$$MGCuKxpIBqkrW8s5u1mFy",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "us_airports",
+        "x" : -940,
+        "y" : -160,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "us_airports_50k",
+          "sourceType" : "Source",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "To0BoT1JsqopA-C300eOr$$awOup_absWtlwmZ7mvMqq",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "Ez7HxUVqmMD16fHk0Q7aW$$rM3SZ0jk1OEaYGYc0Mjpf",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "state",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "iata_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "do5OIPk4yubk5qzdwgAcE$$DjZ4f0a0GPPsAL2ILV4RW" : {
+      "id" : "do5OIPk4yubk5qzdwgAcE$$DjZ4f0a0GPPsAL2ILV4RW",
+      "component" : "FindNearest",
+      "metadata" : {
+        "label" : "FindNearest",
+        "x" : -540,
+        "y" : -260,
+        "phase" : 0
+      },
+      "properties" : {
+        "sourceType" : "point",
+        "sourceColumnName" : "point",
+        "ignoreZeroDistance" : false,
+        "relation_name" : [ "Distribution_Centers", "US_Airports_1" ],
+        "columnNames" : [ ],
+        "_oldMacroProperties" : {
+          "macroName" : "FindNearest",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['Distribution_Centers', 'US_Airports_1']"
+          }, {
+            "name" : "source_schema",
+            "value" : "[{\"name\": \"city\", \"dataType\": \"String\"}, {\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"lat\", \"dataType\": \"Double\"}, {\"name\": \"lon\", \"dataType\": \"Double\"}, {\"name\": \"point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "target_schema",
+            "value" : "[{\"name\": \"city\", \"dataType\": \"String\"}, {\"name\": \"state\", \"dataType\": \"String\"}, {\"name\": \"lat\", \"dataType\": \"Double\"}, {\"name\": \"lon\", \"dataType\": \"Double\"}, {\"name\": \"iata_code\", \"dataType\": \"String\"}, {\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "sourceColumnName",
+            "value" : "point"
+          }, {
+            "name" : "destinationColumnName",
+            "value" : "point"
+          }, {
+            "name" : "sourceType",
+            "value" : "point"
+          }, {
+            "name" : "targetType",
+            "value" : "point"
+          }, {
+            "name" : "nearestPoints",
+            "value" : "50"
+          }, {
+            "name" : "maxDistance",
+            "value" : "500"
+          }, {
+            "name" : "units",
+            "value" : "kms"
+          }, {
+            "name" : "ignoreZeroDistance",
+            "value" : "false"
+          } ]
+        },
+        "source_schema" : "[{\"name\": \"city\", \"dataType\": \"String\"}, {\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"lat\", \"dataType\": \"Double\"}, {\"name\": \"lon\", \"dataType\": \"Double\"}, {\"name\": \"point\", \"dataType\": \"String\"}]",
+        "maxDistance" : 500,
+        "destinationColumnName" : "point",
+        "nearestPoints" : 50,
+        "units" : "kms",
+        "targetType" : "point",
+        "target_schema" : "[{\"name\": \"city\", \"dataType\": \"String\"}, {\"name\": \"state\", \"dataType\": \"String\"}, {\"name\": \"lat\", \"dataType\": \"Double\"}, {\"name\": \"lon\", \"dataType\": \"Double\"}, {\"name\": \"iata_code\", \"dataType\": \"String\"}, {\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"point\", \"dataType\": \"String\"}]"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "alRQGqJynZ9qrBwancbzA$$ZvC4-oMxYaMYWg6EPkZI3",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        }, {
+          "id" : "ojTQ5LsHZw03ukkVpxofo$$Hc3xnSUz9C3WVIvu-V96H",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "state",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "iata_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "tS-xtBWW0026HOi29M1AO$$_OXewk3n1bzl5nqtwmY38",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "source_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "source_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "source_lat",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "source_lon",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "source_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "target_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "state",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "target_lat",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "target_lon",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "iata_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "target_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "target_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "rank_number",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "distanceKilometers",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "cardinal_direction",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "FindNearest_DatabricksSqlSpatial",
+        "name" : "FindNearest",
+        "projectName" : "DatabricksSqlSpatial",
+        "sourceProjectName" : "DatabricksSqlSpatial",
+        "sourceProjectVersion" : "0.0.4"
+      }
+    },
+    "VOcSguhQh-JedSd6-2YBf$$Cn6ETtwaJYhVroVWagy89" : {
+      "id" : "VOcSguhQh-JedSd6-2YBf$$Cn6ETtwaJYhVroVWagy89",
+      "component" : "CreatePoint",
+      "metadata" : {
+        "label" : "US_Airports_1",
+        "x" : -760,
+        "y" : -160,
+        "phase" : 0
+      },
+      "properties" : {
+        "addFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "lon",
+            "latitudeColumnName" : "lat",
+            "targetColumnName" : "point"
+          }
+        } ],
+        "relation_name" : [ "us_airports" ],
+        "_oldMacroProperties" : {
+          "macroName" : "CreatePoint",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['us_airports']"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "W8qaxWHA8wuWwaIr5O5b_$$kVjde8W5v4hyxe5qlYnrW",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "state",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "iata_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "gmGuzRnEMSRYc1ZNyL9Hc$$aBaBrdCZZp0Mcsjw7qS8s",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "state",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "iata_code",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "CreatePoint_DatabricksSqlSpatial",
+        "name" : "CreatePoint",
+        "projectName" : "DatabricksSqlSpatial",
+        "sourceProjectName" : "DatabricksSqlSpatial",
+        "sourceProjectVersion" : "0.0.4"
+      }
+    },
+    "kdlA-mR_S5PDnra21ZdTh$$5YQKTKkAkMXaSTWY-o9l-" : {
+      "id" : "kdlA-mR_S5PDnra21ZdTh$$5YQKTKkAkMXaSTWY-o9l-",
+      "component" : "CreatePoint",
+      "metadata" : {
+        "label" : "Distribution_Centers",
+        "x" : -760,
+        "y" : -340,
+        "phase" : 0
+      },
+      "properties" : {
+        "addFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "lon",
+            "latitudeColumnName" : "lat",
+            "targetColumnName" : "point"
+          }
+        } ],
+        "relation_name" : [ "distribution_centers" ],
+        "_oldMacroProperties" : {
+          "macroName" : "CreatePoint",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['distribution_centers']"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SZvwheIojlxkgq2o4nJ71$$yTVA1cnuC0CPAFub6egxn",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "9zF6wQssfC8Axt2X-0kBc$$Q-hTn07VUqW1LXDt5i0rq",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "CreatePoint_DatabricksSqlSpatial",
+        "name" : "CreatePoint",
+        "projectName" : "DatabricksSqlSpatial",
+        "sourceProjectName" : "DatabricksSqlSpatial",
+        "sourceProjectVersion" : "0.0.4"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "cpeQW1Uq4_5zKs3sCLJJR",
+    "source" : "kdlA-mR_S5PDnra21ZdTh$$5YQKTKkAkMXaSTWY-o9l-",
+    "sourcePort" : "9zF6wQssfC8Axt2X-0kBc$$Q-hTn07VUqW1LXDt5i0rq",
+    "target" : "do5OIPk4yubk5qzdwgAcE$$DjZ4f0a0GPPsAL2ILV4RW",
+    "targetPort" : "alRQGqJynZ9qrBwancbzA$$ZvC4-oMxYaMYWg6EPkZI3"
+  }, {
+    "id" : "5igK4EcFDZw-hy9lK-oxY",
+    "source" : "VOcSguhQh-JedSd6-2YBf$$Cn6ETtwaJYhVroVWagy89",
+    "sourcePort" : "gmGuzRnEMSRYc1ZNyL9Hc$$aBaBrdCZZp0Mcsjw7qS8s",
+    "target" : "do5OIPk4yubk5qzdwgAcE$$DjZ4f0a0GPPsAL2ILV4RW",
+    "targetPort" : "ojTQ5LsHZw03ukkVpxofo$$Hc3xnSUz9C3WVIvu-V96H"
+  }, {
+    "id" : "KXJF3a-mY77hyRyVk0C72",
+    "source" : "UrButyovwNEm7AtmldpGP$$MGCuKxpIBqkrW8s5u1mFy",
+    "sourcePort" : "Ez7HxUVqmMD16fHk0Q7aW$$rM3SZ0jk1OEaYGYc0Mjpf",
+    "target" : "VOcSguhQh-JedSd6-2YBf$$Cn6ETtwaJYhVroVWagy89",
+    "targetPort" : "W8qaxWHA8wuWwaIr5O5b_$$kVjde8W5v4hyxe5qlYnrW"
+  }, {
+    "id" : "YQy1Jq-vFtGt1DN0V8DRS$$Zex3RADWMlC-WSHcnwSPI",
+    "source" : "tA6S4gtineGOsI6ynfPrp$$v7mYlHla0vtZ_-hS5z5t6",
+    "sourcePort" : "IlIHrh0e8W_JufWu0qll1$$pPUwnt8jK8qz8VkrtL2UC",
+    "target" : "kdlA-mR_S5PDnra21ZdTh$$5YQKTKkAkMXaSTWY-o9l-",
+    "targetPort" : "SZvwheIojlxkgq2o4nJ71$$yTVA1cnuC0CPAFub6egxn"
+  } ],
+  "component" : "Pipeline"
+}

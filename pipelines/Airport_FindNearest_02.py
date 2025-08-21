@@ -2,15 +2,15 @@ Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@g
 SensorSchedule = SensorSchedule(enabled = False)
 
 with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
+    Airport_FindNearest_02__FindNearest = Task(
+        task_id = "Airport_FindNearest_02__FindNearest", 
+        component = "Model", 
+        modelName = "Airport_FindNearest_02__FindNearest"
+    )
     customers = Task(
         task_id = "customers", 
         component = "Dataset", 
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "customers", "sourceType" : "Seed"}
     )
-    Airport_FindNearest__FindNearest = Task(
-        task_id = "Airport_FindNearest__FindNearest", 
-        component = "Model", 
-        modelName = "Airport_FindNearest__FindNearest"
-    )
-    customers.out >> Airport_FindNearest__FindNearest.in_1
+    customers.out >> Airport_FindNearest_02__FindNearest.in_0

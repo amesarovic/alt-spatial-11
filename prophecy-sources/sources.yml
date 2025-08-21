@@ -68,3 +68,115 @@ sources:
       dataType:
         type: "String"
     type: "table"
+  - name: "us_cities"
+    columns:
+    - name: "city"
+      dataType:
+        type: "String"
+    - name: "state"
+      dataType:
+        type: "String"
+    - name: "lat"
+      dataType:
+        type: "Double"
+    - name: "lon"
+      dataType:
+        type: "Double"
+    - name: "population"
+      dataType:
+        type: "Integer"
+    type: "table"
+  - name: "us_cities_50k"
+    columns:
+    - name: "city"
+      dataType:
+        type: "String"
+    - name: "state"
+      dataType:
+        type: "String"
+    - name: "lat"
+      dataType:
+        type: "Double"
+    - name: "lon"
+      dataType:
+        type: "Double"
+    - name: "population"
+      dataType:
+        type: "Integer"
+    type: "table"
+  - name: "us_cities_100k"
+    columns:
+    - name: "city"
+      dataType:
+        type: "String"
+    - name: "state"
+      dataType:
+        type: "String"
+    - name: "lat"
+      dataType:
+        type: "Double"
+    - name: "lon"
+      dataType:
+        type: "Double"
+    - name: "population"
+      dataType:
+        type: "Integer"
+    type: "table"
+  - name: "us_airports_50k"
+    columns:
+    - name: "city"
+      dataType:
+        type: "String"
+    - name: "state"
+      dataType:
+        type: "String"
+    - name: "lat"
+      dataType:
+        type: "Double"
+    - name: "lon"
+      dataType:
+        type: "Double"
+    - name: "iata_code"
+      dataType:
+        type: "String"
+    - name: "name"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "distribution_centers"
+    columns:
+    - name: "city"
+      dataType:
+        type: "String"
+    - name: "name"
+      dataType:
+        type: "String"
+    - name: "lat"
+      dataType:
+        type: "Double"
+    - name: "lon"
+      dataType:
+        type: "Double"
+    type: "table"
+- name: "andre_dev.data"
+  database: "andre_dev"
+  schema: "data"
+  tables:
+  - name: "nam_cities"
+    columns:
+    - name: "city"
+      dataType:
+        type: "String"
+    - name: "country"
+      dataType:
+        type: "String"
+    - name: "lat"
+      dataType:
+        type: "Double"
+    - name: "lon"
+      dataType:
+        type: "Double"
+    - name: "population"
+      dataType:
+        type: "Double"
+    type: "table"

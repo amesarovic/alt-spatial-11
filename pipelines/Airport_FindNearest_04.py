@@ -2,8 +2,8 @@ Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@g
 SensorSchedule = SensorSchedule(enabled = False)
 
 with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
-    Simplify_01__Simplify = Task(
-        task_id = "Simplify_01__Simplify", 
+    Airport_FindNearest_04__FilterNearestCities = Task(
+        task_id = "Airport_FindNearest_04__FilterNearestCities", 
         component = "Model", 
-        modelName = "Simplify_01__Simplify"
+        modelName = "Airport_FindNearest_04__FilterNearestCities"
     )

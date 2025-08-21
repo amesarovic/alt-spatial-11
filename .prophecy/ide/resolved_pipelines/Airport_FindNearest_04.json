@@ -1,7 +1,7 @@
 {
-  "id" : "Simplify_01",
+  "id" : "Airport_FindNearest_04",
   "metainfo" : {
-    "label" : "Simplify_01",
+    "label" : "Airport_FindNearest_04",
     "autoLayout" : false,
     "version" : 1,
     "configuration" : {
@@ -27,28 +27,31 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "72MWLq-rY5kiEo145vc2u$$hvt5it7JCEO-ID5JekiA4" : {
-      "id" : "72MWLq-rY5kiEo145vc2u$$hvt5it7JCEO-ID5JekiA4",
+    "sPkxfi4Qn2EGbVxPVDZ98$$XOZR78nc_T-W2P-e7YFbc" : {
+      "id" : "sPkxfi4Qn2EGbVxPVDZ98$$XOZR78nc_T-W2P-e7YFbc",
       "component" : "Model",
       "metadata" : {
-        "label" : "Simplify_01__Simplify",
+        "label" : "Airport_FindNearest_04__FilterNearestCities",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "Simplify_01__Simplify"
+        "modelName" : "Airport_FindNearest_04__FilterNearestCities"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "Simplify_VLxzM6PU6kovFAg8Hpmod$$Nxow-l4L6DaLw_DBqv_oH", "72MWLq-rY5kiEo145vc2u$$hvt5it7JCEO-ID5JekiA4", "Rv89uM3ILQr0XtLy2fkVm$$JkBEGMbtKw_bA26aD_Is8" ],
+        "visualProcessIds" : [ "FilterNearestCities_0G5p0U2cDpN5ANtfFg4Ve$$uhmnCyH-iKr-JYLuz9KHJ", "sPkxfi4Qn2EGbVxPVDZ98$$XOZR78nc_T-W2P-e7YFbc", "tzhBWfcaO20a_3lzjNCwW$$1Ok25_x9OuzBHEqgYlUgl", "9QnLHY-1aS6GQBE8k3TSQ$$-l16VbMTko59VlWewHP6g", "XPhIFIaW2X5c_5KkVdLMm$$A1GCVN6qTTZU3K9Yf89MX", "u5-T-gm627e7RWIi5IQuZ$$deocQmyaIcK2A2cBcGrwz", "GtbjftQH_LPs4wsvhKtT9$$Z4P7G4gtdmYjqVUnX4rwV" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "Simplify_01__Simplify_in_0",
+          "id" : "Airport_FindNearest_04__FilterNearestCities_in_0",
           "slug" : "in_0"
+        }, {
+          "id" : "Airport_FindNearest_04__FilterNearestCities_in_1",
+          "slug" : "in_1"
         } ],
         "outputs" : [ {
-          "id" : "Simplify_01__Simplify_out_0",
+          "id" : "Airport_FindNearest_04__FilterNearestCities_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false

@@ -1,0 +1,331 @@
+{
+  "id" : "Airport_FindNearest_04__FilterNearestCities",
+  "metainfo" : {
+    "label" : "Airport_FindNearest_04__FilterNearestCities",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "GtbjftQH_LPs4wsvhKtT9$$Z4P7G4gtdmYjqVUnX4rwV" : {
+      "id" : "GtbjftQH_LPs4wsvhKtT9$$Z4P7G4gtdmYjqVUnX4rwV",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "us_airports",
+        "x" : -760,
+        "y" : -100,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "us_airports_50k",
+          "sourceType" : "Source",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "pI9LFr6IUd3ueW_guLn_B$$1KQesKuhoDCLKLEprXEqw",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "u5-T-gm627e7RWIi5IQuZ$$deocQmyaIcK2A2cBcGrwz" : {
+      "id" : "u5-T-gm627e7RWIi5IQuZ$$deocQmyaIcK2A2cBcGrwz",
+      "component" : "CreatePoint",
+      "metadata" : {
+        "label" : "US_Airports_1",
+        "x" : -580,
+        "y" : -100,
+        "phase" : 0
+      },
+      "properties" : {
+        "addFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "lon",
+            "latitudeColumnName" : "lat",
+            "targetColumnName" : "point"
+          }
+        } ],
+        "relation_name" : [ "us_airports" ],
+        "_oldMacroProperties" : {
+          "macroName" : "CreatePoint",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['us_airports']"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RQ-WLCWwVj8USG1e3seSc$$jqMQxmS67vmvlwnLwAVgR",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "KAGGiHBlkf86ymP_5WBF3$$vBmhkx5J3eEIZw9JlCUJl",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "tzhBWfcaO20a_3lzjNCwW$$1Ok25_x9OuzBHEqgYlUgl" : {
+      "id" : "tzhBWfcaO20a_3lzjNCwW$$1Ok25_x9OuzBHEqgYlUgl",
+      "component" : "FindNearest",
+      "metadata" : {
+        "label" : "FindNearest",
+        "x" : -360,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "sourceType" : "point",
+        "sourceColumnName" : "point",
+        "ignoreZeroDistance" : true,
+        "relation_name" : [ "Distribution_Centers", "US_Airports_1" ],
+        "columnNames" : [ ],
+        "_oldMacroProperties" : {
+          "macroName" : "FindNearest",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['Distribution_Centers', 'US_Airports_1']"
+          }, {
+            "name" : "source_schema",
+            "value" : "[{\"name\": \"city\", \"dataType\": \"String\"}, {\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"lat\", \"dataType\": \"Double\"}, {\"name\": \"lon\", \"dataType\": \"Double\"}, {\"name\": \"point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "target_schema",
+            "value" : "[{\"name\": \"city\", \"dataType\": \"String\"}, {\"name\": \"state\", \"dataType\": \"String\"}, {\"name\": \"lat\", \"dataType\": \"Double\"}, {\"name\": \"lon\", \"dataType\": \"Double\"}, {\"name\": \"iata_code\", \"dataType\": \"String\"}, {\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "sourceColumnName",
+            "value" : "point"
+          }, {
+            "name" : "destinationColumnName",
+            "value" : "point"
+          }, {
+            "name" : "sourceType",
+            "value" : "point"
+          }, {
+            "name" : "targetType",
+            "value" : "point"
+          }, {
+            "name" : "nearestPoints",
+            "value" : "200"
+          }, {
+            "name" : "maxDistance",
+            "value" : "500"
+          }, {
+            "name" : "units",
+            "value" : "mls"
+          }, {
+            "name" : "ignoreZeroDistance",
+            "value" : "true"
+          } ]
+        },
+        "source_schema" : "[{\"name\": \"city\", \"dataType\": \"String\"}, {\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"lat\", \"dataType\": \"Double\"}, {\"name\": \"lon\", \"dataType\": \"Double\"}, {\"name\": \"point\", \"dataType\": \"String\"}]",
+        "maxDistance" : 500,
+        "destinationColumnName" : "point",
+        "nearestPoints" : 200,
+        "units" : "mls",
+        "targetType" : "point",
+        "target_schema" : "[{\"name\": \"city\", \"dataType\": \"String\"}, {\"name\": \"state\", \"dataType\": \"String\"}, {\"name\": \"lat\", \"dataType\": \"Double\"}, {\"name\": \"lon\", \"dataType\": \"Double\"}, {\"name\": \"iata_code\", \"dataType\": \"String\"}, {\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"point\", \"dataType\": \"String\"}]"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "3BKYLEkDD-19dj7RR7vby$$-4_-m8AfitvYJ3IX7CSYF",
+          "slug" : "in0"
+        }, {
+          "id" : "UgNnAAOVr7aDx4jt3qVbC$$-Q2SrGXiK7H9UG283hWjz",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "zQIAOGfLzkCbc39TDDkpM$$TpX_ySrhwGu_iBTwmzVkF",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "XPhIFIaW2X5c_5KkVdLMm$$A1GCVN6qTTZU3K9Yf89MX" : {
+      "id" : "XPhIFIaW2X5c_5KkVdLMm$$A1GCVN6qTTZU3K9Yf89MX",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "distribution_centers",
+        "x" : -760,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "distribution_centers",
+          "sourceType" : "Source",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Xwvzf8bFVQxNtjzDUimSm$$6-qJsccqcGjvesqN8ZyOa",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "FilterNearestCities_0G5p0U2cDpN5ANtfFg4Ve$$uhmnCyH-iKr-JYLuz9KHJ" : {
+      "id" : "FilterNearestCities_0G5p0U2cDpN5ANtfFg4Ve$$uhmnCyH-iKr-JYLuz9KHJ",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "FilterNearestCities"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM FilterNearestCities\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "9QnLHY-1aS6GQBE8k3TSQ$$-l16VbMTko59VlWewHP6g" : {
+      "id" : "9QnLHY-1aS6GQBE8k3TSQ$$-l16VbMTko59VlWewHP6g",
+      "component" : "CreatePoint",
+      "metadata" : {
+        "label" : "Distribution_Centers",
+        "x" : -580,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "addFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "lon",
+            "latitudeColumnName" : "lat",
+            "targetColumnName" : "point"
+          }
+        } ],
+        "relation_name" : [ "distribution_centers" ],
+        "_oldMacroProperties" : {
+          "macroName" : "CreatePoint",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['distribution_centers']"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "y5yEO2xeYfq8CBVEiMoao$$Hsw6oNyB0zs0RMRvy1t8U",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Ys6YR3l2cw6u3UlB4uh6A$$xIR35EN8zwp679jun9ZAe",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "sPkxfi4Qn2EGbVxPVDZ98$$XOZR78nc_T-W2P-e7YFbc" : {
+      "id" : "sPkxfi4Qn2EGbVxPVDZ98$$XOZR78nc_T-W2P-e7YFbc",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "FilterNearestCities",
+        "x" : -180,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "pSOWKzCCg3Q_BA3Ne3bG2$$N5b0BFtg3bibtM1KvBdB3##distanceMiles" ],
+        "condition" : {
+          "expression" : "distanceMiles > 100"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pSOWKzCCg3Q_BA3Ne3bG2$$N5b0BFtg3bibtM1KvBdB3",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "0G5p0U2cDpN5ANtfFg4Ve$$uhmnCyH-iKr-JYLuz9KHJ",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_sPkxfi4Qn2EGbVxPVDZ98$$XOZR78nc_T-W2P-e7YFbc_FilterNearestCities_0G5p0U2cDpN5ANtfFg4Ve$$uhmnCyH-iKr-JYLuz9KHJ",
+    "source" : "sPkxfi4Qn2EGbVxPVDZ98$$XOZR78nc_T-W2P-e7YFbc",
+    "sourcePort" : "0G5p0U2cDpN5ANtfFg4Ve$$uhmnCyH-iKr-JYLuz9KHJ",
+    "target" : "FilterNearestCities_0G5p0U2cDpN5ANtfFg4Ve$$uhmnCyH-iKr-JYLuz9KHJ",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "RYR3qgR_rupuODX2pLB2c$$YcXXqfPsNyxt_djU_Y9si",
+    "source" : "tzhBWfcaO20a_3lzjNCwW$$1Ok25_x9OuzBHEqgYlUgl",
+    "sourcePort" : "zQIAOGfLzkCbc39TDDkpM$$TpX_ySrhwGu_iBTwmzVkF",
+    "target" : "sPkxfi4Qn2EGbVxPVDZ98$$XOZR78nc_T-W2P-e7YFbc",
+    "targetPort" : "pSOWKzCCg3Q_BA3Ne3bG2$$N5b0BFtg3bibtM1KvBdB3"
+  }, {
+    "id" : "PLXCEooRIoRuhqU6FmQ55",
+    "source" : "9QnLHY-1aS6GQBE8k3TSQ$$-l16VbMTko59VlWewHP6g",
+    "sourcePort" : "Ys6YR3l2cw6u3UlB4uh6A$$xIR35EN8zwp679jun9ZAe",
+    "target" : "tzhBWfcaO20a_3lzjNCwW$$1Ok25_x9OuzBHEqgYlUgl",
+    "targetPort" : "3BKYLEkDD-19dj7RR7vby$$-4_-m8AfitvYJ3IX7CSYF"
+  }, {
+    "id" : "UN0r3pzOzZvnufFNdULbC",
+    "source" : "u5-T-gm627e7RWIi5IQuZ$$deocQmyaIcK2A2cBcGrwz",
+    "sourcePort" : "KAGGiHBlkf86ymP_5WBF3$$vBmhkx5J3eEIZw9JlCUJl",
+    "target" : "tzhBWfcaO20a_3lzjNCwW$$1Ok25_x9OuzBHEqgYlUgl",
+    "targetPort" : "UgNnAAOVr7aDx4jt3qVbC$$-Q2SrGXiK7H9UG283hWjz"
+  }, {
+    "id" : "jy6q7t7v04Xv0ofA8nomE",
+    "source" : "XPhIFIaW2X5c_5KkVdLMm$$A1GCVN6qTTZU3K9Yf89MX",
+    "sourcePort" : "Xwvzf8bFVQxNtjzDUimSm$$6-qJsccqcGjvesqN8ZyOa",
+    "target" : "9QnLHY-1aS6GQBE8k3TSQ$$-l16VbMTko59VlWewHP6g",
+    "targetPort" : "y5yEO2xeYfq8CBVEiMoao$$Hsw6oNyB0zs0RMRvy1t8U"
+  }, {
+    "id" : "I-84-YHAFH7sLhSoU4OI6",
+    "source" : "GtbjftQH_LPs4wsvhKtT9$$Z4P7G4gtdmYjqVUnX4rwV",
+    "sourcePort" : "pI9LFr6IUd3ueW_guLn_B$$1KQesKuhoDCLKLEprXEqw",
+    "target" : "u5-T-gm627e7RWIi5IQuZ$$deocQmyaIcK2A2cBcGrwz",
+    "targetPort" : "RQ-WLCWwVj8USG1e3seSc$$jqMQxmS67vmvlwnLwAVgR"
+  } ],
+  "component" : "Model"
+}

@@ -1,7 +1,7 @@
 {
-  "id" : "Airport_FindNearest__find_nearest_points",
+  "id" : "Airport_FindNearest__FindNearest",
   "metainfo" : {
-    "label" : "Airport_FindNearest__find_nearest_points",
+    "label" : "Airport_FindNearest__FindNearest",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -22,7 +22,7 @@
       "id" : "oBl9uHtsgmS3D4OkHLEj_$$_MTDp7p4BULjOESS58Lmm",
       "component" : "Source",
       "metadata" : {
-        "label" : "us_airports_2",
+        "label" : "airports",
         "x" : -420,
         "y" : -20,
         "phase" : 0
@@ -45,86 +45,17 @@
         "autoUpdateOnRun" : false
       }
     },
-    "cw2_cbVDTJcxKMi-6830_$$FRu8GQ03C4UmooNV-KVcV" : {
-      "id" : "cw2_cbVDTJcxKMi-6830_$$FRu8GQ03C4UmooNV-KVcV",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "airport_fn_01",
-        "x" : -420,
-        "y" : -200,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "airport_fn_01",
-          "sourceType" : "Seed"
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "stdn3Sd_Mfz0McA3eZDHQ$$Np43SUZvxv1L5GHQQC-qv",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
-    "SbcHOOAU4yb-QVwnRWYlc$$Ml2GVODcZ-AKHsymA5zkC" : {
-      "id" : "SbcHOOAU4yb-QVwnRWYlc$$Ml2GVODcZ-AKHsymA5zkC",
-      "component" : "CreatePoint",
-      "metadata" : {
-        "label" : "create_geo_point",
-        "x" : -260,
-        "y" : -200,
-        "phase" : 0
-      },
-      "properties" : {
-        "addFields" : [ {
-          "kind" : "AddMatchField",
-          "AddMatchField" : {
-            "longitudeColumnName" : "lon",
-            "latitudeColumnName" : "lat",
-            "targetColumnName" : "point"
-          }
-        } ],
-        "relation_name" : [ "airport_fn_01" ],
-        "_oldMacroProperties" : {
-          "macroName" : "CreatePoint",
-          "projectName" : "DatabricksSqlSpatial",
-          "parameters" : [ {
-            "name" : "relation_name",
-            "value" : "['airport_fn_01']"
-          } ]
-        }
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "xMMdxDzuID6ImhAvVXaXo$$kF4DY3a1_66q8ssoi2xSW",
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "ug-iBWolnG0fLcBJ6ng3Y$$w011YZY2Qilb-jauUOjcX",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
-    "find_nearest_points_Iv2RCdV8QWG_5r-sojr-u$$pzuotKzDqrP5zqlKNyyX2" : {
-      "id" : "find_nearest_points_Iv2RCdV8QWG_5r-sojr-u$$pzuotKzDqrP5zqlKNyyX2",
+    "FindNearest_Iv2RCdV8QWG_5r-sojr-u$$pzuotKzDqrP5zqlKNyyX2" : {
+      "id" : "FindNearest_Iv2RCdV8QWG_5r-sojr-u$$pzuotKzDqrP5zqlKNyyX2",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "find_nearest_points"
+        "label" : "FindNearest"
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM find_nearest_points\n\n",
+        "query" : "\nSELECT *\n\nFROM FindNearest\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -144,11 +75,80 @@
         "autoUpdateOnRun" : false
       }
     },
+    "SbcHOOAU4yb-QVwnRWYlc$$Ml2GVODcZ-AKHsymA5zkC" : {
+      "id" : "SbcHOOAU4yb-QVwnRWYlc$$Ml2GVODcZ-AKHsymA5zkC",
+      "component" : "CreatePoint",
+      "metadata" : {
+        "label" : "customers_2",
+        "x" : -260,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "addFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "lon",
+            "latitudeColumnName" : "lat",
+            "targetColumnName" : "point"
+          }
+        } ],
+        "relation_name" : [ "customers" ],
+        "_oldMacroProperties" : {
+          "macroName" : "CreatePoint",
+          "projectName" : "DatabricksSqlSpatial",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['customers']"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "xMMdxDzuID6ImhAvVXaXo$$kF4DY3a1_66q8ssoi2xSW",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "ug-iBWolnG0fLcBJ6ng3Y$$w011YZY2Qilb-jauUOjcX",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Btz6g2kenlMTlOJWmrkMf$$2pORfk5ELVzOAAjlw-eN_" : {
+      "id" : "Btz6g2kenlMTlOJWmrkMf$$2pORfk5ELVzOAAjlw-eN_",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "customers",
+        "x" : -420,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "customers",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ZUnG7ExbP2sDbz_9YKIdz$$4252wtCDj5tiYCG8e1mA_",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
     "JyLapyqeR3aXr5yRkNf88$$ZzY1NuMYWLByTZm5k91Gp" : {
       "id" : "JyLapyqeR3aXr5yRkNf88$$ZzY1NuMYWLByTZm5k91Gp",
       "component" : "CreatePoint",
       "metadata" : {
-        "label" : "CreatePoint_1",
+        "label" : "airports_2",
         "x" : -260,
         "y" : -20,
         "phase" : 0
@@ -162,13 +162,13 @@
             "targetColumnName" : "point"
           }
         } ],
-        "relation_name" : [ "us_airports_2" ],
+        "relation_name" : [ "airports" ],
         "_oldMacroProperties" : {
           "macroName" : "CreatePoint",
           "projectName" : "DatabricksSqlSpatial",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['us_airports_2']"
+            "value" : "['airports']"
           } ]
         }
       },
@@ -189,7 +189,7 @@
       "id" : "RWOR4pksL7XOtULkHHlM_$$2PCsrAkCkoeuAUoh2LkJ3",
       "component" : "FindNearest",
       "metadata" : {
-        "label" : "find_nearest_points",
+        "label" : "FindNearest",
         "x" : -60,
         "y" : -120,
         "phase" : 0
@@ -198,17 +198,17 @@
         "sourceType" : "point",
         "sourceColumnName" : "point",
         "ignoreZeroDistance" : false,
-        "relation_name" : [ "create_geo_point", "CreatePoint_1" ],
+        "relation_name" : [ "customers_2", "airports_2" ],
         "columnNames" : [ ],
         "_oldMacroProperties" : {
           "macroName" : "FindNearest",
           "projectName" : "DatabricksSqlSpatial",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['create_geo_point', 'CreatePoint_1']"
+            "value" : "['customers_2', 'airports_2']"
           }, {
             "name" : "source_schema",
-            "value" : "[{\"name\": \"city\", \"dataType\": \"String\"}, {\"name\": \"state\", \"dataType\": \"String\"}, {\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"lat\", \"dataType\": \"Decimal\"}, {\"name\": \"lon\", \"dataType\": \"Decimal\"}, {\"name\": \"point\", \"dataType\": \"String\"}]"
+            "value" : "[{\"name\": \"customer_id\", \"dataType\": \"String\"}, {\"name\": \"city\", \"dataType\": \"String\"}, {\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"lat\", \"dataType\": \"Decimal\"}, {\"name\": \"lon\", \"dataType\": \"Decimal\"}, {\"name\": \"point\", \"dataType\": \"String\"}]"
           }, {
             "name" : "target_schema",
             "value" : "[{\"name\": \"city\", \"dataType\": \"String\"}, {\"name\": \"state\", \"dataType\": \"String\"}, {\"name\": \"lat\", \"dataType\": \"Double\"}, {\"name\": \"lon\", \"dataType\": \"Double\"}, {\"name\": \"iata_code\", \"dataType\": \"String\"}, {\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"point\", \"dataType\": \"String\"}]"
@@ -238,7 +238,7 @@
             "value" : "false"
           } ]
         },
-        "source_schema" : "[{\"name\": \"city\", \"dataType\": \"String\"}, {\"name\": \"state\", \"dataType\": \"String\"}, {\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"lat\", \"dataType\": \"Decimal\"}, {\"name\": \"lon\", \"dataType\": \"Decimal\"}, {\"name\": \"point\", \"dataType\": \"String\"}]",
+        "source_schema" : "[{\"name\": \"customer_id\", \"dataType\": \"String\"}, {\"name\": \"city\", \"dataType\": \"String\"}, {\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"lat\", \"dataType\": \"Decimal\"}, {\"name\": \"lon\", \"dataType\": \"Decimal\"}, {\"name\": \"point\", \"dataType\": \"String\"}]",
         "maxDistance" : 200,
         "destinationColumnName" : "point",
         "nearestPoints" : 100,
@@ -264,10 +264,10 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_RWOR4pksL7XOtULkHHlM_$$2PCsrAkCkoeuAUoh2LkJ3_find_nearest_points_Iv2RCdV8QWG_5r-sojr-u$$pzuotKzDqrP5zqlKNyyX2",
+    "id" : "conn_RWOR4pksL7XOtULkHHlM_$$2PCsrAkCkoeuAUoh2LkJ3_FindNearest_Iv2RCdV8QWG_5r-sojr-u$$pzuotKzDqrP5zqlKNyyX2",
     "source" : "RWOR4pksL7XOtULkHHlM_$$2PCsrAkCkoeuAUoh2LkJ3",
     "sourcePort" : "Iv2RCdV8QWG_5r-sojr-u$$pzuotKzDqrP5zqlKNyyX2",
-    "target" : "find_nearest_points_Iv2RCdV8QWG_5r-sojr-u$$pzuotKzDqrP5zqlKNyyX2",
+    "target" : "FindNearest_Iv2RCdV8QWG_5r-sojr-u$$pzuotKzDqrP5zqlKNyyX2",
     "targetPort" : "input_port_0"
   }, {
     "id" : "RINGq7YQTcstUeZnyIG2S$$ePGtOiC-U7n300SiCBe_t",
@@ -282,9 +282,9 @@
     "target" : "RWOR4pksL7XOtULkHHlM_$$2PCsrAkCkoeuAUoh2LkJ3",
     "targetPort" : "sAgCxgbkvwiih68FMFfPQ$$SMI852c3P_v7RuP_PFGND"
   }, {
-    "id" : "7JVCNw4ZgFyQi56GskJp7$$T7STbQvwBYOwfXUnnkhCo",
-    "source" : "cw2_cbVDTJcxKMi-6830_$$FRu8GQ03C4UmooNV-KVcV",
-    "sourcePort" : "stdn3Sd_Mfz0McA3eZDHQ$$Np43SUZvxv1L5GHQQC-qv",
+    "id" : "6zHSmPwaAXMaMAeDf8aXF$$MY0NzcwUfQDRJSm5Dywqm",
+    "source" : "Btz6g2kenlMTlOJWmrkMf$$2pORfk5ELVzOAAjlw-eN_",
+    "sourcePort" : "ZUnG7ExbP2sDbz_9YKIdz$$4252wtCDj5tiYCG8e1mA_",
     "target" : "SbcHOOAU4yb-QVwnRWYlc$$Ml2GVODcZ-AKHsymA5zkC",
     "targetPort" : "xMMdxDzuID6ImhAvVXaXo$$kF4DY3a1_66q8ssoi2xSW"
   }, {

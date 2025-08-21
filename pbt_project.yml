@@ -263,8 +263,34 @@ sqlSeeds:
     author: mesarovic.andre@prophecy.io
     files:
     - seeds/airport_fn_01.csv
-    - seeds/seeds.yml
     createdAt: '2025-08-12 01:32:32'
+  .prophecy/metadata/sqlseeds/customers:
+    name: customers
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: customer_id
+        dataType:
+          type: String
+      - name: city
+        dataType:
+          type: String
+      - name: name
+        dataType:
+          type: String
+      - name: lat
+        dataType:
+          type: Decimal
+      - name: lon
+        dataType:
+          type: Decimal
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/customers.csv
+    - seeds/seeds.yml
+    createdAt: '2025-08-12 13:37:00'
   .prophecy/metadata/sqlseeds/spatial_match_1:
     name: spatial_match_1
     schema:
@@ -507,6 +533,158 @@ sqlSources:
       author: mesarovic.andre@prophecy.io
       createdAt: '2025-08-12 02:18:36'
       tableType: table
+    - name: us_cities
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: city
+          dataType:
+            type: String
+        - name: state
+          dataType:
+            type: String
+        - name: lat
+          dataType:
+            type: Double
+        - name: lon
+          dataType:
+            type: Double
+        - name: population
+          dataType:
+            type: Integer
+      description: null
+      author: mesarovic.andre@prophecy.io
+      createdAt: '2025-08-12 15:35:22'
+      tableType: table
+    - name: us_cities_50k
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: city
+          dataType:
+            type: String
+        - name: state
+          dataType:
+            type: String
+        - name: lat
+          dataType:
+            type: Double
+        - name: lon
+          dataType:
+            type: Double
+        - name: population
+          dataType:
+            type: Integer
+      description: null
+      author: mesarovic.andre@prophecy.io
+      createdAt: '2025-08-12 15:51:49'
+      tableType: table
+    - name: us_cities_100k
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: city
+          dataType:
+            type: String
+        - name: state
+          dataType:
+            type: String
+        - name: lat
+          dataType:
+            type: Double
+        - name: lon
+          dataType:
+            type: Double
+        - name: population
+          dataType:
+            type: Integer
+      description: null
+      author: mesarovic.andre@prophecy.io
+      createdAt: '2025-08-12 16:02:06'
+      tableType: table
+    - name: us_airports_50k
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: city
+          dataType:
+            type: String
+        - name: state
+          dataType:
+            type: String
+        - name: lat
+          dataType:
+            type: Double
+        - name: lon
+          dataType:
+            type: Double
+        - name: iata_code
+          dataType:
+            type: String
+        - name: name
+          dataType:
+            type: String
+      description: null
+      author: mesarovic.andre@prophecy.io
+      createdAt: '2025-08-12 17:49:59'
+      tableType: table
+    - name: distribution_centers
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: city
+          dataType:
+            type: String
+        - name: name
+          dataType:
+            type: String
+        - name: lat
+          dataType:
+            type: Double
+        - name: lon
+          dataType:
+            type: Double
+      description: null
+      author: mesarovic.andre@prophecy.io
+      createdAt: '2025-08-14 03:54:47'
+      tableType: table
+  .prophecy/metadata/sqlsources/andre_dev_data:
+    name: andre_dev.data
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-08-12 14:40:43'
+    tables:
+    - name: nam_cities
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: city
+          dataType:
+            type: String
+        - name: country
+          dataType:
+            type: String
+        - name: lat
+          dataType:
+            type: Double
+        - name: lon
+          dataType:
+            type: Double
+        - name: population
+          dataType:
+            type: Double
+      description: null
+      author: mesarovic.andre@prophecy.io
+      createdAt: '2025-08-12 14:40:43'
+      tableType: table
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
@@ -534,6 +712,7 @@ projectDependencies:
 flags:
   shouldAddDefaultDependenciesIfAbsent: false
 pipelineConfigurations: {}
+projectConfigurations: {}
 sqlOrchestratorPipelines:
   .prophecy/metadata/sqlorchestratorpipeline/CreatePoint_FindNearest_Workflow:
     name: CreatePoint_FindNearest_Workflow
@@ -546,29 +725,39 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/CreatePoint_FindNearest_Workflow.json
     - pipelines/CreatePoint_FindNearest_Workflow.py
     createdAt: '2025-08-09 17:40:08'
-  .prophecy/metadata/sqlorchestratorpipeline/PolyBuild_Buffer_Workflow:
-    name: PolyBuild_Buffer_Workflow
+  .prophecy/metadata/sqlorchestratorpipeline/CreatePoint_Buffer_Workflow:
+    name: CreatePoint_Buffer_Workflow
     schema: null
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__LineString_Buffer.sql
-    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Polygon_Buffer.sql
-    - models/PolyBuild_Buffer_Workflow/schema.yml
-    - .prophecy/ide/pipelines/PolyBuild_Buffer_Workflow.json
-    - pipelines/PolyBuild_Buffer_Workflow.py
-    createdAt: '2025-08-07 04:21:50'
+    - models/CreatePoint_Buffer_Workflow/CreatePoint_Buffer_Workflow__Buffer.sql
+    - models/CreatePoint_Buffer_Workflow/schema.yml
+    - .prophecy/ide/pipelines/CreatePoint_Buffer_Workflow.json
+    - pipelines/CreatePoint_Buffer_Workflow.py
+    createdAt: '2025-08-09 16:10:16'
+  .prophecy/metadata/sqlorchestratorpipeline/Airport_FindNearest_04:
+    name: Airport_FindNearest_04
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Airport_FindNearest_04/Airport_FindNearest_04__FilterNearestCities.sql
+    - models/Airport_FindNearest_04/schema.yml
+    - .prophecy/ide/pipelines/Airport_FindNearest_04.json
+    - pipelines/Airport_FindNearest_04.py
+    createdAt: '2025-08-16 00:45:13'
   .prophecy/metadata/sqlorchestratorpipeline/Buffer:
     name: Buffer
     schema: null
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Buffer/Buffer__buffer_us_states.sql
-    - models/Buffer/Buffer__buffer_new_england.sql
-    - models/Buffer_01/schema.yml
     - models/Buffer/schema.yml
+    - models/Buffer_01/schema.yml
+    - models/Buffer/Buffer__buffer_us_states.sql
     - models/Buffer_01/Buffer_01__buffer_new_england.sql
+    - models/Buffer/Buffer__buffer_new_england.sql
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-08-07 02:39:38'
@@ -579,7 +768,7 @@ sqlOrchestratorPipelines:
     author: mesarovic.andre@prophecy.io
     files:
     - models/Simplify_01/schema.yml
-    - models/Simplify_01/Simplify_01__simplify_geospatial_data.sql
+    - models/Simplify_01/Simplify_01__Simplify.sql
     - .prophecy/ide/pipelines/Simplify_01.json
     - pipelines/Simplify_01.py
     createdAt: '2025-08-07 03:35:57'
@@ -648,26 +837,29 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/SpatialMatch_Buffer_Workflow.json
     - pipelines/SpatialMatch_Buffer_Workflow.py
     createdAt: '2025-08-07 20:00:11'
-  .prophecy/metadata/sqlorchestratorpipeline/CreatePoint_Buffer_Workflow:
-    name: CreatePoint_Buffer_Workflow
+  .prophecy/metadata/sqlorchestratorpipeline/Airport_FindNearest_02:
+    name: Airport_FindNearest_02
     schema: null
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/CreatePoint_Buffer_Workflow/CreatePoint_Buffer_Workflow__Buffer.sql
-    - models/CreatePoint_Buffer_Workflow/schema.yml
-    - .prophecy/ide/pipelines/CreatePoint_Buffer_Workflow.json
-    - pipelines/CreatePoint_Buffer_Workflow.py
-    createdAt: '2025-08-09 16:10:16'
-  .prophecy/metadata/sqlorchestratorpipeline/SpatialMatch_Workflow_03:
-    name: SpatialMatch_Workflow_03
+    - models/Airport_FindNearest_02/Airport_FindNearest_02__FindNearest.sql
+    - models/Airport_FindNearest_02/schema.yml
+    - .prophecy/ide/pipelines/Airport_FindNearest_02.json
+    - pipelines/Airport_FindNearest_02.py
+    createdAt: '2025-08-12 14:37:41'
+  .prophecy/metadata/sqlorchestratorpipeline/PolyBuild_Buffer_Workflow:
+    name: PolyBuild_Buffer_Workflow
     schema: null
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - .prophecy/ide/pipelines/SpatialMatch_Workflow_03.json
-    - pipelines/SpatialMatch_Workflow_03.py
-    createdAt: '2025-08-10 20:40:33'
+    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__LineString_Buffer.sql
+    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Polygon_Buffer.sql
+    - models/PolyBuild_Buffer_Workflow/schema.yml
+    - .prophecy/ide/pipelines/PolyBuild_Buffer_Workflow.json
+    - pipelines/PolyBuild_Buffer_Workflow.py
+    createdAt: '2025-08-07 04:21:50'
   .prophecy/metadata/sqlorchestratorpipeline/Buffer_01:
     name: Buffer_01
     schema: null
@@ -696,17 +888,17 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/PolyBuild/PolyBuild__Polygon.sql
-    - models/PolyBuild_Simplify_Workflow/PolyBuild_Simplify_Workflow__Polygon_Simplify.sql
-    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Polygon_Buffer.sql
     - models/PolyBuild/PolyBuild__PolyBuild_1_1.sql
-    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__LineString_Buffer.sql
-    - models/PolyBuild_Simplify_Workflow/PolyBuild_Simplify_Workflow__LineString_Simplify.sql
-    - models/PolyBuild_Buffer_Workflow/schema.yml
-    - models/PolyBuild/PolyBuild__build_route_polygon.sql
-    - models/PolyBuild_Simplify_Workflow/schema.yml
+    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Polygon_Buffer.sql
     - models/PolyBuild/PolyBuild__Line.sql
+    - models/PolyBuild_Simplify_Workflow/PolyBuild_Simplify_Workflow__Polygon_Simplify.sql
+    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__LineString_Buffer.sql
+    - models/PolyBuild/PolyBuild__build_route_polygon.sql
+    - models/PolyBuild_Simplify_Workflow/PolyBuild_Simplify_Workflow__LineString_Simplify.sql
     - models/PolyBuild/schema.yml
+    - models/PolyBuild_Buffer_Workflow/schema.yml
+    - models/PolyBuild_Simplify_Workflow/schema.yml
+    - models/PolyBuild/PolyBuild__Polygon.sql
     - .prophecy/ide/pipelines/PolyBuild.json
     - pipelines/PolyBuild.py
     createdAt: '2025-08-08 04:45:01'
@@ -716,23 +908,34 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/SpatialMatch_Workflow_02/schema.yml
-    - models/SpatialMatch_Workflow_02/SpatialMatch_Workflow_02__SpatialMatch_1.sql
     - models/SpatialMatch_Workflow/schema.yml
     - models/SpatialMatch_Workflow/SpatialMatch_Workflow__SpatialMatch_1.sql
+    - models/SpatialMatch_Workflow_02/schema.yml
+    - models/SpatialMatch_Workflow_02/SpatialMatch_Workflow_02__SpatialMatch_1.sql
     - .prophecy/ide/pipelines/SpatialMatch_Workflow.json
     - pipelines/SpatialMatch_Workflow.py
     createdAt: '2025-08-10 16:12:46'
+  .prophecy/metadata/sqlorchestratorpipeline/Airport_FindNearest_03:
+    name: Airport_FindNearest_03
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Airport_FindNearest_03/schema.yml
+    - models/Airport_FindNearest_03/Airport_FindNearest_03__FindNearest.sql
+    - .prophecy/ide/pipelines/Airport_FindNearest_03.json
+    - pipelines/Airport_FindNearest_03.py
+    createdAt: '2025-08-13 13:45:38'
   .prophecy/metadata/sqlorchestratorpipeline/Simplify:
     name: Simplify
     schema: null
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/Simplify_01/schema.yml
+    - models/Simplify_01/Simplify_01__Simplify.sql
     - models/Simplify/schema.yml
     - models/Simplify/Simplify__simplify_geometries.sql
-    - models/Simplify_01/schema.yml
-    - models/Simplify_01/Simplify_01__simplify_geospatial_data.sql
     - .prophecy/ide/pipelines/Simplify.json
     - pipelines/Simplify.py
     createdAt: '2025-08-07 03:23:41'
@@ -742,8 +945,14 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/Airport_FindNearest/Airport_FindNearest__FindNearest.sql
+    - models/Airport_FindNearest_03/Airport_FindNearest_03__FindNearest.sql
+    - models/Airport_FindNearest_04/schema.yml
+    - models/Airport_FindNearest_04/Airport_FindNearest_04__FilterNearestCities.sql
     - models/Airport_FindNearest/schema.yml
-    - models/Airport_FindNearest/Airport_FindNearest__find_nearest_points.sql
+    - models/Airport_FindNearest_03/schema.yml
+    - models/Airport_FindNearest_02/schema.yml
+    - models/Airport_FindNearest_02/Airport_FindNearest_02__FindNearest.sql
     - .prophecy/ide/pipelines/Airport_FindNearest.json
     - pipelines/Airport_FindNearest.py
     createdAt: '2025-08-12 01:33:42'
@@ -753,14 +962,14 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/CreatePoint_FindNearest_Workflow/schema.yml
-    - models/CreatePoint/CreatePoint__create_geo_point.sql
-    - models/CreatePoint_Buffer_Workflow/CreatePoint_Buffer_Workflow__Buffer.sql
-    - models/CreatePoint/schema.yml
-    - models/CreatePoint_Distance_Workflow/CreatePoint_Distance_Workflow__Distance.sql
-    - models/CreatePoint_Buffer_Workflow/schema.yml
-    - models/CreatePoint_Distance_Workflow/schema.yml
     - models/CreatePoint/CreatePoint__create_geo_points.sql
+    - models/CreatePoint_FindNearest_Workflow/schema.yml
+    - models/CreatePoint_Buffer_Workflow/CreatePoint_Buffer_Workflow__Buffer.sql
+    - models/CreatePoint_Distance_Workflow/CreatePoint_Distance_Workflow__Distance.sql
+    - models/CreatePoint/CreatePoint__create_geo_point.sql
+    - models/CreatePoint/schema.yml
+    - models/CreatePoint_Distance_Workflow/schema.yml
+    - models/CreatePoint_Buffer_Workflow/schema.yml
     - models/CreatePoint_FindNearest_Workflow/CreatePoint_FindNearest_Workflow__FindNearestPoints.sql
     - .prophecy/ide/pipelines/CreatePoint.json
     - pipelines/CreatePoint.py
@@ -771,12 +980,12 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/SpatialMatch_Workflow_02/SpatialMatch_Workflow_02__SpatialMatch_1.sql
-    - models/SpatialMatch_Workflow/SpatialMatch_Workflow__SpatialMatch_1.sql
-    - models/SpatialMatch/SpatialMatch__SpatialMatch_1.sql
-    - models/SpatialMatch_Workflow_02/schema.yml
-    - models/SpatialMatch/schema.yml
     - models/SpatialMatch_Workflow/schema.yml
+    - models/SpatialMatch_Workflow_02/schema.yml
+    - models/SpatialMatch_Workflow/SpatialMatch_Workflow__SpatialMatch_1.sql
+    - models/SpatialMatch_Workflow_02/SpatialMatch_Workflow_02__SpatialMatch_1.sql
+    - models/SpatialMatch/SpatialMatch__SpatialMatch_1.sql
+    - models/SpatialMatch/schema.yml
     - .prophecy/ide/pipelines/SpatialMatch.json
     - pipelines/SpatialMatch.py
     createdAt: '2025-08-07 19:59:51'

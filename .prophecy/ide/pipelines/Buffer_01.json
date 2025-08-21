@@ -101,19 +101,19 @@
             "value" : "geometry"
           }, {
             "name" : "distance",
-            "value" : "1"
+            "value" : "10"
           }, {
             "name" : "unit",
             "value" : "miles"
           }, {
             "name" : "outputColumnName",
-            "value" : "ooo"
+            "value" : "output"
           } ]
         },
-        "outputColumnName" : "ooo",
+        "outputColumnName" : "output",
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "unit" : "miles",
-        "distance" : 1
+        "distance" : 10
       },
       "ports" : {
         "inputs" : [ {
@@ -151,7 +151,7 @@
                 "type" : "String"
               }
             }, {
-              "name" : "ooo",
+              "name" : "output",
               "dataType" : {
                 "type" : "String"
               }

@@ -6,7 +6,7 @@
   })
 }}
 
-WITH us_airports_2 AS (
+WITH airports AS (
 
   SELECT * 
   
@@ -14,31 +14,31 @@ WITH us_airports_2 AS (
 
 ),
 
-airport_fn_01 AS (
+customers AS (
 
   SELECT * 
   
-  FROM {{ ref('airport_fn_01')}}
+  FROM {{ ref('customers')}}
 
 ),
 
-create_geo_point AS (
+customers_2 AS (
 
-  {{ DatabricksSqlSpatial.CreatePoint('airport_fn_01', [['lon', 'lat', 'point']]) }}
-
-),
-
-CreatePoint_1 AS (
-
-  {{ DatabricksSqlSpatial.CreatePoint('us_airports_2', [['lon', 'lat', 'point']]) }}
+  {{ DatabricksSqlSpatial.CreatePoint('customers', [['lon', 'lat', 'point']]) }}
 
 ),
 
-find_nearest_points AS (
+airports_2 AS (
+
+  {{ DatabricksSqlSpatial.CreatePoint('airports', [['lon', 'lat', 'point']]) }}
+
+),
+
+FindNearest AS (
 
   {{
     DatabricksSqlSpatial.FindNearest(
-      ['create_geo_point', 'CreatePoint_1'], 
+      ['customers_2', 'airports_2'], 
       'point', 
       'point', 
       'point', 
@@ -47,7 +47,7 @@ find_nearest_points AS (
       200, 
       'mls', 
       false, 
-      ['city', 'state', 'name', 'lat', 'lon', 'point'], 
+      ['customer_id', 'city', 'name', 'lat', 'lon', 'point'], 
       ['city', 'state', 'lat', 'lon', 'iata_code', 'name', 'point']
     )
   }}
@@ -56,4 +56,4 @@ find_nearest_points AS (
 
 SELECT *
 
-FROM find_nearest_points
+FROM FindNearest

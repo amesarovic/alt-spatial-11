@@ -1,7 +1,7 @@
 {
-  "id" : "Simplify_01__simplify_geospatial_data",
+  "id" : "Simplify_01__Simplify",
   "metainfo" : {
-    "label" : "Simplify_01__simplify_geospatial_data",
+    "label" : "Simplify_01__Simplify",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -18,17 +18,17 @@
     "version" : 3
   },
   "processes" : {
-    "simplify_geospatial_data_VLxzM6PU6kovFAg8Hpmod$$Nxow-l4L6DaLw_DBqv_oH" : {
-      "id" : "simplify_geospatial_data_VLxzM6PU6kovFAg8Hpmod$$Nxow-l4L6DaLw_DBqv_oH",
+    "Simplify_VLxzM6PU6kovFAg8Hpmod$$Nxow-l4L6DaLw_DBqv_oH" : {
+      "id" : "Simplify_VLxzM6PU6kovFAg8Hpmod$$Nxow-l4L6DaLw_DBqv_oH",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "simplify_geospatial_data"
+        "label" : "Simplify"
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM simplify_geospatial_data\n\n",
+        "query" : "\nSELECT *\n\nFROM Simplify\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -52,7 +52,7 @@
       "id" : "72MWLq-rY5kiEo145vc2u$$hvt5it7JCEO-ID5JekiA4",
       "component" : "Simplify_01",
       "metadata" : {
-        "label" : "simplify_geospatial_data",
+        "label" : "Simplify",
         "x" : -300,
         "y" : -200,
         "phase" : 0
@@ -134,10 +134,10 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_72MWLq-rY5kiEo145vc2u$$hvt5it7JCEO-ID5JekiA4_simplify_geospatial_data_VLxzM6PU6kovFAg8Hpmod$$Nxow-l4L6DaLw_DBqv_oH",
+    "id" : "conn_72MWLq-rY5kiEo145vc2u$$hvt5it7JCEO-ID5JekiA4_Simplify_VLxzM6PU6kovFAg8Hpmod$$Nxow-l4L6DaLw_DBqv_oH",
     "source" : "72MWLq-rY5kiEo145vc2u$$hvt5it7JCEO-ID5JekiA4",
     "sourcePort" : "VLxzM6PU6kovFAg8Hpmod$$Nxow-l4L6DaLw_DBqv_oH",
-    "target" : "simplify_geospatial_data_VLxzM6PU6kovFAg8Hpmod$$Nxow-l4L6DaLw_DBqv_oH",
+    "target" : "Simplify_VLxzM6PU6kovFAg8Hpmod$$Nxow-l4L6DaLw_DBqv_oH",
     "targetPort" : "input_port_0"
   }, {
     "id" : "20_WwVU10LAmTIRRj7Ze2$$9X1Hb1pxSlTVLq5gMeAS6",

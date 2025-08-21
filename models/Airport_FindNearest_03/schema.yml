@@ -1,6 +1,6 @@
 ---
 version: 2
 models:
-- name: "Airport_FindNearest__FindNearest"
+- name: "Airport_FindNearest_03__FindNearest"
   tags:
   - "prophecy_temp"

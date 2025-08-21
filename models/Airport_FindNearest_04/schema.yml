@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "Airport_FindNearest_04__FilterNearestCities"
+  tags:
+  - "prophecy_temp"
