@@ -1,0 +1,167 @@
+{
+  "id" : "SpatialInfo",
+  "metainfo" : {
+    "label" : "SpatialInfo",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "JYaHJ8scfaesdvv9Ksv89$$S83kspFloPkWgFqSqQpBg" : {
+      "id" : "JYaHJ8scfaesdvv9Ksv89$$S83kspFloPkWgFqSqQpBg",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -380,
+        "y" : -160,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "cHjCXcP_xrLp1vJveB-Mu$$fgjpqnVJimm0_VMRn9plU",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "IIFSrakkccnNPo4_EVgPw$$TAUY8ZWsxL6L9upgsiVMR",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "8vpoqoPsCIMkjUNJTPXQ-$$Y82ISCEjhzvCucme2Fwvh" : {
+      "id" : "8vpoqoPsCIMkjUNJTPXQ-$$Y82ISCEjhzvCucme2Fwvh",
+      "component" : "SpatialInfo",
+      "metadata" : {
+        "label" : "generate_centroid",
+        "x" : -220,
+        "y" : -160,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "new_england" ],
+        "geometryColumnName" : "geometry",
+        "_oldMacroProperties" : {
+          "macroName" : "SpatialInfo",
+          "projectName" : "alt_spatial_11",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['new_england']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "centroid",
+            "value" : "true"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "centroid" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "go9CwRL2AJ2lIivqI8JWA$$Yn2DKR1JMueRGg58cRoYB",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "BAMV0JrmrxWFBKRc_Bxlc$$t-PL_Mbbn0lt-jVv3tJ4L",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "centroid",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "input",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "SpatialInfo_alt_spatial_11",
+        "name" : "SpatialInfo",
+        "projectName" : "alt_spatial_11",
+        "sourceProjectName" : "alt_spatial_11"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "w0AtvmBA1ngmjpZPo39jm$$YTUJPsNRIgvCpdcKt4T83",
+    "source" : "JYaHJ8scfaesdvv9Ksv89$$S83kspFloPkWgFqSqQpBg",
+    "sourcePort" : "IIFSrakkccnNPo4_EVgPw$$TAUY8ZWsxL6L9upgsiVMR",
+    "target" : "8vpoqoPsCIMkjUNJTPXQ-$$Y82ISCEjhzvCucme2Fwvh",
+    "targetPort" : "go9CwRL2AJ2lIivqI8JWA$$Yn2DKR1JMueRGg58cRoYB"
+  } ],
+  "component" : "Pipeline"
+}

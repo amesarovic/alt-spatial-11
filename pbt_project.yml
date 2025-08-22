@@ -88,6 +88,17 @@ sqlMacros:
     - macros/macros.yml
     - gems/Buffer_01.py
     createdAt: '2025-08-07 03:03:13'
+  .prophecy/metadata/sqlmacros/SpatialInfo:
+    name: SpatialInfo
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/SpatialInfo.sql
+    - .prophecy/ide/macros/SpatialInfo.json
+    - macros/macros.yml
+    - gems/SpatialInfo.py
+    createdAt: '2025-08-22 02:44:02'
 sqlSeeds:
   .prophecy/metadata/sqlseeds/points_02:
     name: points_02
@@ -753,11 +764,11 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/Buffer/Buffer__buffer_new_england.sql
+    - models/Buffer_01/Buffer_01__buffer_new_england.sql
+    - models/Buffer/Buffer__buffer_us_states.sql
     - models/Buffer/schema.yml
     - models/Buffer_01/schema.yml
-    - models/Buffer/Buffer__buffer_us_states.sql
-    - models/Buffer_01/Buffer_01__buffer_new_england.sql
-    - models/Buffer/Buffer__buffer_new_england.sql
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-08-07 02:39:38'
@@ -828,6 +839,17 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/CreatePoint_Distance_Workflow.json
     - pipelines/CreatePoint_Distance_Workflow.py
     createdAt: '2025-08-08 20:24:50'
+  .prophecy/metadata/sqlorchestratorpipeline/SpatialInfo:
+    name: SpatialInfo
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/SpatialInfo/schema.yml
+    - models/SpatialInfo/SpatialInfo__generate_centroid.sql
+    - .prophecy/ide/pipelines/SpatialInfo.json
+    - pipelines/SpatialInfo.py
+    createdAt: '2025-08-22 02:52:15'
   .prophecy/metadata/sqlorchestratorpipeline/SpatialMatch_Buffer_Workflow:
     name: SpatialMatch_Buffer_Workflow
     schema: null
@@ -888,17 +910,17 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/PolyBuild/PolyBuild__PolyBuild_1_1.sql
-    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Polygon_Buffer.sql
-    - models/PolyBuild/PolyBuild__Line.sql
-    - models/PolyBuild_Simplify_Workflow/PolyBuild_Simplify_Workflow__Polygon_Simplify.sql
-    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__LineString_Buffer.sql
-    - models/PolyBuild/PolyBuild__build_route_polygon.sql
-    - models/PolyBuild_Simplify_Workflow/PolyBuild_Simplify_Workflow__LineString_Simplify.sql
     - models/PolyBuild/schema.yml
+    - models/PolyBuild_Simplify_Workflow/PolyBuild_Simplify_Workflow__LineString_Simplify.sql
+    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__LineString_Buffer.sql
     - models/PolyBuild_Buffer_Workflow/schema.yml
-    - models/PolyBuild_Simplify_Workflow/schema.yml
+    - models/PolyBuild/PolyBuild__PolyBuild_1_1.sql
     - models/PolyBuild/PolyBuild__Polygon.sql
+    - models/PolyBuild_Simplify_Workflow/PolyBuild_Simplify_Workflow__Polygon_Simplify.sql
+    - models/PolyBuild/PolyBuild__Line.sql
+    - models/PolyBuild/PolyBuild__build_route_polygon.sql
+    - models/PolyBuild_Simplify_Workflow/schema.yml
+    - models/PolyBuild_Buffer_Workflow/PolyBuild_Buffer_Workflow__Polygon_Buffer.sql
     - .prophecy/ide/pipelines/PolyBuild.json
     - pipelines/PolyBuild.py
     createdAt: '2025-08-08 04:45:01'
@@ -945,14 +967,14 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Airport_FindNearest/Airport_FindNearest__FindNearest.sql
-    - models/Airport_FindNearest_03/Airport_FindNearest_03__FindNearest.sql
-    - models/Airport_FindNearest_04/schema.yml
-    - models/Airport_FindNearest_04/Airport_FindNearest_04__FilterNearestCities.sql
-    - models/Airport_FindNearest/schema.yml
-    - models/Airport_FindNearest_03/schema.yml
     - models/Airport_FindNearest_02/schema.yml
     - models/Airport_FindNearest_02/Airport_FindNearest_02__FindNearest.sql
+    - models/Airport_FindNearest/Airport_FindNearest__FindNearest.sql
+    - models/Airport_FindNearest/schema.yml
+    - models/Airport_FindNearest_03/schema.yml
+    - models/Airport_FindNearest_04/Airport_FindNearest_04__FilterNearestCities.sql
+    - models/Airport_FindNearest_03/Airport_FindNearest_03__FindNearest.sql
+    - models/Airport_FindNearest_04/schema.yml
     - .prophecy/ide/pipelines/Airport_FindNearest.json
     - pipelines/Airport_FindNearest.py
     createdAt: '2025-08-12 01:33:42'
@@ -962,15 +984,15 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/CreatePoint/schema.yml
+    - models/CreatePoint_Buffer_Workflow/schema.yml
+    - models/CreatePoint_Distance_Workflow/CreatePoint_Distance_Workflow__Distance.sql
+    - models/CreatePoint_Distance_Workflow/schema.yml
     - models/CreatePoint/CreatePoint__create_geo_points.sql
     - models/CreatePoint_FindNearest_Workflow/schema.yml
     - models/CreatePoint_Buffer_Workflow/CreatePoint_Buffer_Workflow__Buffer.sql
-    - models/CreatePoint_Distance_Workflow/CreatePoint_Distance_Workflow__Distance.sql
-    - models/CreatePoint/CreatePoint__create_geo_point.sql
-    - models/CreatePoint/schema.yml
-    - models/CreatePoint_Distance_Workflow/schema.yml
-    - models/CreatePoint_Buffer_Workflow/schema.yml
     - models/CreatePoint_FindNearest_Workflow/CreatePoint_FindNearest_Workflow__FindNearestPoints.sql
+    - models/CreatePoint/CreatePoint__create_geo_point.sql
     - .prophecy/ide/pipelines/CreatePoint.json
     - pipelines/CreatePoint.py
     createdAt: '2025-08-07 19:17:47'
@@ -981,10 +1003,10 @@ sqlOrchestratorPipelines:
     author: mesarovic.andre@prophecy.io
     files:
     - models/SpatialMatch_Workflow/schema.yml
-    - models/SpatialMatch_Workflow_02/schema.yml
-    - models/SpatialMatch_Workflow/SpatialMatch_Workflow__SpatialMatch_1.sql
-    - models/SpatialMatch_Workflow_02/SpatialMatch_Workflow_02__SpatialMatch_1.sql
     - models/SpatialMatch/SpatialMatch__SpatialMatch_1.sql
+    - models/SpatialMatch_Workflow_02/SpatialMatch_Workflow_02__SpatialMatch_1.sql
+    - models/SpatialMatch_Workflow/SpatialMatch_Workflow__SpatialMatch_1.sql
+    - models/SpatialMatch_Workflow_02/schema.yml
     - models/SpatialMatch/schema.yml
     - .prophecy/ide/pipelines/SpatialMatch.json
     - pipelines/SpatialMatch.py
