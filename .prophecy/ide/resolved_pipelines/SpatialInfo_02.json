@@ -1,0 +1,60 @@
+{
+  "id" : "SpatialInfo_02",
+  "metainfo" : {
+    "label" : "SpatialInfo_02",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "f8FQE0fC4DV93P7ITXa5b$$PWVxMye4XEZm4N4cfHuUr" : {
+      "id" : "f8FQE0fC4DV93P7ITXa5b$$PWVxMye4XEZm4N4cfHuUr",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "SpatialInfo_02__compute_centroid",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "SpatialInfo_02__compute_centroid"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "compute_centroid_BiKKjfzDW2Usy-IWUxDXT$$MJM3nuwEUbpNMbQkQce4v", "f8FQE0fC4DV93P7ITXa5b$$PWVxMye4XEZm4N4cfHuUr", "Bdjght92lAm0ITmJc8m_r$$p4uSIeqGy2bWMdKscMbiU" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SpatialInfo_02__compute_centroid_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "SpatialInfo_02__compute_centroid_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

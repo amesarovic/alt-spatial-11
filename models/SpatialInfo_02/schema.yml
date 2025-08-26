@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "SpatialInfo_02__compute_centroid"
+  tags:
+  - "prophecy_temp"

@@ -1,7 +1,7 @@
 {
-  "id" : "SpatialInfo",
+  "id" : "SpatialInfo_02",
   "metainfo" : {
-    "label" : "SpatialInfo",
+    "label" : "SpatialInfo_02",
     "autoLayout" : false,
     "version" : 1,
     "configuration" : {
@@ -27,12 +27,12 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "JYaHJ8scfaesdvv9Ksv89$$S83kspFloPkWgFqSqQpBg" : {
-      "id" : "JYaHJ8scfaesdvv9Ksv89$$S83kspFloPkWgFqSqQpBg",
+    "Bdjght92lAm0ITmJc8m_r$$p4uSIeqGy2bWMdKscMbiU" : {
+      "id" : "Bdjght92lAm0ITmJc8m_r$$p4uSIeqGy2bWMdKscMbiU",
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -380,
+        "x" : -420,
         "y" : -160,
         "phase" : 0
       },
@@ -50,11 +50,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "cHjCXcP_xrLp1vJveB-Mu$$fgjpqnVJimm0_VMRn9plU",
+          "id" : "GSI7DI1pWPE3fyGFh5INr$$rOKmdY7A2dn7c4eGX6Nl3",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "IIFSrakkccnNPo4_EVgPw$$TAUY8ZWsxL6L9upgsiVMR",
+          "id" : "YR39OqfojLeTb41zW8yBI$$Ct8BmcVNRPoYM2uGDSpnd",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -75,12 +75,12 @@
         "isCustomOutputSchema" : false
       }
     },
-    "8vpoqoPsCIMkjUNJTPXQ-$$Y82ISCEjhzvCucme2Fwvh" : {
-      "id" : "8vpoqoPsCIMkjUNJTPXQ-$$Y82ISCEjhzvCucme2Fwvh",
-      "component" : "SpatialInfo",
+    "f8FQE0fC4DV93P7ITXa5b$$PWVxMye4XEZm4N4cfHuUr" : {
+      "id" : "f8FQE0fC4DV93P7ITXa5b$$PWVxMye4XEZm4N4cfHuUr",
+      "component" : "SpatialInfo_02",
       "metadata" : {
-        "label" : "generate_centroid",
-        "x" : -220,
+        "label" : "compute_centroid",
+        "x" : -240,
         "y" : -160,
         "phase" : 0
       },
@@ -88,7 +88,7 @@
         "relation_name" : [ "new_england" ],
         "geometryColumnName" : "geometry",
         "_oldMacroProperties" : {
-          "macroName" : "SpatialInfo",
+          "macroName" : "SpatialInfo_02",
           "projectName" : "alt_spatial_11",
           "parameters" : [ {
             "name" : "relation_name",
@@ -109,7 +109,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "go9CwRL2AJ2lIivqI8JWA$$Yn2DKR1JMueRGg58cRoYB",
+          "id" : "U5U-mGewiQmA8CJrOMDqj$$tsI5JCarPRbuD0-H0KPVs",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -128,25 +128,40 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "BAMV0JrmrxWFBKRc_Bxlc$$t-PL_Mbbn0lt-jVv3tJ4L",
+          "id" : "BiKKjfzDW2Usy-IWUxDXT$$MJM3nuwEUbpNMbQkQce4v",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "centroid",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "input",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
       },
       "componentInfo" : {
-        "gemId" : "SpatialInfo_alt_spatial_11",
-        "name" : "SpatialInfo",
+        "gemId" : "SpatialInfo_02_alt_spatial_11",
+        "name" : "SpatialInfo_02",
         "projectName" : "alt_spatial_11",
         "sourceProjectName" : "alt_spatial_11"
       }
     }
   },
   "connections" : [ {
-    "id" : "w0AtvmBA1ngmjpZPo39jm$$YTUJPsNRIgvCpdcKt4T83",
-    "source" : "JYaHJ8scfaesdvv9Ksv89$$S83kspFloPkWgFqSqQpBg",
-    "sourcePort" : "IIFSrakkccnNPo4_EVgPw$$TAUY8ZWsxL6L9upgsiVMR",
-    "target" : "8vpoqoPsCIMkjUNJTPXQ-$$Y82ISCEjhzvCucme2Fwvh",
-    "targetPort" : "go9CwRL2AJ2lIivqI8JWA$$Yn2DKR1JMueRGg58cRoYB"
+    "id" : "oIsEDml1I-yGwNB9NKBWC$$larUjv6rmOldUS82rXVHO",
+    "source" : "Bdjght92lAm0ITmJc8m_r$$p4uSIeqGy2bWMdKscMbiU",
+    "sourcePort" : "YR39OqfojLeTb41zW8yBI$$Ct8BmcVNRPoYM2uGDSpnd",
+    "target" : "f8FQE0fC4DV93P7ITXa5b$$PWVxMye4XEZm4N4cfHuUr",
+    "targetPort" : "U5U-mGewiQmA8CJrOMDqj$$tsI5JCarPRbuD0-H0KPVs"
   } ],
   "component" : "Pipeline"
 }

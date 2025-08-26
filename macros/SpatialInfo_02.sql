@@ -1,4 +1,4 @@
-{%- macro SpatialInfo(table_name, schema, polygonColumnName, centroid) -%}
+{%- macro SpatialInfo_02(table_name, schema, polygonColumnName, centroid) -%}
   {{ log("table_name=" ~ table_name, info=True) }}
   {{ log("schema=" ~ schema, info=True) }}
   {{ log("polygonColumnName=" ~ polygonColumnName, info=True) }}
@@ -6,8 +6,6 @@
 
   SELECT
     ST_AsText(ST_Centroid(ST_GeomFromText({{polygonColumnName}}))) as centroid,
-    round(ST_GeogArea({{polygonColumnName}})/1000000) as area_kms,
-    round(ST_GeogArea({{polygonColumnName}})/1000000/2.59) as area_miles,
     {{polygonColumnName}} as input
   FROM
     {{table_name}}
