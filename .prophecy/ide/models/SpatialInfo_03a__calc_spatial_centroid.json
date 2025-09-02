@@ -1,0 +1,142 @@
+{
+  "id" : "SpatialInfo_03a__calc_spatial_centroid",
+  "metainfo" : {
+    "label" : "SpatialInfo_03a__calc_spatial_centroid",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "calc_spatial_centroid_P0ExeBs-xV-3vBYmt4D_6$$i_NCRajshRpY-jW3arPI8" : {
+      "id" : "calc_spatial_centroid_P0ExeBs-xV-3vBYmt4D_6$$i_NCRajshRpY-jW3arPI8",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "calc_spatial_centroid"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM calc_spatial_centroid\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "VBbOPq-Iw7Arp4XkcNFs2$$2QszIjHN4JOsLvpCXNOZE" : {
+      "id" : "VBbOPq-Iw7Arp4XkcNFs2$$2QszIjHN4JOsLvpCXNOZE",
+      "component" : "SpatialInfo_03",
+      "metadata" : {
+        "label" : "calc_spatial_centroid",
+        "x" : -280,
+        "y" : -160,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "new_england" ],
+        "geometryColumnName" : "geometry",
+        "_oldMacroProperties" : {
+          "macroName" : "SpatialInfo_03",
+          "projectName" : "alt_spatial_11",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['new_england']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "centroid",
+            "value" : "true"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "centroid" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Gub4ypLwoALVH8-mdgVdM$$zLz-w0HBPRk-jkiA6ZwC6",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "P0ExeBs-xV-3vBYmt4D_6$$i_NCRajshRpY-jW3arPI8",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "PuDscaUPCLfxM8TOryRoe$$MchwwU2_OAAci1ytYFTIj" : {
+      "id" : "PuDscaUPCLfxM8TOryRoe$$MchwwU2_OAAci1ytYFTIj",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -440,
+        "y" : -160,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "PiFwmlb2-nnmJOLTSvOsc$$fLCELsjk35_tsRUimYSMV",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_VBbOPq-Iw7Arp4XkcNFs2$$2QszIjHN4JOsLvpCXNOZE_calc_spatial_centroid_P0ExeBs-xV-3vBYmt4D_6$$i_NCRajshRpY-jW3arPI8",
+    "source" : "VBbOPq-Iw7Arp4XkcNFs2$$2QszIjHN4JOsLvpCXNOZE",
+    "sourcePort" : "P0ExeBs-xV-3vBYmt4D_6$$i_NCRajshRpY-jW3arPI8",
+    "target" : "calc_spatial_centroid_P0ExeBs-xV-3vBYmt4D_6$$i_NCRajshRpY-jW3arPI8",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "VBXcjk0Nc7ZVB_YlewHDP$$U_Rvzm4U0OnvP92Ih3zrt",
+    "source" : "PuDscaUPCLfxM8TOryRoe$$MchwwU2_OAAci1ytYFTIj",
+    "sourcePort" : "PiFwmlb2-nnmJOLTSvOsc$$fLCELsjk35_tsRUimYSMV",
+    "target" : "VBbOPq-Iw7Arp4XkcNFs2$$2QszIjHN4JOsLvpCXNOZE",
+    "targetPort" : "Gub4ypLwoALVH8-mdgVdM$$zLz-w0HBPRk-jkiA6ZwC6"
+  } ],
+  "component" : "Model"
+}

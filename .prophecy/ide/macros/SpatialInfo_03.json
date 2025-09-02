@@ -2,7 +2,7 @@
   "SpatialInfo_03" : {
     "name" : "SpatialInfo_03",
     "macroType" : "query",
-    "definition" : "\n  {{ log(\"table_name=\" ~ table_name, info=True) }}\n  {{ log(\"schema=\" ~ schema, info=True) }}\n  {{ log(\"polygonColumnName=\" ~ polygonColumnName, info=True) }}\n  {{ log(\"centroid=\" ~ centroid, info=True) }}\n\n  SELECT\n    ST_AsText(ST_Centroid(ST_GeomFromText({{polygonColumnName}}))) as centroid,\n    ST_Area(ST_GeomFromText({{polygonColumnName}})) as area,\n    {{polygonColumnName}} as input\n  FROM\n    {{table_name}}",
+    "definition" : "\n  {{ log(\"table_name=\" ~ table_name, info=True) }}\n  {{ log(\"schema=\" ~ schema, info=True) }}\n  {{ log(\"polygonColumnName=\" ~ polygonColumnName, info=True) }}\n  {{ log(\"centroid=\" ~ centroid, info=True) }}\n\n  SELECT\n    ST_AsText(ST_Centroid(ST_GeomFromText({{polygonColumnName}}))) as centroid,\n    ST_Area(ST_GeomFromText({{polygonColumnName}})) as area,\n    round(ST_Area(ST_GeomFromText({{polygonColumnName}})),4) as area2,\n    {{polygonColumnName}} as input\n  FROM\n    {{table_name}}",
     "parameters" : {
       "type" : "record",
       "fields" : [ {
