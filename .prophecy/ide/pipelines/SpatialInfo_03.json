@@ -138,6 +138,11 @@
                 "type" : "String"
               }
             }, {
+              "name" : "area",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
               "name" : "input",
               "dataType" : {
                 "type" : "String"

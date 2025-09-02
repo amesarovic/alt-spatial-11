@@ -6,6 +6,7 @@
 
   SELECT
     ST_AsText(ST_Centroid(ST_GeomFromText({{polygonColumnName}}))) as centroid,
+    ST_Area(ST_GeomFromText({{polygonColumnName}})) as area,
     {{polygonColumnName}} as input
   FROM
     {{table_name}}
