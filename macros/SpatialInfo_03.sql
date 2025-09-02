@@ -5,10 +5,13 @@
   {{ log("centroid=" ~ centroid, info=True) }}
 
   SELECT
+    round(ST_Area(ST_GeomFromText({{polygonColumnName}})),4) as area,
     ST_AsText(ST_Centroid(ST_GeomFromText({{polygonColumnName}}))) as centroid,
-    ST_Area(ST_GeomFromText({{polygonColumnName}})) as area,
-    round(ST_Area(ST_GeomFromText({{polygonColumnName}})),4) as area2,
-    {{polygonColumnName}} as input
+    ST_Length(ST_GeomFromText({{polygonColumnName}})) as length,
+    round(ST_Perimeter(ST_GeomFromText({{polygonColumnName}})), 2) as perimeter,
+    ST_AsText(ST_Envelope(ST_GeomFromText({{polygonColumnName}}))) as bounding_box,
+    ST_NumGeometries(ST_GeomFromText({{polygonColumnName}})) as num_geometries,
+    {{polygonColumnName}}
   FROM
     {{table_name}}
 

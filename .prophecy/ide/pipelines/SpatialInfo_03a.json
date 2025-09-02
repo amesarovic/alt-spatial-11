@@ -133,22 +133,37 @@
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "centroid",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
               "name" : "area",
               "dataType" : {
                 "type" : "Double"
               }
             }, {
-              "name" : "area2",
+              "name" : "centroid",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "length",
               "dataType" : {
                 "type" : "Double"
               }
             }, {
-              "name" : "input",
+              "name" : "perimeter",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "bounding_box",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "num_geometries",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "geometry",
               "dataType" : {
                 "type" : "String"
               }

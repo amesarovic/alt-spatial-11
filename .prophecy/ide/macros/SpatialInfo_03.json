@@ -2,7 +2,7 @@
   "SpatialInfo_03" : {
     "name" : "SpatialInfo_03",
     "macroType" : "query",
-    "definition" : "\n  {{ log(\"table_name=\" ~ table_name, info=True) }}\n  {{ log(\"schema=\" ~ schema, info=True) }}\n  {{ log(\"polygonColumnName=\" ~ polygonColumnName, info=True) }}\n  {{ log(\"centroid=\" ~ centroid, info=True) }}\n\n  SELECT\n    ST_AsText(ST_Centroid(ST_GeomFromText({{polygonColumnName}}))) as centroid,\n    ST_Area(ST_GeomFromText({{polygonColumnName}})) as area,\n    round(ST_Area(ST_GeomFromText({{polygonColumnName}})),4) as area2,\n    {{polygonColumnName}} as input\n  FROM\n    {{table_name}}",
+    "definition" : "\n  {{ log(\"table_name=\" ~ table_name, info=True) }}\n  {{ log(\"schema=\" ~ schema, info=True) }}\n  {{ log(\"polygonColumnName=\" ~ polygonColumnName, info=True) }}\n  {{ log(\"centroid=\" ~ centroid, info=True) }}\n\n  SELECT\n    round(ST_Area(ST_GeomFromText({{polygonColumnName}})),4) as area,\n    ST_AsText(ST_Centroid(ST_GeomFromText({{polygonColumnName}}))) as centroid,\n    ST_Length(ST_GeomFromText({{polygonColumnName}})) as length,\n    round(ST_Perimeter(ST_GeomFromText({{polygonColumnName}})), 2) as perimeter,\n    ST_AsText(ST_Envelope(ST_GeomFromText({{polygonColumnName}}))) as bounding_box,\n    ST_NumGeometries(ST_GeomFromText({{polygonColumnName}})) as num_geometries,\n    {{polygonColumnName}}\n  FROM\n    {{table_name}}",
     "parameters" : {
       "type" : "record",
       "fields" : [ {
