@@ -14,10 +14,10 @@ WITH new_england AS (
 
 ),
 
-compute_centroid AS (
+calc_spatial_centroid AS (
 
   {{
-    alt_spatial_11.SpatialInfo_02(
+    alt_spatial_11.SpatialInfo_03(
       'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
@@ -29,4 +29,4 @@ compute_centroid AS (
 
 SELECT *
 
-FROM compute_centroid
+FROM calc_spatial_centroid

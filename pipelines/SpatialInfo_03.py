@@ -2,8 +2,8 @@ Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@g
 SensorSchedule = SensorSchedule(enabled = False)
 
 with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
-    SpatialInfo_02__calc_spatial_centroid = Task(
-        task_id = "SpatialInfo_02__calc_spatial_centroid", 
+    SpatialInfo_03__calc_spatial_centroid = Task(
+        task_id = "SpatialInfo_03__calc_spatial_centroid", 
         component = "Model", 
-        modelName = "SpatialInfo_02__calc_spatial_centroid"
+        modelName = "SpatialInfo_03__calc_spatial_centroid"
     )
