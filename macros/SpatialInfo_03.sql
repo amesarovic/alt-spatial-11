@@ -5,7 +5,8 @@
   {{ log("centroid=" ~ centroid, info=True) }}
 
   SELECT
-    round(ST_Area(ST_GeomFromText({{polygonColumnName}})),4) as area,
+    round(ST_Area(ST_GeogFromText({{polygonColumnName}}))/1000000,0) as area_kms,
+    round(ST_Area(ST_GeogFromText({{polygonColumnName}}))/1000000/2.59,0) as area_miles,
     ST_AsText(ST_Centroid(ST_GeomFromText({{polygonColumnName}}))) as centroid,
     ST_Length(ST_GeomFromText({{polygonColumnName}})) as length,
     round(ST_Perimeter(ST_GeomFromText({{polygonColumnName}})), 2) as perimeter,
