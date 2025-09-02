@@ -868,9 +868,9 @@ sqlOrchestratorPipelines:
     author: mesarovic.andre@prophecy.io
     files:
     - models/SpatialInfo/schema.yml
+    - models/SpatialInfo_03/SpatialInfo_03__calc_spatial_centroid.sql
     - models/SpatialInfo_03/schema.yml
     - models/SpatialInfo_02/schema.yml
-    - models/SpatialInfo_03/SpatialInfo_03__calc_spatial_centroid.sql
     - models/SpatialInfo/SpatialInfo__generate_centroid.sql
     - models/SpatialInfo_02/SpatialInfo_02__calc_spatial_centroid.sql
     - .prophecy/ide/pipelines/SpatialInfo.json
