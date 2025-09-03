@@ -21,6 +21,7 @@ calc_spatial_centroid AS (
       'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
+      'Polygon', 
       true
     )
   }}
