@@ -182,6 +182,16 @@
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
               "name" : "length_kms",
               "dataType" : {
                 "type" : "Double"
@@ -297,61 +307,6 @@
         } ],
         "outputs" : [ {
           "id" : "fmFKGTMIJucj8N8wzv13u$$WUgoOff1K4WrYmPe_1XnX",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "area_kms",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "area_miles",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "perimeter_kms",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "perimeter_miles",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "NPoints",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "SRID",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "centroid",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "bounding_box",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "num_geometries",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "geometry",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false

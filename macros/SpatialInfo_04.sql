@@ -8,6 +8,7 @@
   {%- if geometryType == 'LineString' -%}
 
   SELECT
+    *,
     round(ST_Length(ST_GeogFromText({{geometryColumnName}}))/1000,0) as length_kms,
     round(ST_Length(ST_GeogFromText({{geometryColumnName}}))/1609.344,0) as length_miles,
     ST_NPoints(ST_GeogFromText({{geometryColumnName}})) as NPoints,
@@ -23,6 +24,7 @@
   {%- else -%}
 
   SELECT
+    *,
     round(ST_Area(ST_GeogFromText({{geometryColumnName}}))/1000000,0) as area_kms,
     round(ST_Area(ST_GeogFromText({{geometryColumnName}}))/1000000/2.59,0) as area_miles,
     round(ST_Perimeter(ST_GeogFromText({{geometryColumnName}}))/1000,0) as perimeter_kms,
