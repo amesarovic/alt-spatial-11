@@ -1,7 +1,7 @@
 {
-  "id" : "SpatialInfo_04__calc_line_centroid",
+  "id" : "SpatialInfo_04__calc_line_geometry_info",
   "metainfo" : {
-    "label" : "SpatialInfo_04__calc_line_centroid",
+    "label" : "SpatialInfo_04__calc_line_geometry_info",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -18,17 +18,17 @@
     "version" : 3
   },
   "processes" : {
-    "calc_line_centroid_v-WTM3b0E9ykxADucI4RL$$dcGygfXHvwACIVRQowFGB" : {
-      "id" : "calc_line_centroid_v-WTM3b0E9ykxADucI4RL$$dcGygfXHvwACIVRQowFGB",
+    "calc_line_geometry_info_VqpwtuGlI7eU5AZ8qeKzy$$9b2nPsp3vDz6cywaDoqch" : {
+      "id" : "calc_line_geometry_info_VqpwtuGlI7eU5AZ8qeKzy$$9b2nPsp3vDz6cywaDoqch",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "calc_line_centroid"
+        "label" : "calc_line_geometry_info"
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM calc_line_centroid\n\n",
+        "query" : "\nSELECT *\n\nFROM calc_line_geometry_info\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -48,11 +48,11 @@
         "autoUpdateOnRun" : false
       }
     },
-    "Anz0YcwCZ2em8JDCKbV2l$$2OM19QkPEBuH9KeWApsQt" : {
-      "id" : "Anz0YcwCZ2em8JDCKbV2l$$2OM19QkPEBuH9KeWApsQt",
+    "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C" : {
+      "id" : "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C",
       "component" : "SpatialInfo_04",
       "metadata" : {
-        "label" : "calc_line_centroid",
+        "label" : "calc_line_geometry_info",
         "x" : -720,
         "y" : -140,
         "phase" : 0
@@ -86,11 +86,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "lamamC_wrllLzluhWHKq8$$zuSkkDMi09QOuDeNdTU9q",
+          "id" : "AFiTykyLbx7SOeq1DMm_s$$PljYamJLc69xYguRwpXBQ",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "v-WTM3b0E9ykxADucI4RL$$dcGygfXHvwACIVRQowFGB",
+          "id" : "VqpwtuGlI7eU5AZ8qeKzy$$9b2nPsp3vDz6cywaDoqch",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -127,17 +127,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_Anz0YcwCZ2em8JDCKbV2l$$2OM19QkPEBuH9KeWApsQt_calc_line_centroid_v-WTM3b0E9ykxADucI4RL$$dcGygfXHvwACIVRQowFGB",
-    "source" : "Anz0YcwCZ2em8JDCKbV2l$$2OM19QkPEBuH9KeWApsQt",
-    "sourcePort" : "v-WTM3b0E9ykxADucI4RL$$dcGygfXHvwACIVRQowFGB",
-    "target" : "calc_line_centroid_v-WTM3b0E9ykxADucI4RL$$dcGygfXHvwACIVRQowFGB",
+    "id" : "conn_5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C_calc_line_geometry_info_VqpwtuGlI7eU5AZ8qeKzy$$9b2nPsp3vDz6cywaDoqch",
+    "source" : "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C",
+    "sourcePort" : "VqpwtuGlI7eU5AZ8qeKzy$$9b2nPsp3vDz6cywaDoqch",
+    "target" : "calc_line_geometry_info_VqpwtuGlI7eU5AZ8qeKzy$$9b2nPsp3vDz6cywaDoqch",
     "targetPort" : "input_port_0"
   }, {
-    "id" : "VHRw0pcMvO17wkXFMGvcX$$ZFEgzgX358mUQDmAVqBCo",
+    "id" : "4sjtVIpcHQ73XbG4I3rV2$$HM1l_uS39H_3DWEpI9YZ9",
     "source" : "A3QwCEfIfmBAdpMr0G4R1$$wJigCD955T54G4hyEEzB6",
     "sourcePort" : "FrSZvgixaOIf0fZvykuEJ$$DB8mXzQDUV4MTfYMMxEtH",
-    "target" : "Anz0YcwCZ2em8JDCKbV2l$$2OM19QkPEBuH9KeWApsQt",
-    "targetPort" : "lamamC_wrllLzluhWHKq8$$zuSkkDMi09QOuDeNdTU9q"
+    "target" : "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C",
+    "targetPort" : "AFiTykyLbx7SOeq1DMm_s$$PljYamJLc69xYguRwpXBQ"
   } ],
   "component" : "Model"
 }

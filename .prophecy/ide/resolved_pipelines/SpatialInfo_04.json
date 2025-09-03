@@ -27,28 +27,28 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "Anz0YcwCZ2em8JDCKbV2l$$2OM19QkPEBuH9KeWApsQt" : {
-      "id" : "Anz0YcwCZ2em8JDCKbV2l$$2OM19QkPEBuH9KeWApsQt",
+    "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C" : {
+      "id" : "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C",
       "component" : "Model",
       "metadata" : {
-        "label" : "SpatialInfo_04__calc_line_centroid",
+        "label" : "SpatialInfo_04__calc_line_geometry_info",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "SpatialInfo_04__calc_line_centroid"
+        "modelName" : "SpatialInfo_04__calc_line_geometry_info"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "calc_line_centroid_v-WTM3b0E9ykxADucI4RL$$dcGygfXHvwACIVRQowFGB", "Anz0YcwCZ2em8JDCKbV2l$$2OM19QkPEBuH9KeWApsQt", "A3QwCEfIfmBAdpMr0G4R1$$wJigCD955T54G4hyEEzB6" ],
+        "visualProcessIds" : [ "calc_line_geometry_info_VqpwtuGlI7eU5AZ8qeKzy$$9b2nPsp3vDz6cywaDoqch", "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C", "A3QwCEfIfmBAdpMr0G4R1$$wJigCD955T54G4hyEEzB6" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "SpatialInfo_04__calc_line_centroid_in_0",
+          "id" : "SpatialInfo_04__calc_line_geometry_info_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "SpatialInfo_04__calc_line_centroid_out_0",
+          "id" : "SpatialInfo_04__calc_line_geometry_info_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -128,11 +128,11 @@
     }
   },
   "connections" : [ {
-    "id" : "VHRw0pcMvO17wkXFMGvcX$$ZFEgzgX358mUQDmAVqBCo",
+    "id" : "4sjtVIpcHQ73XbG4I3rV2$$HM1l_uS39H_3DWEpI9YZ9",
     "source" : "A3QwCEfIfmBAdpMr0G4R1$$wJigCD955T54G4hyEEzB6",
     "sourcePort" : "FrSZvgixaOIf0fZvykuEJ$$DB8mXzQDUV4MTfYMMxEtH",
-    "target" : "Anz0YcwCZ2em8JDCKbV2l$$2OM19QkPEBuH9KeWApsQt",
-    "targetPort" : "SpatialInfo_04__calc_line_centroid_in_0"
+    "target" : "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C",
+    "targetPort" : "SpatialInfo_04__calc_line_geometry_info_in_0"
   } ],
   "component" : "Pipeline"
 }
