@@ -182,9 +182,24 @@
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "length",
+              "name" : "length_kms",
               "dataType" : {
                 "type" : "Double"
+              }
+            }, {
+              "name" : "length_miles",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "NPoints",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "SRID",
+              "dataType" : {
+                "type" : "Integer"
               }
             }, {
               "name" : "centroid",
@@ -296,19 +311,29 @@
                 "type" : "Double"
               }
             }, {
+              "name" : "perimeter_kms",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "perimeter_miles",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "NPoints",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "SRID",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
               "name" : "centroid",
               "dataType" : {
                 "type" : "String"
-              }
-            }, {
-              "name" : "length",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "perimeter",
-              "dataType" : {
-                "type" : "Double"
               }
             }, {
               "name" : "bounding_box",
