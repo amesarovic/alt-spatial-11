@@ -1,0 +1,9 @@
+---
+version: 2
+models:
+- name: "SpatialInfo_04__SpatialInfo_04_1_1"
+  tags:
+  - "prophecy_temp"
+- name: "SpatialInfo_04__calc_polygon_centroid"
+  tags:
+  - "prophecy_temp"

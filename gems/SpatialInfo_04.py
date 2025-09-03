@@ -4,14 +4,14 @@ import json
 from prophecy.cb.sql.MacroBuilderBase import *
 from prophecy.cb.ui.uispec import *
 
-class SpatialInfo_03(MacroSpec):
-    name: str = "SpatialInfo_03"
+class SpatialInfo_04(MacroSpec):
+    name: str = "SpatialInfo_04"
     projectName: str = "alt_spatial_11"
     category: str = "Spatial"
     minNumOfInputPorts: int = 1
     
     @dataclass(frozen=True)
-    class SpatialInfo_03Properties(MacroProperties):
+    class SpatialInfo_04Properties(MacroProperties):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
@@ -41,7 +41,7 @@ class SpatialInfo_03(MacroSpec):
 
     def dialog(self) -> Dialog:
         help = "Add the input geometry to the result along with the output geometry"
-        return Dialog("SpatialInfo_03").addElement(
+        return Dialog("SpatialInfo_04").addElement(
             ColumnsLayout(gap="1rem", height="100%")
             .addColumn(
                 Ports(allowInputAddOrDelete=True),
@@ -89,7 +89,7 @@ class SpatialInfo_03(MacroSpec):
         )
         return newState.bindProperties(newProperties)
 
-    def apply(self, props: SpatialInfo_03Properties) -> str:
+    def apply(self, props: SpatialInfo_04Properties) -> str:
         # Get the table name
         table_name: str = ",".join(str(rel) for rel in props.relation_name)
 
@@ -111,7 +111,7 @@ class SpatialInfo_03(MacroSpec):
     def loadProperties(self, properties: MacroProperties) -> PropertiesType:
         # load the component's state given default macro property representation
         parametersMap = self.convertToParameterMap(properties.parameters)
-        return SpatialInfo_03.SpatialInfo_03Properties(
+        return SpatialInfo_04.SpatialInfo_04Properties(
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
             geometryColumnName=parametersMap.get('geometryColumnName'),
