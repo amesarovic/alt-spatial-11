@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "Buffer_02__buffer_new_england"
+  tags:
+  - "prophecy_temp"

@@ -1,0 +1,60 @@
+{
+  "id" : "Buffer_02",
+  "metainfo" : {
+    "label" : "Buffer_02",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "UjHc0lqAxP8urZjY0egjl$$OmrqQlYCZ0iXIxlP9r7kl" : {
+      "id" : "UjHc0lqAxP8urZjY0egjl$$OmrqQlYCZ0iXIxlP9r7kl",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "Buffer_02__buffer_new_england",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "Buffer_02__buffer_new_england"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "buffer_new_england_LKU-iS1k7MgJrd2p_lPKs$$w-dIR5yScsC1dMAY2A41g", "UjHc0lqAxP8urZjY0egjl$$OmrqQlYCZ0iXIxlP9r7kl", "9bzi2HhylOWdhm5NzEphO$$NBObnioYF65vOo_jlfo-e" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Buffer_02__buffer_new_england_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "Buffer_02__buffer_new_england_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}
