@@ -14,14 +14,14 @@ WITH us_states_lines AS (
 
 ),
 
-SpatialInfo_04_1_1 AS (
+calc_spatial_info AS (
 
   {{
-    alt_spatial_11.SpatialInfo_04(
+    alt_spatial_11.SpatialInfo_03(
       'us_states_lines', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      'LineString', 
+      'line_string', 
       true
     )
   }}
@@ -30,4 +30,4 @@ SpatialInfo_04_1_1 AS (
 
 SELECT *
 
-FROM SpatialInfo_04_1_1
+FROM calc_spatial_info

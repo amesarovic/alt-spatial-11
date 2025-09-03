@@ -55,7 +55,7 @@ class SpatialInfo_03(MacroSpec):
                         .bindProperty("geometryColumnName")
                 )   
                 .addElement(
-                    SelectBox("Geometry type").addOption("Polygon", "Polygon").addOption("LineString", "LineString").addOption("Point", "Point").bindProperty("geometryType")
+                    SelectBox("Geometry type").addOption("Polygon", "polygon").addOption("LineString", "line_string").addOption("Point", "point").bindProperty("geometryType")
                 )                            
                 .addElement(
                     Checkbox("Centroid",helpText=help).bindProperty("centroid")) 

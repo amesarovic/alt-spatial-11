@@ -2,10 +2,15 @@ Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@g
 SensorSchedule = SensorSchedule(enabled = False)
 
 with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
-    SpatialInfo_04__calc_polygon_centroid = Task(
-        task_id = "SpatialInfo_04__calc_polygon_centroid", 
+    SpatialInfo_04__calc_line_centroid = Task(
+        task_id = "SpatialInfo_04__calc_line_centroid", 
         component = "Model", 
-        modelName = "SpatialInfo_04__calc_polygon_centroid"
+        modelName = "SpatialInfo_04__calc_line_centroid"
+    )
+    SpatialInfo_04__calc_spatial_info = Task(
+        task_id = "SpatialInfo_04__calc_spatial_info", 
+        component = "Model", 
+        modelName = "SpatialInfo_04__calc_spatial_info"
     )
     us_states_lines = Task(
         task_id = "us_states_lines", 
@@ -13,9 +18,4 @@ with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "us_states_lines", "sourceType" : "Seed"}
     )
-    SpatialInfo_04__SpatialInfo_04_1_1 = Task(
-        task_id = "SpatialInfo_04__SpatialInfo_04_1_1", 
-        component = "Model", 
-        modelName = "SpatialInfo_04__SpatialInfo_04_1_1"
-    )
-    us_states_lines.out >> SpatialInfo_04__SpatialInfo_04_1_1.in_0
+    us_states_lines.out >> SpatialInfo_04__calc_line_centroid.in_0

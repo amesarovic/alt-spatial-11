@@ -14,7 +14,7 @@ WITH new_england AS (
 
 ),
 
-calc_polygon_centroid AS (
+calc_spatial_info AS (
 
   {{
     alt_spatial_11.SpatialInfo_04(
@@ -30,4 +30,4 @@ calc_polygon_centroid AS (
 
 SELECT *
 
-FROM calc_polygon_centroid
+FROM calc_spatial_info

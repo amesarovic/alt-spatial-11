@@ -6,22 +6,22 @@
   })
 }}
 
-WITH new_england AS (
+WITH us_states_lines AS (
 
   SELECT * 
   
-  FROM {{ source('andre_dev.alteryx_spatial', 'new_england') }}
+  FROM {{ ref('us_states_lines')}}
 
 ),
 
-calc_spatial_centroid AS (
+calc_line_centroid AS (
 
   {{
-    alt_spatial_11.SpatialInfo_03(
-      'new_england', 
+    alt_spatial_11.SpatialInfo_04(
+      'us_states_lines', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      'polygon', 
+      'LineString', 
       true
     )
   }}
@@ -30,4 +30,4 @@ calc_spatial_centroid AS (
 
 SELECT *
 
-FROM calc_spatial_centroid
+FROM calc_line_centroid

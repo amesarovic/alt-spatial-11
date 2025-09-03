@@ -4,3 +4,6 @@ models:
 - name: "SpatialInfo_03__calc_spatial_centroid"
   tags:
   - "prophecy_temp"
+- name: "SpatialInfo_03__calc_spatial_info"
+  tags:
+  - "prophecy_temp"
