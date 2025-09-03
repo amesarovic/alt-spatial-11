@@ -54,33 +54,6 @@
         "isCustomOutputSchema" : false
       }
     },
-    "k9P-mUnm5N5TRDusB5Y8w$$tbsVDxNGUfkCbZ3QkRTSq" : {
-      "id" : "k9P-mUnm5N5TRDusB5Y8w$$tbsVDxNGUfkCbZ3QkRTSq",
-      "component" : "Model",
-      "metadata" : {
-        "label" : "SpatialInfo_04__calc_spatial_info",
-        "phase" : 0
-      },
-      "properties" : {
-        "modelName" : "SpatialInfo_04__calc_spatial_info"
-      },
-      "visualMetaInfo" : {
-        "visualProcessIds" : [ "calc_spatial_info_d8-0CKLmQx0J1Pg98kdzV$$TkxUx4Hl7AQ3g5V2nN-EH", "k9P-mUnm5N5TRDusB5Y8w$$tbsVDxNGUfkCbZ3QkRTSq", "K4E0nsTF-Lt0R8SVdqDb0$$6AKjScV4NvU2MmtUwQ2zZ" ],
-        "type" : "ephemeral",
-        "isTemporaryTable" : true
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "SpatialInfo_04__calc_spatial_info_in_0",
-          "slug" : "in_0"
-        } ],
-        "outputs" : [ {
-          "id" : "SpatialInfo_04__calc_spatial_info_out_0",
-          "slug" : "out_0"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
     "A3QwCEfIfmBAdpMr0G4R1$$wJigCD955T54G4hyEEzB6" : {
       "id" : "A3QwCEfIfmBAdpMr0G4R1$$wJigCD955T54G4hyEEzB6",
       "component" : "Dataset",
@@ -122,6 +95,33 @@
             } ]
           },
           "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "-70zMFAKW9ijW_y23vSWX$$Hko_XXecZm8C9ix4p5_BF" : {
+      "id" : "-70zMFAKW9ijW_y23vSWX$$Hko_XXecZm8C9ix4p5_BF",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "SpatialInfo_04__calc_spatial_metrics",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "SpatialInfo_04__calc_spatial_metrics"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "calc_spatial_metrics_fmFKGTMIJucj8N8wzv13u$$WUgoOff1K4WrYmPe_1XnX", "-70zMFAKW9ijW_y23vSWX$$Hko_XXecZm8C9ix4p5_BF", "K4E0nsTF-Lt0R8SVdqDb0$$6AKjScV4NvU2MmtUwQ2zZ" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SpatialInfo_04__calc_spatial_metrics_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "SpatialInfo_04__calc_spatial_metrics_out_0",
+          "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
       }

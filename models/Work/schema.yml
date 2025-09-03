@@ -1,0 +1,9 @@
+---
+version: 2
+models:
+- name: "Work__Deduplicate_0"
+  tags:
+  - "prophecy_temp"
+- name: "Work__JSONParse_1"
+  tags:
+  - "prophecy_temp"

@@ -1,0 +1,89 @@
+{
+  "id" : "Work__Deduplicate_0",
+  "metainfo" : {
+    "label" : "Work__Deduplicate_0",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "Deduplicate_0_yjyZ5eBd9NX8CNeRcj2XP$$qRk5J_h84xFxC376DevI4" : {
+      "id" : "Deduplicate_0_yjyZ5eBd9NX8CNeRcj2XP$$qRk5J_h84xFxC376DevI4",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "Deduplicate_0"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM Deduplicate_0\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_1",
+          "slug" : "input_port_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_1",
+          "slug" : "output_port_1"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "lJfKK-uDoMCKzwRsr1G1s$$oyh9dcs76EYubT9oFNltc" : {
+      "id" : "lJfKK-uDoMCKzwRsr1G1s$$oyh9dcs76EYubT9oFNltc",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "Deduplicate_0",
+        "x" : -440,
+        "y" : -160,
+        "phase" : 0
+      },
+      "properties" : {
+        "dedupColumns" : [ ],
+        "dedupType" : "distinct",
+        "columnsSelector" : [ ],
+        "orders" : [ ],
+        "useOrderBy" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ynH6KP4s0LeRDzz25ucKu$$qaM4AoY6q_ECiG6HOsNWR",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "yjyZ5eBd9NX8CNeRcj2XP$$qRk5J_h84xFxC376DevI4",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_lJfKK-uDoMCKzwRsr1G1s$$oyh9dcs76EYubT9oFNltc_Deduplicate_0_yjyZ5eBd9NX8CNeRcj2XP$$qRk5J_h84xFxC376DevI4",
+    "source" : "lJfKK-uDoMCKzwRsr1G1s$$oyh9dcs76EYubT9oFNltc",
+    "sourcePort" : "yjyZ5eBd9NX8CNeRcj2XP$$qRk5J_h84xFxC376DevI4",
+    "target" : "Deduplicate_0_yjyZ5eBd9NX8CNeRcj2XP$$qRk5J_h84xFxC376DevI4",
+    "targetPort" : "input_port_1"
+  } ],
+  "component" : "Model"
+}

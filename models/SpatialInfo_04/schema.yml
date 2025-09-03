@@ -4,6 +4,6 @@ models:
 - name: "SpatialInfo_04__calc_line_geometry_info"
   tags:
   - "prophecy_temp"
-- name: "SpatialInfo_04__calc_spatial_info"
+- name: "SpatialInfo_04__calc_spatial_metrics"
   tags:
   - "prophecy_temp"

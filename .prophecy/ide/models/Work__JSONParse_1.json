@@ -1,0 +1,109 @@
+{
+  "id" : "Work__JSONParse_1",
+  "metainfo" : {
+    "label" : "Work__JSONParse_1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "JSONParse_1_y0DqGBjYx2F6kRIPvMGrO$$wCBccH8NVWYYeMyTx1yqB" : {
+      "id" : "JSONParse_1_y0DqGBjYx2F6kRIPvMGrO$$wCBccH8NVWYYeMyTx1yqB",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "JSONParse_1"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM JSONParse_1\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "3xTY1TeVEQQWgOhvdRsDK$$14QGtn_bBFI5AjdkA1nW0" : {
+      "id" : "3xTY1TeVEQQWgOhvdRsDK$$14QGtn_bBFI5AjdkA1nW0",
+      "component" : "JSONParse",
+      "metadata" : {
+        "label" : "JSONParse_1",
+        "x" : -180,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnName" : "",
+        "relation_name" : [ "" ],
+        "_oldMacroProperties" : {
+          "macroName" : "JSONParse",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['']"
+          }, {
+            "name" : "columnName",
+            "value" : ""
+          }, {
+            "name" : "parsingMethod",
+            "value" : "parseFromSampleRecord"
+          }, {
+            "name" : "sampleRecord",
+            "value" : null
+          }, {
+            "name" : "sampleSchema",
+            "value" : null
+          } ]
+        },
+        "parsingMethod" : "parseFromSampleRecord",
+        "sampleSchema" : null,
+        "sampleRecord" : null
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "n17kzbqNP89a1CFoox7gz$$Zlc1oNsNFjbrQaMn-oLWX",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "y0DqGBjYx2F6kRIPvMGrO$$wCBccH8NVWYYeMyTx1yqB",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_3xTY1TeVEQQWgOhvdRsDK$$14QGtn_bBFI5AjdkA1nW0_JSONParse_1_y0DqGBjYx2F6kRIPvMGrO$$wCBccH8NVWYYeMyTx1yqB",
+    "source" : "3xTY1TeVEQQWgOhvdRsDK$$14QGtn_bBFI5AjdkA1nW0",
+    "sourcePort" : "y0DqGBjYx2F6kRIPvMGrO$$wCBccH8NVWYYeMyTx1yqB",
+    "target" : "JSONParse_1_y0DqGBjYx2F6kRIPvMGrO$$wCBccH8NVWYYeMyTx1yqB",
+    "targetPort" : "input_port_0"
+  } ],
+  "component" : "Model"
+}

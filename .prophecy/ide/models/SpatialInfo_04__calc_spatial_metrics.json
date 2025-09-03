@@ -1,7 +1,7 @@
 {
-  "id" : "SpatialInfo_04__calc_spatial_info",
+  "id" : "SpatialInfo_04__calc_spatial_metrics",
   "metainfo" : {
-    "label" : "SpatialInfo_04__calc_spatial_info",
+    "label" : "SpatialInfo_04__calc_spatial_metrics",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -18,17 +18,17 @@
     "version" : 3
   },
   "processes" : {
-    "calc_spatial_info_d8-0CKLmQx0J1Pg98kdzV$$TkxUx4Hl7AQ3g5V2nN-EH" : {
-      "id" : "calc_spatial_info_d8-0CKLmQx0J1Pg98kdzV$$TkxUx4Hl7AQ3g5V2nN-EH",
+    "calc_spatial_metrics_fmFKGTMIJucj8N8wzv13u$$WUgoOff1K4WrYmPe_1XnX" : {
+      "id" : "calc_spatial_metrics_fmFKGTMIJucj8N8wzv13u$$WUgoOff1K4WrYmPe_1XnX",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "calc_spatial_info"
+        "label" : "calc_spatial_metrics"
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM calc_spatial_info\n\n",
+        "query" : "\nSELECT *\n\nFROM calc_spatial_metrics\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -48,11 +48,11 @@
         "autoUpdateOnRun" : false
       }
     },
-    "k9P-mUnm5N5TRDusB5Y8w$$tbsVDxNGUfkCbZ3QkRTSq" : {
-      "id" : "k9P-mUnm5N5TRDusB5Y8w$$tbsVDxNGUfkCbZ3QkRTSq",
+    "-70zMFAKW9ijW_y23vSWX$$Hko_XXecZm8C9ix4p5_BF" : {
+      "id" : "-70zMFAKW9ijW_y23vSWX$$Hko_XXecZm8C9ix4p5_BF",
       "component" : "SpatialInfo_04",
       "metadata" : {
-        "label" : "calc_spatial_info",
+        "label" : "calc_spatial_metrics",
         "x" : -720,
         "y" : -300,
         "phase" : 0
@@ -86,11 +86,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "kBcbBvVNtpvUh5diZ3j1y$$_4TzAOk_HNGaPlBawqJP-",
+          "id" : "83j6ZvgbtdvBUSQAZeqcZ$$65M0jorEmEonWUENsPOz9",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "d8-0CKLmQx0J1Pg98kdzV$$TkxUx4Hl7AQ3g5V2nN-EH",
+          "id" : "fmFKGTMIJucj8N8wzv13u$$WUgoOff1K4WrYmPe_1XnX",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -130,17 +130,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_k9P-mUnm5N5TRDusB5Y8w$$tbsVDxNGUfkCbZ3QkRTSq_calc_spatial_info_d8-0CKLmQx0J1Pg98kdzV$$TkxUx4Hl7AQ3g5V2nN-EH",
-    "source" : "k9P-mUnm5N5TRDusB5Y8w$$tbsVDxNGUfkCbZ3QkRTSq",
-    "sourcePort" : "d8-0CKLmQx0J1Pg98kdzV$$TkxUx4Hl7AQ3g5V2nN-EH",
-    "target" : "calc_spatial_info_d8-0CKLmQx0J1Pg98kdzV$$TkxUx4Hl7AQ3g5V2nN-EH",
+    "id" : "conn_-70zMFAKW9ijW_y23vSWX$$Hko_XXecZm8C9ix4p5_BF_calc_spatial_metrics_fmFKGTMIJucj8N8wzv13u$$WUgoOff1K4WrYmPe_1XnX",
+    "source" : "-70zMFAKW9ijW_y23vSWX$$Hko_XXecZm8C9ix4p5_BF",
+    "sourcePort" : "fmFKGTMIJucj8N8wzv13u$$WUgoOff1K4WrYmPe_1XnX",
+    "target" : "calc_spatial_metrics_fmFKGTMIJucj8N8wzv13u$$WUgoOff1K4WrYmPe_1XnX",
     "targetPort" : "input_port_1"
   }, {
-    "id" : "Hme_jIBCF-9tr9zEuElEq$$GmiGNv0RJ8VwpLQoc2Vei",
+    "id" : "70sakmIkZCc4xW1Q0q83X$$G677xVOSLskWAP22YayZ-",
     "source" : "K4E0nsTF-Lt0R8SVdqDb0$$6AKjScV4NvU2MmtUwQ2zZ",
     "sourcePort" : "unlZPflIKr7jDetV23Iz7$$ctOfsahEmcBl3WcgFIbRA",
-    "target" : "k9P-mUnm5N5TRDusB5Y8w$$tbsVDxNGUfkCbZ3QkRTSq",
-    "targetPort" : "kBcbBvVNtpvUh5diZ3j1y$$_4TzAOk_HNGaPlBawqJP-"
+    "target" : "-70zMFAKW9ijW_y23vSWX$$Hko_XXecZm8C9ix4p5_BF",
+    "targetPort" : "83j6ZvgbtdvBUSQAZeqcZ$$65M0jorEmEonWUENsPOz9"
   } ],
   "component" : "Model"
 }

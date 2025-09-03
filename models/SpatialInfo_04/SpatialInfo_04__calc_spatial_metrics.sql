@@ -14,7 +14,7 @@ WITH new_england AS (
 
 ),
 
-calc_spatial_info AS (
+calc_spatial_metrics AS (
 
   {{
     alt_spatial_11.SpatialInfo_04(
@@ -30,4 +30,4 @@ calc_spatial_info AS (
 
 SELECT *
 
-FROM calc_spatial_info
+FROM calc_spatial_metrics

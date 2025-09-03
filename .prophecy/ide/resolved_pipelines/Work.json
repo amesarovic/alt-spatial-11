@@ -1,0 +1,192 @@
+{
+  "id" : "Work",
+  "metainfo" : {
+    "label" : "Work",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "Qm4wexFwWYzlUuuY94vBx$$DLEGuux4zJGzzkH7C3SfI" : {
+      "id" : "Qm4wexFwWYzlUuuY94vBx$$DLEGuux4zJGzzkH7C3SfI",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -80,
+        "y" : -100,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "C1aOu6d2dD_48IduiZASw$$raX0J08XltlmGWHrJFv_d",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "ajvBu2iEs0RmWDV8UY1HM$$-5pR7oO1ky4DCPpriYbDB",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "3xTY1TeVEQQWgOhvdRsDK$$14QGtn_bBFI5AjdkA1nW0" : {
+      "id" : "3xTY1TeVEQQWgOhvdRsDK$$14QGtn_bBFI5AjdkA1nW0",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "Work__JSONParse_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "Work__JSONParse_1"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "JSONParse_1_y0DqGBjYx2F6kRIPvMGrO$$wCBccH8NVWYYeMyTx1yqB", "3xTY1TeVEQQWgOhvdRsDK$$14QGtn_bBFI5AjdkA1nW0" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Work__JSONParse_1_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "lJfKK-uDoMCKzwRsr1G1s$$oyh9dcs76EYubT9oFNltc" : {
+      "id" : "lJfKK-uDoMCKzwRsr1G1s$$oyh9dcs76EYubT9oFNltc",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "Work__Deduplicate_0",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "Work__Deduplicate_0"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "Deduplicate_0_yjyZ5eBd9NX8CNeRcj2XP$$qRk5J_h84xFxC376DevI4", "lJfKK-uDoMCKzwRsr1G1s$$oyh9dcs76EYubT9oFNltc" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Work__Deduplicate_0_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "p1Z1wrk-BE2dUHfMcHZFE$$oVygHKaI45L9Pd_r6p7dd" : {
+      "id" : "p1Z1wrk-BE2dUHfMcHZFE$$oVygHKaI45L9Pd_r6p7dd",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_1",
+        "x" : 100,
+        "y" : -100,
+        "phase" : 0
+      },
+      "properties" : {
+        "ports" : null,
+        "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
+        "scriptMethodFooter" : "return out0",
+        "script" : ""
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-p0bdKGUyl8oiETOJDiCB$$BElwDBl-puFK8Bwkic1jL",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Q1khKVforBzY60EPVWd5u$$CFPAr8ui-b6pHLdZbOQao",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "C9rheK6OR-qV0-okidJFn$$B5oYVUtahLVeHdBkVGhUk",
+    "source" : "Qm4wexFwWYzlUuuY94vBx$$DLEGuux4zJGzzkH7C3SfI",
+    "sourcePort" : "ajvBu2iEs0RmWDV8UY1HM$$-5pR7oO1ky4DCPpriYbDB",
+    "target" : "p1Z1wrk-BE2dUHfMcHZFE$$oVygHKaI45L9Pd_r6p7dd",
+    "targetPort" : "-p0bdKGUyl8oiETOJDiCB$$BElwDBl-puFK8Bwkic1jL"
+  } ],
+  "component" : "Pipeline"
+}
