@@ -27,34 +27,45 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "K4E0nsTF-Lt0R8SVdqDb0$$6AKjScV4NvU2MmtUwQ2zZ" : {
-      "id" : "K4E0nsTF-Lt0R8SVdqDb0$$6AKjScV4NvU2MmtUwQ2zZ",
-      "component" : "Dataset",
+    "X8pkBkWNyWXWiewMRxUws$$Zd7w0zzjPrtB0cdS5r9gD" : {
+      "id" : "X8pkBkWNyWXWiewMRxUws$$Zd7w0zzjPrtB0cdS5r9gD",
+      "component" : "SpatialInfo_04",
       "metadata" : {
-        "label" : "new_england",
-        "x" : -920,
-        "y" : -300,
+        "label" : "calc_us_state_centroids",
+        "x" : -720,
+        "y" : 0,
         "phase" : 0
       },
       "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
+        "geometryType" : "Polygon",
+        "relation_name" : [ "us_states" ],
+        "geometryColumnName" : "geometry",
+        "_oldMacroProperties" : {
+          "macroName" : "SpatialInfo_04",
+          "projectName" : "alt_spatial_11",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['us_states']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"distance\", \"dataType\": \"Integer\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "geometryType",
+            "value" : "Polygon"
+          }, {
+            "name" : "centroid",
+            "value" : "true"
+          } ]
         },
-        "table" : {
-          "name" : "new_england",
-          "sourceType" : "Table",
-          "sourceName" : "andre_dev.alteryx_spatial",
-          "alias" : "",
-          "additionalProperties" : null
-        }
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"distance\", \"dataType\": \"Integer\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "centroid" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "3oHsxKbYJZ4PhDqjzwD9X$$-Z2BtVOuDshjuQg-ymRiP",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "unlZPflIKr7jDetV23Iz7$$ctOfsahEmcBl3WcgFIbRA",
+          "id" : "UyTwS5MSIPbSf9FB5jXJ1$$12FeP3ARq-Jh4o_V5B8vQ",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -64,49 +75,9 @@
                 "type" : "String"
               }
             }, {
-              "name" : "geometry",
+              "name" : "distance",
               "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
-    "A3QwCEfIfmBAdpMr0G4R1$$wJigCD955T54G4hyEEzB6" : {
-      "id" : "A3QwCEfIfmBAdpMr0G4R1$$wJigCD955T54G4hyEEzB6",
-      "component" : "Dataset",
-      "metadata" : {
-        "label" : "us_states_lines",
-        "x" : -920,
-        "y" : -140,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "us_states_lines",
-          "sourceType" : "Seed"
-        }
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "VRpcsWEgjSR8b95lJggjX$$YMr1HOogCQMrRcKQy8i_s",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "FrSZvgixaOIf0fZvykuEJ$$DB8mXzQDUV4MTfYMMxEtH",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "name",
-              "dataType" : {
-                "type" : "String"
+                "type" : "Integer"
               }
             }, {
               "name" : "geometry",
@@ -115,9 +86,19 @@
               }
             } ]
           },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "VoS0DOprGBooWsBDtQIlh$$54VmZ0K6uMKZlG-ivJ1I-",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "SpatialInfo_04_alt_spatial_11",
+        "name" : "SpatialInfo_04",
+        "projectName" : "alt_spatial_11",
+        "sourceProjectName" : "alt_spatial_11"
       }
     },
     "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C" : {
@@ -249,6 +230,51 @@
         "sourceProjectName" : "alt_spatial_11"
       }
     },
+    "A3QwCEfIfmBAdpMr0G4R1$$wJigCD955T54G4hyEEzB6" : {
+      "id" : "A3QwCEfIfmBAdpMr0G4R1$$wJigCD955T54G4hyEEzB6",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "us_states_lines",
+        "x" : -920,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "us_states_lines",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "VRpcsWEgjSR8b95lJggjX$$YMr1HOogCQMrRcKQy8i_s",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "FrSZvgixaOIf0fZvykuEJ$$DB8mXzQDUV4MTfYMMxEtH",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "-70zMFAKW9ijW_y23vSWX$$Hko_XXecZm8C9ix4p5_BF" : {
       "id" : "-70zMFAKW9ijW_y23vSWX$$Hko_XXecZm8C9ix4p5_BF",
       "component" : "SpatialInfo_04",
@@ -317,6 +343,103 @@
         "projectName" : "alt_spatial_11",
         "sourceProjectName" : "alt_spatial_11"
       }
+    },
+    "muVIW_KvVgmbrdKkQqw9w$$BRVV596OIb0kCgpiUOe3-" : {
+      "id" : "muVIW_KvVgmbrdKkQqw9w$$BRVV596OIb0kCgpiUOe3-",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "us_states",
+        "x" : -920,
+        "y" : 0,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "us_states",
+          "sourceType" : "Source",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "zdvlsHqJjRGAKpbxk72I3$$gjAm8-_BOnCoxzigfv7LB",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "LMborQusA-7EU-2Tpz_yy$$oO6ixwMnt9JFr3XFUiQn4",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "distance",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "K4E0nsTF-Lt0R8SVdqDb0$$6AKjScV4NvU2MmtUwQ2zZ" : {
+      "id" : "K4E0nsTF-Lt0R8SVdqDb0$$6AKjScV4NvU2MmtUwQ2zZ",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -920,
+        "y" : -300,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "3oHsxKbYJZ4PhDqjzwD9X$$-Z2BtVOuDshjuQg-ymRiP",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "unlZPflIKr7jDetV23Iz7$$ctOfsahEmcBl3WcgFIbRA",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
   "connections" : [ {
@@ -331,6 +454,12 @@
     "sourcePort" : "unlZPflIKr7jDetV23Iz7$$ctOfsahEmcBl3WcgFIbRA",
     "target" : "-70zMFAKW9ijW_y23vSWX$$Hko_XXecZm8C9ix4p5_BF",
     "targetPort" : "83j6ZvgbtdvBUSQAZeqcZ$$65M0jorEmEonWUENsPOz9"
+  }, {
+    "id" : "G0kn32rQEV9J4M9uJOpww$$cw9DzMnsf2PWTeGlsVsOW",
+    "source" : "muVIW_KvVgmbrdKkQqw9w$$BRVV596OIb0kCgpiUOe3-",
+    "sourcePort" : "LMborQusA-7EU-2Tpz_yy$$oO6ixwMnt9JFr3XFUiQn4",
+    "target" : "X8pkBkWNyWXWiewMRxUws$$Zd7w0zzjPrtB0cdS5r9gD",
+    "targetPort" : "UyTwS5MSIPbSf9FB5jXJ1$$12FeP3ARq-Jh4o_V5B8vQ"
   } ],
   "component" : "Pipeline"
 }

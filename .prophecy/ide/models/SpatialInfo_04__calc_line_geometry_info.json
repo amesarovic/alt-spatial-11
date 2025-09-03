@@ -37,12 +37,12 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "input_port_0",
-          "slug" : "input_port_0"
+          "id" : "input_port_1",
+          "slug" : "input_port_1"
         } ],
         "outputs" : [ {
-          "id" : "output_port_0",
-          "slug" : "output_port_0"
+          "id" : "output_port_1",
+          "slug" : "output_port_1"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
@@ -131,7 +131,7 @@
     "source" : "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C",
     "sourcePort" : "VqpwtuGlI7eU5AZ8qeKzy$$9b2nPsp3vDz6cywaDoqch",
     "target" : "calc_line_geometry_info_VqpwtuGlI7eU5AZ8qeKzy$$9b2nPsp3vDz6cywaDoqch",
-    "targetPort" : "input_port_0"
+    "targetPort" : "input_port_1"
   }, {
     "id" : "4sjtVIpcHQ73XbG4I3rV2$$HM1l_uS39H_3DWEpI9YZ9",
     "source" : "A3QwCEfIfmBAdpMr0G4R1$$wJigCD955T54G4hyEEzB6",

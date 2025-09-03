@@ -158,6 +158,18 @@ sources:
       dataType:
         type: "Double"
     type: "table"
+  - name: "us_states"
+    columns:
+    - name: "name"
+      dataType:
+        type: "String"
+    - name: "distance"
+      dataType:
+        type: "Integer"
+    - name: "geometry"
+      dataType:
+        type: "String"
+    type: "table"
 - name: "andre_dev.data"
   database: "andre_dev"
   schema: "data"

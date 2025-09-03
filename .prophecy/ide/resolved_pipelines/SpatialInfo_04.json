@@ -27,6 +27,33 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
+    "X8pkBkWNyWXWiewMRxUws$$Zd7w0zzjPrtB0cdS5r9gD" : {
+      "id" : "X8pkBkWNyWXWiewMRxUws$$Zd7w0zzjPrtB0cdS5r9gD",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "SpatialInfo_04__calc_us_state_centroids",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "SpatialInfo_04__calc_us_state_centroids"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "calc_us_state_centroids_VoS0DOprGBooWsBDtQIlh$$54VmZ0K6uMKZlG-ivJ1I-", "X8pkBkWNyWXWiewMRxUws$$Zd7w0zzjPrtB0cdS5r9gD", "muVIW_KvVgmbrdKkQqw9w$$BRVV596OIb0kCgpiUOe3-" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SpatialInfo_04__calc_us_state_centroids_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "SpatialInfo_04__calc_us_state_centroids_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C" : {
       "id" : "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C",
       "component" : "Model",
