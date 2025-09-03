@@ -5,6 +5,20 @@
   {{ log("geometryType=" ~ geometryType, info=True) }}
   {{ log("centroid=" ~ centroid, info=True) }}
 
+  {%- if geometryType == 'LineString' -%}
+
+  SELECT
+    round(ST_Length(ST_GeogFromText({{geometry}})),0) as length,
+    ST_AsText(ST_Centroid(ST_GeomFromText({{geometry}}))) as centroid,
+    ST_AsText(ST_EndPoint(ST_GeomFromText({{geometry}}))) as endpoint,
+    ST_AsText(ST_Envelope(ST_GeomFromText({{geometry}}))) as bounding_box,
+    ST_NumGeometries(ST_GeomFromText({{geometry}})) as num_geometries,
+    {{geometry}} as input
+  FROM
+    {{table_name}}
+
+  {%- else -%}
+
   SELECT
     round(ST_Area(ST_GeogFromText({{geometryColumnName}}))/1000000,0) as area_kms,
     round(ST_Area(ST_GeogFromText({{geometryColumnName}}))/1000000/2.59,0) as area_miles,
@@ -16,5 +30,7 @@
     {{geometryColumnName}}
   FROM
     {{table_name}}
+
+  {%- endif -%}
 
 {%- endmacro -%}
