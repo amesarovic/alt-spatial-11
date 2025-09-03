@@ -14,7 +14,7 @@ WITH us_states_lines AS (
 
 ),
 
-calc_spatial_centroid_1 AS (
+calc_spatial_info AS (
 
   {{
     alt_spatial_11.SpatialInfo_03(
@@ -30,4 +30,4 @@ calc_spatial_centroid_1 AS (
 
 SELECT *
 
-FROM calc_spatial_centroid_1
+FROM calc_spatial_info

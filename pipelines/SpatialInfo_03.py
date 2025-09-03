@@ -8,14 +8,14 @@ with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "us_states_lines", "sourceType" : "Seed"}
     )
+    SpatialInfo_03__calc_spatial_info = Task(
+        task_id = "SpatialInfo_03__calc_spatial_info", 
+        component = "Model", 
+        modelName = "SpatialInfo_03__calc_spatial_info"
+    )
     SpatialInfo_03__calc_spatial_centroid = Task(
         task_id = "SpatialInfo_03__calc_spatial_centroid", 
         component = "Model", 
         modelName = "SpatialInfo_03__calc_spatial_centroid"
     )
-    SpatialInfo_03__calc_spatial_centroid_1 = Task(
-        task_id = "SpatialInfo_03__calc_spatial_centroid_1", 
-        component = "Model", 
-        modelName = "SpatialInfo_03__calc_spatial_centroid_1"
-    )
-    us_states_lines.out >> SpatialInfo_03__calc_spatial_centroid_1.in_0
+    us_states_lines.out >> SpatialInfo_03__calc_spatial_info.in_0
