@@ -16,6 +16,7 @@ class SpatialInfo_03(MacroSpec):
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
         geometryColumnName: str = ""
+        geometryType: str = "Polygon"
         centroid: bool = True
         
 
@@ -52,7 +53,10 @@ class SpatialInfo_03(MacroSpec):
                     SchemaColumnsDropdown("Geometry column")
                         .bindSchema("component.ports.inputs[0].schema")
                         .bindProperty("geometryColumnName")
-                )                               
+                )   
+                .addElement(
+                    SelectBox("Geometry type").addOption("Polygon", "polygon").addOption("LineString", "line_string").addOption("Point", "points").bindProperty("geometryType")
+                )                            
                 .addElement(
                     Checkbox("Centroid",helpText=help).bindProperty("centroid")) 
                 .addElement(
@@ -110,6 +114,7 @@ class SpatialInfo_03(MacroSpec):
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
             geometryColumnName=parametersMap.get('geometryColumnName'),
+            geometryType=str(parametersMap.get('geometryType')),
             centroid=parametersMap.get('centroid').lower() == 'true',
         )
 
@@ -122,6 +127,7 @@ class SpatialInfo_03(MacroSpec):
                 MacroParameter("relation_name", str(properties.relation_name)),
                 MacroParameter("schema", str(properties.schema)),
                 MacroParameter("destinationColumnNames", properties.geometryColumnName),
+                MacroParameter("geometryType", properties.geometryType),
                 MacroParameter("centroid", str(properties.centroid).lower())
             ]
         )
