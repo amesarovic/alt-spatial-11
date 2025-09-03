@@ -1,7 +1,7 @@
 {
-  "id" : "SpatialInfo_03__calc_spatial_centroid",
+  "id" : "SpatialInfo_03__calc_spatial_centroid_1",
   "metainfo" : {
-    "label" : "SpatialInfo_03__calc_spatial_centroid",
+    "label" : "SpatialInfo_03__calc_spatial_centroid_1",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -18,17 +18,17 @@
     "version" : 3
   },
   "processes" : {
-    "calc_spatial_centroid_zij8fHUBHBxe4MuhSNhq9$$vKLG5OWSYdNSnPBMqENR3" : {
-      "id" : "calc_spatial_centroid_zij8fHUBHBxe4MuhSNhq9$$vKLG5OWSYdNSnPBMqENR3",
+    "calc_spatial_centroid_1_xO-OVcy0hjEqOSQ-izfo3$$cLWrUMV_YLGhA6K7XERyF" : {
+      "id" : "calc_spatial_centroid_1_xO-OVcy0hjEqOSQ-izfo3$$cLWrUMV_YLGhA6K7XERyF",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "calc_spatial_centroid"
+        "label" : "calc_spatial_centroid_1"
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM calc_spatial_centroid\n\n",
+        "query" : "\nSELECT *\n\nFROM calc_spatial_centroid_1\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -37,36 +37,36 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "input_port_1",
-          "slug" : "input_port_1"
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
         } ],
         "outputs" : [ {
-          "id" : "output_port_1",
-          "slug" : "output_port_1"
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "Q4BUn_kqPaqOpJo66hIMx$$LfLDWjVzzkKFmIrEMPDSG" : {
-      "id" : "Q4BUn_kqPaqOpJo66hIMx$$LfLDWjVzzkKFmIrEMPDSG",
+    "_nKyBa08sbDd4LGd0x2-J$$vofJfRso1B9GOydqClnil" : {
+      "id" : "_nKyBa08sbDd4LGd0x2-J$$vofJfRso1B9GOydqClnil",
       "component" : "SpatialInfo_03",
       "metadata" : {
-        "label" : "calc_spatial_centroid",
-        "x" : -240,
-        "y" : -160,
+        "label" : "calc_spatial_centroid_1",
+        "x" : -220,
+        "y" : 0,
         "phase" : 0
       },
       "properties" : {
-        "geometryType" : "polygon",
-        "relation_name" : [ "new_england" ],
+        "geometryType" : "line_string",
+        "relation_name" : [ "us_states_lines" ],
         "geometryColumnName" : "geometry",
         "_oldMacroProperties" : {
           "macroName" : "SpatialInfo_03",
           "projectName" : "alt_spatial_11",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['new_england']"
+            "value" : "['us_states_lines']"
           }, {
             "name" : "schema",
             "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
@@ -75,7 +75,7 @@
             "value" : "geometry"
           }, {
             "name" : "geometryType",
-            "value" : "polygon"
+            "value" : "line_string"
           }, {
             "name" : "centroid",
             "value" : "true"
@@ -86,24 +86,24 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "Cg3_WUoSsaRUwtM_IGeQr$$Tm0yy-RZxTmTmGObTtum8",
+          "id" : "VR-bKcj2FM2bOM16XQKdI$$9ZzA6VhM8M5NTQFox9keN",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "zij8fHUBHBxe4MuhSNhq9$$vKLG5OWSYdNSnPBMqENR3",
+          "id" : "xO-OVcy0hjEqOSQ-izfo3$$cLWrUMV_YLGhA6K7XERyF",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "8o-oSPuoIVUHfT8GFLN7R$$apmbzydpMC7il76NJvB8B" : {
-      "id" : "8o-oSPuoIVUHfT8GFLN7R$$apmbzydpMC7il76NJvB8B",
+    "HPXPyTC3H_ckTQwhhS86B$$PVrs-y1Y7o4C71ub2eHOW" : {
+      "id" : "HPXPyTC3H_ckTQwhhS86B$$PVrs-y1Y7o4C71ub2eHOW",
       "component" : "Source",
       "metadata" : {
-        "label" : "new_england",
+        "label" : "us_states_lines",
         "x" : -440,
-        "y" : -160,
+        "y" : 0,
         "phase" : 0
       },
       "properties" : {
@@ -111,17 +111,14 @@
           "writeMode" : "overwrite"
         },
         "table" : {
-          "name" : "new_england",
-          "sourceType" : "Table",
-          "sourceName" : "andre_dev.alteryx_spatial",
-          "alias" : "",
-          "additionalProperties" : null
+          "name" : "us_states_lines",
+          "sourceType" : "Seed"
         }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "NBz0SfGMLxLgV4GWnTwNV$$O9CayyXlhsTQ6NebyTSxG",
+          "id" : "9uNT6FKSXLT6mjuw9YyWq$$WdTmekZo0Jd0GoZysu2po",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -130,17 +127,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_Q4BUn_kqPaqOpJo66hIMx$$LfLDWjVzzkKFmIrEMPDSG_calc_spatial_centroid_zij8fHUBHBxe4MuhSNhq9$$vKLG5OWSYdNSnPBMqENR3",
-    "source" : "Q4BUn_kqPaqOpJo66hIMx$$LfLDWjVzzkKFmIrEMPDSG",
-    "sourcePort" : "zij8fHUBHBxe4MuhSNhq9$$vKLG5OWSYdNSnPBMqENR3",
-    "target" : "calc_spatial_centroid_zij8fHUBHBxe4MuhSNhq9$$vKLG5OWSYdNSnPBMqENR3",
-    "targetPort" : "input_port_1"
+    "id" : "conn__nKyBa08sbDd4LGd0x2-J$$vofJfRso1B9GOydqClnil_calc_spatial_centroid_1_xO-OVcy0hjEqOSQ-izfo3$$cLWrUMV_YLGhA6K7XERyF",
+    "source" : "_nKyBa08sbDd4LGd0x2-J$$vofJfRso1B9GOydqClnil",
+    "sourcePort" : "xO-OVcy0hjEqOSQ-izfo3$$cLWrUMV_YLGhA6K7XERyF",
+    "target" : "calc_spatial_centroid_1_xO-OVcy0hjEqOSQ-izfo3$$cLWrUMV_YLGhA6K7XERyF",
+    "targetPort" : "input_port_0"
   }, {
-    "id" : "P0oeGrHtSFB99j3xwGry1",
-    "source" : "8o-oSPuoIVUHfT8GFLN7R$$apmbzydpMC7il76NJvB8B",
-    "sourcePort" : "NBz0SfGMLxLgV4GWnTwNV$$O9CayyXlhsTQ6NebyTSxG",
-    "target" : "Q4BUn_kqPaqOpJo66hIMx$$LfLDWjVzzkKFmIrEMPDSG",
-    "targetPort" : "Cg3_WUoSsaRUwtM_IGeQr$$Tm0yy-RZxTmTmGObTtum8"
+    "id" : "b-joTV3H--vo_1iEQYntV$$j4pwPpzDsfxUS_0rIJbCV",
+    "source" : "HPXPyTC3H_ckTQwhhS86B$$PVrs-y1Y7o4C71ub2eHOW",
+    "sourcePort" : "9uNT6FKSXLT6mjuw9YyWq$$WdTmekZo0Jd0GoZysu2po",
+    "target" : "_nKyBa08sbDd4LGd0x2-J$$vofJfRso1B9GOydqClnil",
+    "targetPort" : "VR-bKcj2FM2bOM16XQKdI$$9ZzA6VhM8M5NTQFox9keN"
   } ],
   "component" : "Model"
 }

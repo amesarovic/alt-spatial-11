@@ -8,12 +8,12 @@
   {%- if geometryType == 'LineString' -%}
 
   SELECT
-    round(ST_Length(ST_GeogFromText({{geometry}})),0) as length,
-    ST_AsText(ST_Centroid(ST_GeomFromText({{geometry}}))) as centroid,
-    ST_AsText(ST_EndPoint(ST_GeomFromText({{geometry}}))) as endpoint,
-    ST_AsText(ST_Envelope(ST_GeomFromText({{geometry}}))) as bounding_box,
-    ST_NumGeometries(ST_GeomFromText({{geometry}})) as num_geometries,
-    {{geometry}} as input
+    round(ST_Length(ST_GeogFromText({{geometryColumnName}})),0) as length,
+    ST_AsText(ST_Centroid(ST_GeomFromText({{geometryColumnName}}))) as centroid,
+    ST_AsText(ST_EndPoint(ST_GeomFromText({{geometryColumnName}}))) as endpoint,
+    ST_AsText(ST_Envelope(ST_GeomFromText({{geometryColumnName}}))) as bounding_box,
+    ST_NumGeometries(ST_GeomFromText({{geometryColumnName}})) as num_geometries,
+    {{geometryColumnName}} as input
   FROM
     {{table_name}}
 

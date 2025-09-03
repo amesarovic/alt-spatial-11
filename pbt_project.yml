@@ -862,6 +862,7 @@ sqlOrchestratorPipelines:
     - models/SpatialInfo_03a/SpatialInfo_03a__calc_spatial_centroid.sql
     - models/SpatialInfo_02/schema.yml
     - models/SpatialInfo_02/SpatialInfo_02__calc_spatial_centroid.sql
+    - models/SpatialInfo_03/SpatialInfo_03__calc_spatial_centroid_1.sql
     - models/SpatialInfo_03/SpatialInfo_03__calc_spatial_centroid.sql
     - models/SpatialInfo/SpatialInfo__generate_centroid.sql
     - .prophecy/ide/pipelines/SpatialInfo.json
@@ -883,9 +884,10 @@ sqlOrchestratorPipelines:
     author: mesarovic.andre@prophecy.io
     files:
     - models/SpatialInfo_03/schema.yml
-    - models/SpatialInfo_03/SpatialInfo_03__calc_spatial_centroid.sql
-    - models/SpatialInfo_03a/SpatialInfo_03a__calc_spatial_centroid.sql
     - models/SpatialInfo_03a/schema.yml
+    - models/SpatialInfo_03a/SpatialInfo_03a__calc_spatial_centroid.sql
+    - models/SpatialInfo_03/SpatialInfo_03__calc_spatial_centroid_1.sql
+    - models/SpatialInfo_03/SpatialInfo_03__calc_spatial_centroid.sql
     - .prophecy/ide/pipelines/SpatialInfo_03.json
     - pipelines/SpatialInfo_03.py
     createdAt: '2025-09-02 20:09:24'
