@@ -33,7 +33,7 @@
       "metadata" : {
         "label" : "calc_us_state_centroids",
         "x" : -720,
-        "y" : 0,
+        "y" : 100,
         "phase" : 0
       },
       "properties" : {
@@ -350,7 +350,7 @@
       "metadata" : {
         "label" : "us_states",
         "x" : -920,
-        "y" : 0,
+        "y" : 100,
         "phase" : 0
       },
       "properties" : {
