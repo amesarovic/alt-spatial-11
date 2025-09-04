@@ -49,17 +49,6 @@ sqlMacros:
     - macros/macros.yml
     - gems/Buffer_02.py
     createdAt: '2025-09-03 23:15:36'
-  .prophecy/metadata/sqlmacros/Simplify_01:
-    name: Simplify_01
-    macroType: query
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - macros/Simplify_01.sql
-    - .prophecy/ide/macros/Simplify_01.json
-    - macros/macros.yml
-    - gems/Simplify_01.py
-    createdAt: '2025-08-07 03:34:30'
   .prophecy/metadata/sqlmacros/SpatialInfo_03:
     name: SpatialInfo_03
     macroType: query
@@ -132,6 +121,28 @@ sqlMacros:
     - macros/macros.yml
     - gems/SpatialInfo.py
     createdAt: '2025-08-22 02:44:02'
+  .prophecy/metadata/sqlmacros/Simplify_01:
+    name: Simplify_01
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/Simplify_01.sql
+    - .prophecy/ide/macros/Simplify_01.json
+    - macros/macros.yml
+    - gems/Simplify_01.py
+    createdAt: '2025-08-07 03:34:30'
+  .prophecy/metadata/sqlmacros/SpatialInfo_05:
+    name: SpatialInfo_05
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/SpatialInfo_05.sql
+    - .prophecy/ide/macros/SpatialInfo_05.json
+    - macros/macros.yml
+    - gems/SpatialInfo_05.py
+    createdAt: '2025-09-04 14:02:41'
 sqlSeeds:
   .prophecy/metadata/sqlseeds/points_02:
     name: points_02
@@ -796,7 +807,7 @@ sqlOrchestratorPipelines:
     - models/SpatialInfo_04/SpatialInfo_04__calc_line_geometry_info.sql
     - models/SpatialInfo_04/SpatialInfo_04__calc_us_state_centroids.sql
     - models/SpatialInfo_04/schema.yml
-    - models/SpatialInfo_04/SpatialInfo_04__calc_spatial_metrics.sql
+    - models/SpatialInfo_04/SpatialInfo_04__calc_polygon_centroid.sql
     - .prophecy/ide/pipelines/SpatialInfo_04.json
     - pipelines/SpatialInfo_04.py
     createdAt: '2025-09-03 01:57:35'
@@ -811,6 +822,18 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/Airport_FindNearest_04.json
     - pipelines/Airport_FindNearest_04.py
     createdAt: '2025-08-16 00:45:13'
+  .prophecy/metadata/sqlorchestratorpipeline/SpatialInfo_05:
+    name: SpatialInfo_05
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/SpatialInfo_05/schema.yml
+    - models/SpatialInfo_05/SpatialInfo_05__calc_spatial_info.sql
+    - models/SpatialInfo_05/SpatialInfo_05__compute_spatial_info.sql
+    - .prophecy/ide/pipelines/SpatialInfo_05.json
+    - pipelines/SpatialInfo_05.py
+    createdAt: '2025-09-04 14:04:39'
   .prophecy/metadata/sqlorchestratorpipeline/Buffer:
     name: Buffer
     schema: null
@@ -889,18 +912,21 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/SpatialInfo_04/SpatialInfo_04__calc_polygon_centroid.sql
     - models/SpatialInfo_03a/schema.yml
     - models/SpatialInfo_04/SpatialInfo_04__calc_line_geometry_info.sql
     - models/SpatialInfo_02/schema.yml
+    - models/SpatialInfo_05/schema.yml
     - models/SpatialInfo_04/SpatialInfo_04__calc_us_state_centroids.sql
+    - models/SpatialInfo_05/SpatialInfo_05__calc_spatial_info.sql
     - models/SpatialInfo_04/schema.yml
     - models/SpatialInfo/SpatialInfo__generate_centroid.sql
     - models/SpatialInfo_02/SpatialInfo_02__calc_spatial_centroid.sql
     - models/SpatialInfo_03/SpatialInfo_03__calc_spatial_centroid.sql
     - models/SpatialInfo/schema.yml
-    - models/SpatialInfo_04/SpatialInfo_04__calc_spatial_metrics.sql
     - models/SpatialInfo_03a/SpatialInfo_03a__calc_spatial_centroid.sql
     - models/SpatialInfo_03/schema.yml
+    - models/SpatialInfo_05/SpatialInfo_05__compute_spatial_info.sql
     - models/SpatialInfo_03/SpatialInfo_03__calc_spatial_info.sql
     - .prophecy/ide/pipelines/SpatialInfo.json
     - pipelines/SpatialInfo.py

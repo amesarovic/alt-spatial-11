@@ -7,6 +7,11 @@ with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
         component = "Model", 
         modelName = "SpatialInfo_04__calc_us_state_centroids"
     )
+    SpatialInfo_04__calc_polygon_centroid = Task(
+        task_id = "SpatialInfo_04__calc_polygon_centroid", 
+        component = "Model", 
+        modelName = "SpatialInfo_04__calc_polygon_centroid"
+    )
     SpatialInfo_04__calc_line_geometry_info = Task(
         task_id = "SpatialInfo_04__calc_line_geometry_info", 
         component = "Model", 
@@ -17,10 +22,5 @@ with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
         component = "Dataset", 
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "us_states_lines", "sourceType" : "Seed"}
-    )
-    SpatialInfo_04__calc_spatial_metrics = Task(
-        task_id = "SpatialInfo_04__calc_spatial_metrics", 
-        component = "Model", 
-        modelName = "SpatialInfo_04__calc_spatial_metrics"
     )
     us_states_lines.out >> SpatialInfo_04__calc_line_geometry_info.in_0

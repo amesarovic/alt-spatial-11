@@ -1,0 +1,33 @@
+{{
+  config({    
+    "materialized": "ephemeral",
+    "database": "andre_dev",
+    "schema": "alteryx_spatial"
+  })
+}}
+
+WITH us_states_lines AS (
+
+  SELECT * 
+  
+  FROM {{ ref('us_states_lines')}}
+
+),
+
+compute_spatial_info AS (
+
+  {{
+    alt_spatial_11.SpatialInfo_05(
+      'us_states_lines', 
+      [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
+      'geometry', 
+      'LineString', 
+      true
+    )
+  }}
+
+)
+
+SELECT *
+
+FROM compute_spatial_info

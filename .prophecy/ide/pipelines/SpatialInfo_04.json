@@ -101,6 +101,75 @@
         "sourceProjectName" : "alt_spatial_11"
       }
     },
+    "1hoL6SmQ0ZOeHxiQRAdpq$$qY6msZ_5uHMiOHwIMdbHz" : {
+      "id" : "1hoL6SmQ0ZOeHxiQRAdpq$$qY6msZ_5uHMiOHwIMdbHz",
+      "component" : "SpatialInfo_04",
+      "metadata" : {
+        "label" : "calc_polygon_centroid",
+        "x" : -720,
+        "y" : -300,
+        "phase" : 0
+      },
+      "properties" : {
+        "geometryType" : "Polygon",
+        "relation_name" : [ "new_england" ],
+        "geometryColumnName" : "geometry",
+        "_oldMacroProperties" : {
+          "macroName" : "SpatialInfo_04",
+          "projectName" : "alt_spatial_11",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['new_england']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "geometryType",
+            "value" : "Polygon"
+          }, {
+            "name" : "centroid",
+            "value" : "true"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "centroid" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "rMS7atUWH1ZWSQfDC3Dq6$$jX9v3LfK0dIMi76660zYL",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "cmPnQmFmicoTtovvCjPfN$$2sHORU6XA_8HNPOm0iKRU",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "SpatialInfo_04_alt_spatial_11",
+        "name" : "SpatialInfo_04",
+        "projectName" : "alt_spatial_11",
+        "sourceProjectName" : "alt_spatial_11"
+      }
+    },
     "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C" : {
       "id" : "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C",
       "component" : "SpatialInfo_04",
@@ -275,75 +344,6 @@
         "isCustomOutputSchema" : false
       }
     },
-    "-70zMFAKW9ijW_y23vSWX$$Hko_XXecZm8C9ix4p5_BF" : {
-      "id" : "-70zMFAKW9ijW_y23vSWX$$Hko_XXecZm8C9ix4p5_BF",
-      "component" : "SpatialInfo_04",
-      "metadata" : {
-        "label" : "calc_spatial_metrics",
-        "x" : -720,
-        "y" : -300,
-        "phase" : 0
-      },
-      "properties" : {
-        "geometryType" : "Polygon",
-        "relation_name" : [ "new_england" ],
-        "geometryColumnName" : "geometry",
-        "_oldMacroProperties" : {
-          "macroName" : "SpatialInfo_04",
-          "projectName" : "alt_spatial_11",
-          "parameters" : [ {
-            "name" : "relation_name",
-            "value" : "['new_england']"
-          }, {
-            "name" : "schema",
-            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
-          }, {
-            "name" : "destinationColumnNames",
-            "value" : "geometry"
-          }, {
-            "name" : "geometryType",
-            "value" : "Polygon"
-          }, {
-            "name" : "centroid",
-            "value" : "true"
-          } ]
-        },
-        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
-        "centroid" : true
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "83j6ZvgbtdvBUSQAZeqcZ$$65M0jorEmEonWUENsPOz9",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "databricks",
-            "fields" : [ {
-              "name" : "name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "geometry",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "fmFKGTMIJucj8N8wzv13u$$WUgoOff1K4WrYmPe_1XnX",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      },
-      "componentInfo" : {
-        "gemId" : "SpatialInfo_04_alt_spatial_11",
-        "name" : "SpatialInfo_04",
-        "projectName" : "alt_spatial_11",
-        "sourceProjectName" : "alt_spatial_11"
-      }
-    },
     "muVIW_KvVgmbrdKkQqw9w$$BRVV596OIb0kCgpiUOe3-" : {
       "id" : "muVIW_KvVgmbrdKkQqw9w$$BRVV596OIb0kCgpiUOe3-",
       "component" : "Dataset",
@@ -449,17 +449,17 @@
     "target" : "5cgPKEvEjcmTyhXE5A4UV$$jp57VqZU6Om_T9iF5EK-C",
     "targetPort" : "AFiTykyLbx7SOeq1DMm_s$$PljYamJLc69xYguRwpXBQ"
   }, {
-    "id" : "70sakmIkZCc4xW1Q0q83X$$G677xVOSLskWAP22YayZ-",
-    "source" : "K4E0nsTF-Lt0R8SVdqDb0$$6AKjScV4NvU2MmtUwQ2zZ",
-    "sourcePort" : "unlZPflIKr7jDetV23Iz7$$ctOfsahEmcBl3WcgFIbRA",
-    "target" : "-70zMFAKW9ijW_y23vSWX$$Hko_XXecZm8C9ix4p5_BF",
-    "targetPort" : "83j6ZvgbtdvBUSQAZeqcZ$$65M0jorEmEonWUENsPOz9"
-  }, {
     "id" : "G0kn32rQEV9J4M9uJOpww$$cw9DzMnsf2PWTeGlsVsOW",
     "source" : "muVIW_KvVgmbrdKkQqw9w$$BRVV596OIb0kCgpiUOe3-",
     "sourcePort" : "LMborQusA-7EU-2Tpz_yy$$oO6ixwMnt9JFr3XFUiQn4",
     "target" : "X8pkBkWNyWXWiewMRxUws$$Zd7w0zzjPrtB0cdS5r9gD",
     "targetPort" : "UyTwS5MSIPbSf9FB5jXJ1$$12FeP3ARq-Jh4o_V5B8vQ"
+  }, {
+    "id" : "TismJdWxW-NNcKvJ9YWZR$$NfbI0mb5g46Led1n4Yf6n",
+    "source" : "K4E0nsTF-Lt0R8SVdqDb0$$6AKjScV4NvU2MmtUwQ2zZ",
+    "sourcePort" : "unlZPflIKr7jDetV23Iz7$$ctOfsahEmcBl3WcgFIbRA",
+    "target" : "1hoL6SmQ0ZOeHxiQRAdpq$$qY6msZ_5uHMiOHwIMdbHz",
+    "targetPort" : "rMS7atUWH1ZWSQfDC3Dq6$$jX9v3LfK0dIMi76660zYL"
   } ],
   "component" : "Pipeline"
 }

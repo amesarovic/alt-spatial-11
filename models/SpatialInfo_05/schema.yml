@@ -1,0 +1,9 @@
+---
+version: 2
+models:
+- name: "SpatialInfo_05__calc_spatial_info"
+  tags:
+  - "prophecy_temp"
+- name: "SpatialInfo_05__compute_spatial_info"
+  tags:
+  - "prophecy_temp"

@@ -4,7 +4,7 @@ models:
 - name: "SpatialInfo_04__calc_line_geometry_info"
   tags:
   - "prophecy_temp"
-- name: "SpatialInfo_04__calc_spatial_metrics"
+- name: "SpatialInfo_04__calc_polygon_centroid"
   tags:
   - "prophecy_temp"
 - name: "SpatialInfo_04__calc_us_state_centroids"
